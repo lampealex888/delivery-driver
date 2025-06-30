@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://be4ttwlu7qmsm"]
+[gd_scene load_steps=8 format=3 uid="uid://be4ttwlu7qmsm"]
 
 [ext_resource type="PackedScene" uid="uid://bhbapxlnmbtag" path="res://scenes/prefabs/road-kit/road_crossroad_path.tscn" id="1_03iei"]
 [ext_resource type="PackedScene" uid="uid://djy4xcx14u71h" path="res://scenes/prefabs/road-kit/road_straight.tscn" id="2_sn7cj"]
 [ext_resource type="PackedScene" uid="uid://25djqotvidb7" path="res://scenes/prefabs/city-kit-commerical/low_detail_building_wide_b.tscn" id="3_c6gv3"]
 [ext_resource type="PackedScene" uid="uid://pwpxtotuw6p0" path="res://scenes/prefabs/road-kit/tile_low.tscn" id="4_vsfy4"]
+[ext_resource type="PackedScene" uid="uid://ysipsntvyrwe" path="res://scenes/prefabs/car-kit/hatchback_sports.tscn" id="5_623cv"]
 [ext_resource type="PackedScene" uid="uid://dprepqr5yw3g" path="res://scenes/prefabs/road-kit/road_intersection.tscn" id="5_w53h0"]
 [ext_resource type="PackedScene" uid="uid://b6n7kuog1s5ox" path="res://scenes/prefabs/city-kit-commerical/building_skyscraper_c.tscn" id="6_vsfy4"]
 
@@ -71,4 +72,16 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
 [node name="BuildingSkyscraperC" parent="." instance=ExtResource("6_vsfy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 0, -1)
+
+[node name="hatchback-sports" parent="." instance=ExtResource("5_623cv")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -1, 0, 0.180287)
+
+[node name="Pivot" type="Node3D" parent="hatchback-sports"]
+transform = Transform3D(1, 1.77636e-15, 3.55271e-15, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="hatchback-sports/Pivot"]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 4.17233e-07, 0, -10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 5, 0)
