@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://be4ttwlu7qmsm"]
+
+[ext_resource type="PackedScene" uid="uid://bhbapxlnmbtag" path="res://scenes/prefabs/road-kit/road_crossroad_path.tscn" id="1_03iei"]
+[ext_resource type="PackedScene" uid="uid://djy4xcx14u71h" path="res://scenes/prefabs/road-kit/road_straight.tscn" id="2_sn7cj"]
+[ext_resource type="PackedScene" uid="uid://25djqotvidb7" path="res://scenes/prefabs/city-kit-commerical/low_detail_building_wide_b.tscn" id="3_c6gv3"]
+[ext_resource type="PackedScene" uid="uid://pwpxtotuw6p0" path="res://scenes/prefabs/road-kit/tile_low.tscn" id="4_vsfy4"]
+[ext_resource type="PackedScene" uid="uid://dprepqr5yw3g" path="res://scenes/prefabs/road-kit/road_intersection.tscn" id="5_w53h0"]
+[ext_resource type="PackedScene" uid="uid://b6n7kuog1s5ox" path="res://scenes/prefabs/city-kit-commerical/building_skyscraper_c.tscn" id="6_vsfy4"]
+
+[node name="LevelOne" type="Node3D"]
+
+[node name="Roads" type="Node3D" parent="."]
+
+[node name="RoadCrossroadPath" parent="Roads" instance=ExtResource("1_03iei")]
+
+[node name="RoadStraight" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="RoadStraight4" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="RoadStraight2" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="RoadStraight7" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="RoadStraight8" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="RoadStraight10" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="RoadStraight12" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="RoadStraight15" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="RoadStraight3" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1)
+
+[node name="RoadStraight6" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, -1)
+
+[node name="RoadStraight13" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, -1)
+
+[node name="RoadStraight14" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, -1)
+
+[node name="RoadStraight5" parent="Roads" instance=ExtResource("2_sn7cj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
+
+[node name="TileLow" parent="Roads" instance=ExtResource("4_vsfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="TileLow2" parent="Roads" instance=ExtResource("4_vsfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+
+[node name="RoadIntersection" parent="Roads" instance=ExtResource("5_w53h0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 0)
+
+[node name="RoadIntersection2" parent="Roads" instance=ExtResource("5_w53h0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 0, 0)
+
+[node name="RoadIntersection3" parent="Roads" instance=ExtResource("5_w53h0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, 0)
+
+[node name="LowDetailBuildingWideB" parent="." instance=ExtResource("3_c6gv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BuildingSkyscraperC" parent="." instance=ExtResource("6_vsfy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1)

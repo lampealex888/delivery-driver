@@ -1,0 +1,276 @@
+[gd_scene load_steps=69 format=3 uid="uid://b0fgrwotp5mox"]
+
+[ext_resource type="PackedScene" uid="uid://c62crvhhb25w5" path="res://assets/kenney_road-kit/bridge-pillar-wide.glb" id="1_fvk62"]
+[ext_resource type="PackedScene" uid="uid://dk7qd1oxvrjck" path="res://assets/kenney_road-kit/bridge-pillar.glb" id="2_gfwft"]
+[ext_resource type="PackedScene" uid="uid://dom4my4v0185f" path="res://assets/kenney_road-kit/construction-barrier.glb" id="3_uebn5"]
+[ext_resource type="PackedScene" uid="uid://c6le1iu3fjufh" path="res://assets/kenney_road-kit/construction-cone.glb" id="4_3utnb"]
+[ext_resource type="PackedScene" uid="uid://l1l5og54vcx7" path="res://assets/kenney_road-kit/construction-light.glb" id="5_va8ji"]
+[ext_resource type="PackedScene" uid="uid://35g2i2fnebx0" path="res://assets/kenney_road-kit/light-curved-cross.glb" id="6_gid0h"]
+[ext_resource type="PackedScene" uid="uid://cehvj1pps2aaf" path="res://assets/kenney_road-kit/light-curved-double.glb" id="7_blb64"]
+[ext_resource type="PackedScene" uid="uid://idojqb4kl5b" path="res://assets/kenney_road-kit/light-curved.glb" id="8_itiul"]
+[ext_resource type="PackedScene" uid="uid://bbyxlgut8ellm" path="res://assets/kenney_road-kit/light-square-cross.glb" id="9_yl132"]
+[ext_resource type="PackedScene" uid="uid://b4t6dcso42th0" path="res://assets/kenney_road-kit/light-square-double.glb" id="10_t0m2i"]
+[ext_resource type="PackedScene" uid="uid://1dbni7dgspj" path="res://assets/kenney_road-kit/light-square.glb" id="11_ywjke"]
+[ext_resource type="PackedScene" uid="uid://bl7opgo1n2ply" path="res://assets/kenney_road-kit/road-bend-barrier.glb" id="12_ny8gi"]
+[ext_resource type="PackedScene" uid="uid://dppc1ep6t04ep" path="res://assets/kenney_road-kit/road-bend-sidewalk.glb" id="13_qt0gv"]
+[ext_resource type="PackedScene" uid="uid://bwbpc2nbah8ln" path="res://assets/kenney_road-kit/road-bend-square-barrier.glb" id="14_bqkr1"]
+[ext_resource type="PackedScene" uid="uid://kqc45087hofi" path="res://assets/kenney_road-kit/road-bend-square.glb" id="15_uj507"]
+[ext_resource type="PackedScene" uid="uid://ci53mfjggjftq" path="res://assets/kenney_road-kit/road-bend.glb" id="16_xay7u"]
+[ext_resource type="PackedScene" uid="uid://dbuu6k6il6m6n" path="res://assets/kenney_road-kit/road-bridge.glb" id="17_3umdt"]
+[ext_resource type="PackedScene" uid="uid://d1jhh8urdq0sv" path="res://assets/kenney_road-kit/road-crossing.glb" id="18_p4qsg"]
+[ext_resource type="PackedScene" uid="uid://m4uux1mw0uwf" path="res://assets/kenney_road-kit/road-crossroad-barrier.glb" id="19_pkhf2"]
+[ext_resource type="PackedScene" uid="uid://cmu4x2s63ei5f" path="res://assets/kenney_road-kit/road-crossroad-line.glb" id="20_cjjxs"]
+[ext_resource type="PackedScene" uid="uid://dvsxaxhjso41n" path="res://assets/kenney_road-kit/road-crossroad.glb" id="21_dme0m"]
+[ext_resource type="PackedScene" uid="uid://qssg06ytu8d" path="res://assets/kenney_road-kit/road-curve-barrier.glb" id="22_x84oh"]
+[ext_resource type="PackedScene" uid="uid://cib3oaiqkbrvt" path="res://assets/kenney_road-kit/road-curve-intersection-barrier.glb" id="23_xw1rq"]
+[ext_resource type="PackedScene" uid="uid://boplr62yto8mq" path="res://assets/kenney_road-kit/road-curve-intersection.glb" id="24_nwlv8"]
+[ext_resource type="PackedScene" uid="uid://cv2qduvlf2vyw" path="res://assets/kenney_road-kit/road-curve-pavement.glb" id="25_77ly7"]
+[ext_resource type="PackedScene" uid="uid://c1fm21b7xyjni" path="res://assets/kenney_road-kit/road-curve.glb" id="26_gg4y8"]
+[ext_resource type="PackedScene" uid="uid://4h3uw20xky54" path="res://assets/kenney_road-kit/road-driveway-double-barrier.glb" id="27_l8l2o"]
+[ext_resource type="PackedScene" uid="uid://dfaxy8k02uler" path="res://assets/kenney_road-kit/road-driveway-double.glb" id="28_wg7o5"]
+[ext_resource type="PackedScene" uid="uid://bcofa3rpdbyga" path="res://assets/kenney_road-kit/road-driveway-single-barrier.glb" id="29_n0ha7"]
+[ext_resource type="PackedScene" uid="uid://d28ps1bt7mme3" path="res://assets/kenney_road-kit/road-driveway-single.glb" id="30_t5psg"]
+[ext_resource type="PackedScene" uid="uid://cy7hk30t1ygmx" path="res://assets/kenney_road-kit/road-end-barrier.glb" id="31_x71b8"]
+[ext_resource type="PackedScene" uid="uid://d2ia7squlg83t" path="res://assets/kenney_road-kit/road-end-round-barrier.glb" id="32_osnvq"]
+[ext_resource type="PackedScene" uid="uid://dhn2o38aspdgw" path="res://assets/kenney_road-kit/road-end-round.glb" id="33_l5lx5"]
+[ext_resource type="PackedScene" uid="uid://bu8mb5u6w8fj" path="res://assets/kenney_road-kit/road-end.glb" id="34_h4afv"]
+[ext_resource type="PackedScene" uid="uid://dd03d8spdpkvr" path="res://assets/kenney_road-kit/road-intersection-barrier.glb" id="35_pjjbc"]
+[ext_resource type="PackedScene" uid="uid://b5bfvfyqp1w6k" path="res://assets/kenney_road-kit/road-intersection-line.glb" id="36_r8eut"]
+[ext_resource type="PackedScene" uid="uid://c8i3rqnm30e0j" path="res://assets/kenney_road-kit/road-intersection-path.glb" id="37_rfw5r"]
+[ext_resource type="PackedScene" uid="uid://cws1034d4eyut" path="res://assets/kenney_road-kit/road-roundabout-barrier.glb" id="39_2ldju"]
+[ext_resource type="PackedScene" uid="uid://q2tpyegasb1q" path="res://assets/kenney_road-kit/road-roundabout.glb" id="40_5ik4f"]
+[ext_resource type="PackedScene" uid="uid://d2new4t3jspr2" path="res://assets/kenney_road-kit/road-side-barrier.glb" id="41_pk0pd"]
+[ext_resource type="PackedScene" uid="uid://bgjc2moyloxhg" path="res://assets/kenney_road-kit/road-side-entry-barrier.glb" id="42_avaai"]
+[ext_resource type="PackedScene" uid="uid://bgcrkwskrddtr" path="res://assets/kenney_road-kit/road-side-entry.glb" id="43_e4n00"]
+[ext_resource type="PackedScene" uid="uid://b53gbndgfno4v" path="res://assets/kenney_road-kit/road-side-exit-barrier.glb" id="44_0gu4y"]
+[ext_resource type="PackedScene" uid="uid://5ivoc4whmpw4" path="res://assets/kenney_road-kit/road-side-exit.glb" id="45_evecy"]
+[ext_resource type="PackedScene" uid="uid://dfvhkhrobrcvi" path="res://assets/kenney_road-kit/road-side.glb" id="46_h7em6"]
+[ext_resource type="PackedScene" uid="uid://dhmhcsu1jlsq3" path="res://assets/kenney_road-kit/road-slant-barrier.glb" id="47_yjw1h"]
+[ext_resource type="PackedScene" uid="uid://crtmumdxps373" path="res://assets/kenney_road-kit/road-slant-curve-barrier.glb" id="48_po2bi"]
+[ext_resource type="PackedScene" uid="uid://dmvwovyqdn4mb" path="res://assets/kenney_road-kit/road-slant-curve.glb" id="49_uekdx"]
+[ext_resource type="PackedScene" uid="uid://cbijvmoekvlwx" path="res://assets/kenney_road-kit/road-slant-flat-curve.glb" id="50_bmoy1"]
+[ext_resource type="PackedScene" uid="uid://cra6ko518slio" path="res://assets/kenney_road-kit/road-slant-flat-high.glb" id="51_oqy2k"]
+[ext_resource type="PackedScene" uid="uid://b27y0cogk15v2" path="res://assets/kenney_road-kit/road-slant-flat.glb" id="52_hygbm"]
+[ext_resource type="PackedScene" uid="uid://chfxwxuvc48sq" path="res://assets/kenney_road-kit/road-slant-high-barrier.glb" id="53_q4uej"]
+[ext_resource type="PackedScene" uid="uid://b16rt1wr2k5cf" path="res://assets/kenney_road-kit/road-slant-high.glb" id="54_p6jmw"]
+[ext_resource type="PackedScene" uid="uid://cps6e3v3a13r8" path="res://assets/kenney_road-kit/road-slant.glb" id="55_08dnq"]
+[ext_resource type="PackedScene" uid="uid://bssym72865ka" path="res://assets/kenney_road-kit/road-split-barrier.glb" id="56_7p8ho"]
+[ext_resource type="PackedScene" uid="uid://5w41h1ojoedl" path="res://assets/kenney_road-kit/road-split.glb" id="57_uhwer"]
+[ext_resource type="PackedScene" uid="uid://ehbnjpa1qnpd" path="res://assets/kenney_road-kit/road-square-barrier.glb" id="58_dhxtm"]
+[ext_resource type="PackedScene" uid="uid://cmw6gingquxsp" path="res://assets/kenney_road-kit/road-square.glb" id="59_yp7dq"]
+[ext_resource type="PackedScene" uid="uid://ccb2sb3kmanhe" path="res://assets/kenney_road-kit/road-straight-barrier-end.glb" id="60_rnsyy"]
+[ext_resource type="PackedScene" uid="uid://jjvqxtmwpw74" path="res://assets/kenney_road-kit/road-straight-barrier-half.glb" id="61_w4x5x"]
+[ext_resource type="PackedScene" uid="uid://hfdg8wo1mftd" path="res://assets/kenney_road-kit/road-straight-barrier.glb" id="62_wjsx6"]
+[ext_resource type="PackedScene" uid="uid://cda6kblgqwr1g" path="res://assets/kenney_road-kit/road-straight-half.glb" id="63_d0n1y"]
+[ext_resource type="PackedScene" uid="uid://cn260pgyh7j3u" path="res://assets/kenney_road-kit/sign-highway-detailed.glb" id="64_b2c23"]
+[ext_resource type="PackedScene" uid="uid://dinudthkq6pha" path="res://assets/kenney_road-kit/sign-highway-wide.glb" id="65_3j0aq"]
+[ext_resource type="PackedScene" uid="uid://cwcn0g6nqxgb5" path="res://assets/kenney_road-kit/sign-highway.glb" id="66_2opkm"]
+[ext_resource type="PackedScene" uid="uid://tpdx3l4l8eyf" path="res://assets/kenney_road-kit/tile-high.glb" id="67_ndpee"]
+[ext_resource type="PackedScene" uid="uid://dbeo6q4knbqdk" path="res://assets/kenney_road-kit/tile-slant.glb" id="68_elo4u"]
+[ext_resource type="PackedScene" uid="uid://ci65ucbfmevme" path="res://assets/kenney_road-kit/tile-slantHigh.glb" id="69_ulby0"]
+
+[node name="Roads" type="Node3D"]
+
+[node name="bridge-pillar-wide2" parent="." instance=ExtResource("1_fvk62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5305, 0, -0.103133)
+
+[node name="bridge-pillar2" parent="." instance=ExtResource("2_gfwft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90574, 0, -0.103133)
+
+[node name="construction-barrier2" parent="." instance=ExtResource("3_uebn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581569, 0, -0.103133)
+
+[node name="construction-cone2" parent="." instance=ExtResource("4_3utnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28575, 0, -0.103133)
+
+[node name="construction-light2" parent="." instance=ExtResource("5_va8ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-curved-cross2" parent="." instance=ExtResource("6_gid0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-curved-double2" parent="." instance=ExtResource("7_blb64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-curved2" parent="." instance=ExtResource("8_itiul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-square-cross2" parent="." instance=ExtResource("9_yl132")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-square-double2" parent="." instance=ExtResource("10_t0m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="light-square2" parent="." instance=ExtResource("11_ywjke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, 2.45954)
+
+[node name="road-bend-barrier2" parent="." instance=ExtResource("12_ny8gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-bend-sidewalk2" parent="." instance=ExtResource("13_qt0gv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-bend-square-barrier2" parent="." instance=ExtResource("14_bqkr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-bend-square2" parent="." instance=ExtResource("15_uj507")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-bend2" parent="." instance=ExtResource("16_xay7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7656, 0, -0.103133)
+
+[node name="road-bridge2" parent="." instance=ExtResource("17_3umdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -2.673)
+
+[node name="road-crossing2" parent="." instance=ExtResource("18_p4qsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-crossroad-barrier2" parent="." instance=ExtResource("19_pkhf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-crossroad-line2" parent="." instance=ExtResource("20_cjjxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-crossroad2" parent="." instance=ExtResource("21_dme0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-curve-barrier2" parent="." instance=ExtResource("22_x84oh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 4.42705)
+
+[node name="road-curve-intersection-barrier2" parent="." instance=ExtResource("23_xw1rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -0.103133)
+
+[node name="road-curve-intersection2" parent="." instance=ExtResource("24_nwlv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -6.60227)
+
+[node name="road-curve-pavement2" parent="." instance=ExtResource("25_77ly7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.454, 0, 2.31522)
+
+[node name="road-curve2" parent="." instance=ExtResource("26_gg4y8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 5.48293)
+
+[node name="road-driveway-double-barrier2" parent="." instance=ExtResource("27_l8l2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-driveway-double2" parent="." instance=ExtResource("28_wg7o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.20071, 0, 3.12204)
+
+[node name="road-driveway-single-barrier2" parent="." instance=ExtResource("29_n0ha7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-driveway-single2" parent="." instance=ExtResource("30_t5psg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-end-barrier2" parent="." instance=ExtResource("31_x71b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-end-round-barrier2" parent="." instance=ExtResource("32_osnvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-end-round2" parent="." instance=ExtResource("33_l5lx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-end2" parent="." instance=ExtResource("34_h4afv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-intersection-barrier2" parent="." instance=ExtResource("35_pjjbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-intersection-line2" parent="." instance=ExtResource("36_r8eut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-intersection-path2" parent="." instance=ExtResource("37_rfw5r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-roundabout-barrier2" parent="." instance=ExtResource("39_2ldju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 6.54626)
+
+[node name="road-roundabout2" parent="." instance=ExtResource("40_5ik4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13383, 0, -0.103133)
+
+[node name="road-side-barrier2" parent="." instance=ExtResource("41_pk0pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-side-entry-barrier2" parent="." instance=ExtResource("42_avaai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 2.15824)
+
+[node name="road-side-entry2" parent="." instance=ExtResource("43_e4n00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 3.19222)
+
+[node name="road-side-exit-barrier2" parent="." instance=ExtResource("44_0gu4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-side-exit2" parent="." instance=ExtResource("45_evecy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-side2" parent="." instance=ExtResource("46_h7em6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -2.80405)
+
+[node name="road-slant-barrier2" parent="." instance=ExtResource("47_yjw1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 8.07992)
+
+[node name="road-slant-curve-barrier2" parent="." instance=ExtResource("48_po2bi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -0.103133)
+
+[node name="road-slant-curve2" parent="." instance=ExtResource("49_uekdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -1.70518)
+
+[node name="road-slant-flat-curve2" parent="." instance=ExtResource("50_bmoy1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 2.47692)
+
+[node name="road-slant-flat-high2" parent="." instance=ExtResource("51_oqy2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 1.40314)
+
+[node name="road-slant-flat2" parent="." instance=ExtResource("52_hygbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -4.43248)
+
+[node name="road-slant-high-barrier2" parent="." instance=ExtResource("53_q4uej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-slant-high2" parent="." instance=ExtResource("54_p6jmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88972, 0, -0.103133)
+
+[node name="road-slant2" parent="." instance=ExtResource("55_08dnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 4.21824)
+
+[node name="road-split-barrier2" parent="." instance=ExtResource("56_7p8ho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-split2" parent="." instance=ExtResource("57_uhwer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-square-barrier2" parent="." instance=ExtResource("58_dhxtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-square2" parent="." instance=ExtResource("59_yp7dq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5567, 0, -0.103133)
+
+[node name="road-straight-barrier-end2" parent="." instance=ExtResource("60_rnsyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-straight-barrier-half2" parent="." instance=ExtResource("61_w4x5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-straight-barrier2" parent="." instance=ExtResource("62_wjsx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+
+[node name="road-straight-half2" parent="." instance=ExtResource("63_d0n1y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 1.5572)
+
+[node name="sign-highway-detailed2" parent="." instance=ExtResource("64_b2c23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="sign-highway-wide2" parent="." instance=ExtResource("65_3j0aq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="sign-highway2" parent="." instance=ExtResource("66_2opkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
+
+[node name="tile-high2" parent="." instance=ExtResource("67_ndpee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -3.71752)
+
+[node name="tile-slant2" parent="." instance=ExtResource("68_elo4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -2.15495)
+
+[node name="tile-slantHigh2" parent="." instance=ExtResource("69_ulby0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, 1.49107)

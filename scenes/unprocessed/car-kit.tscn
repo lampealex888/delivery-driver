@@ -1,0 +1,142 @@
+[gd_scene load_steps=45 format=3 uid="uid://dq0jb4r60myno"]
+
+[ext_resource type="PackedScene" uid="uid://dqxwcddh1giow" path="res://assets/kenney_car-kit/ambulance.glb" id="1_7qsoq"]
+[ext_resource type="PackedScene" uid="uid://dac421785eq0m" path="res://assets/kenney_car-kit/box.glb" id="2_hruk4"]
+[ext_resource type="PackedScene" uid="uid://cvnowrn67s1hy" path="res://assets/kenney_car-kit/cone-flat.glb" id="3_5c4jk"]
+[ext_resource type="PackedScene" uid="uid://ckxqo3bftam3k" path="res://assets/kenney_car-kit/cone.glb" id="4_ddsll"]
+[ext_resource type="PackedScene" uid="uid://cx2dbqyvesqaw" path="res://assets/kenney_car-kit/debris-bolt.glb" id="5_0j2kr"]
+[ext_resource type="PackedScene" uid="uid://ceghr8h04wkw3" path="res://assets/kenney_car-kit/debris-bumper.glb" id="6_n2o1l"]
+[ext_resource type="PackedScene" uid="uid://c4unkfvrckfx3" path="res://assets/kenney_car-kit/debris-door-window.glb" id="7_myypw"]
+[ext_resource type="PackedScene" uid="uid://b6abit4m68t0" path="res://assets/kenney_car-kit/debris-door.glb" id="8_iv1og"]
+[ext_resource type="PackedScene" uid="uid://lsc2qdmoaxlq" path="res://assets/kenney_car-kit/debris-drivetrain-axle.glb" id="9_63txb"]
+[ext_resource type="PackedScene" uid="uid://7lbusisyfh5x" path="res://assets/kenney_car-kit/debris-drivetrain.glb" id="10_f1j0l"]
+[ext_resource type="PackedScene" uid="uid://dfiuvbo335cb4" path="res://assets/kenney_car-kit/debris-nut.glb" id="11_by0cu"]
+[ext_resource type="PackedScene" uid="uid://b4ilgyvjnwxng" path="res://assets/kenney_car-kit/debris-plate-a.glb" id="12_0wekh"]
+[ext_resource type="PackedScene" uid="uid://dhyjk73he54ct" path="res://assets/kenney_car-kit/debris-plate-b.glb" id="13_dcdsv"]
+[ext_resource type="PackedScene" uid="uid://gusa27lfhapf" path="res://assets/kenney_car-kit/debris-plate-small-a.glb" id="14_e2mj3"]
+[ext_resource type="PackedScene" uid="uid://bfs7ttweyv74l" path="res://assets/kenney_car-kit/debris-plate-small-b.glb" id="15_j2h80"]
+[ext_resource type="PackedScene" uid="uid://cenmkrcuamed7" path="res://assets/kenney_car-kit/debris-spoiler-a.glb" id="16_d8u80"]
+[ext_resource type="PackedScene" uid="uid://bipm4nnxfffge" path="res://assets/kenney_car-kit/debris-spoiler-b.glb" id="17_xu4xo"]
+[ext_resource type="PackedScene" uid="uid://cw6372y3ntl6x" path="res://assets/kenney_car-kit/debris-tire.glb" id="18_fbn7b"]
+[ext_resource type="PackedScene" uid="uid://lxxkm8b3bsai" path="res://assets/kenney_car-kit/delivery-flat.glb" id="19_aju6j"]
+[ext_resource type="PackedScene" uid="uid://c56esbrymcnq4" path="res://assets/kenney_car-kit/delivery.glb" id="20_mrlb5"]
+[ext_resource type="PackedScene" uid="uid://du60hxm3iatjm" path="res://assets/kenney_car-kit/firetruck.glb" id="21_54w13"]
+[ext_resource type="PackedScene" uid="uid://c1omxw8i1fqcx" path="res://assets/kenney_car-kit/garbage-truck.glb" id="22_fgv5g"]
+[ext_resource type="PackedScene" uid="uid://ck3l8rld5hmqg" path="res://assets/kenney_car-kit/police.glb" id="24_aanyk"]
+[ext_resource type="PackedScene" uid="uid://cpe12ju4rtlrc" path="res://assets/kenney_car-kit/race-future.glb" id="25_ohuvn"]
+[ext_resource type="PackedScene" uid="uid://de6swa3roh4eh" path="res://assets/kenney_car-kit/race.glb" id="26_c4hhj"]
+[ext_resource type="PackedScene" uid="uid://bju5ufd1pfcjl" path="res://assets/kenney_car-kit/sedan-sports.glb" id="27_pvfiy"]
+[ext_resource type="PackedScene" uid="uid://dvukpnyckd6bb" path="res://assets/kenney_car-kit/sedan.glb" id="28_e5ii5"]
+[ext_resource type="PackedScene" uid="uid://bcqlq84xrrry2" path="res://assets/kenney_car-kit/suv-luxury.glb" id="29_hcnjo"]
+[ext_resource type="PackedScene" uid="uid://cbrkbtgvy1las" path="res://assets/kenney_car-kit/suv.glb" id="30_0bvtd"]
+[ext_resource type="PackedScene" uid="uid://bqcg1rylguy7x" path="res://assets/kenney_car-kit/taxi.glb" id="31_afq04"]
+[ext_resource type="PackedScene" uid="uid://blhp4mpjc4t4l" path="res://assets/kenney_car-kit/tractor-police.glb" id="32_0ym06"]
+[ext_resource type="PackedScene" uid="uid://4hkqt0kjol4c" path="res://assets/kenney_car-kit/tractor-shovel.glb" id="33_vt24a"]
+[ext_resource type="PackedScene" uid="uid://beuq1m2oeg4ps" path="res://assets/kenney_car-kit/tractor.glb" id="34_bnqm2"]
+[ext_resource type="PackedScene" uid="uid://dtywi0s88kljy" path="res://assets/kenney_car-kit/truck-flat.glb" id="35_jftp8"]
+[ext_resource type="PackedScene" uid="uid://djsrckouqlo3n" path="res://assets/kenney_car-kit/truck.glb" id="36_s4d0d"]
+[ext_resource type="PackedScene" uid="uid://41buuhtdkyyy" path="res://assets/kenney_car-kit/van.glb" id="37_j1irx"]
+[ext_resource type="PackedScene" uid="uid://bptged5b4gk6t" path="res://assets/kenney_car-kit/wheel-dark.glb" id="38_837c1"]
+[ext_resource type="PackedScene" uid="uid://3w70rtnp8ykp" path="res://assets/kenney_car-kit/wheel-default.glb" id="39_np6vk"]
+[ext_resource type="PackedScene" uid="uid://7qe76y6iepdl" path="res://assets/kenney_car-kit/wheel-racing.glb" id="40_mtf4y"]
+[ext_resource type="PackedScene" uid="uid://bd0om0irivgfx" path="res://assets/kenney_car-kit/wheel-tractor-back.glb" id="41_6gdre"]
+[ext_resource type="PackedScene" uid="uid://dft7bh6jagxc1" path="res://assets/kenney_car-kit/wheel-tractor-dark-back.glb" id="42_42cef"]
+[ext_resource type="PackedScene" uid="uid://pm1k83rc7ht" path="res://assets/kenney_car-kit/wheel-tractor-dark-front.glb" id="43_c0hkh"]
+[ext_resource type="PackedScene" uid="uid://bpxldy4tpajy3" path="res://assets/kenney_car-kit/wheel-tractor-front.glb" id="44_foew4"]
+[ext_resource type="PackedScene" uid="uid://ggtuasc576oq" path="res://assets/kenney_car-kit/wheel-truck.glb" id="45_lrk07"]
+
+[node name="Car-kit" type="Node3D"]
+
+[node name="ambulance" parent="." instance=ExtResource("1_7qsoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="box2" parent="." instance=ExtResource("2_hruk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="cone-flat2" parent="." instance=ExtResource("3_5c4jk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="cone2" parent="." instance=ExtResource("4_ddsll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="debris-bolt2" parent="." instance=ExtResource("5_0j2kr")]
+
+[node name="debris-bumper2" parent="." instance=ExtResource("6_n2o1l")]
+
+[node name="debris-door-window2" parent="." instance=ExtResource("7_myypw")]
+
+[node name="debris-door2" parent="." instance=ExtResource("8_iv1og")]
+
+[node name="debris-drivetrain-axle2" parent="." instance=ExtResource("9_63txb")]
+
+[node name="debris-drivetrain2" parent="." instance=ExtResource("10_f1j0l")]
+
+[node name="debris-nut2" parent="." instance=ExtResource("11_by0cu")]
+
+[node name="debris-plate-a2" parent="." instance=ExtResource("12_0wekh")]
+
+[node name="debris-plate-b2" parent="." instance=ExtResource("13_dcdsv")]
+
+[node name="debris-plate-small-a2" parent="." instance=ExtResource("14_e2mj3")]
+
+[node name="debris-plate-small-b2" parent="." instance=ExtResource("15_j2h80")]
+
+[node name="debris-spoiler-a2" parent="." instance=ExtResource("16_d8u80")]
+
+[node name="debris-spoiler-b2" parent="." instance=ExtResource("17_xu4xo")]
+
+[node name="debris-tire2" parent="." instance=ExtResource("18_fbn7b")]
+
+[node name="delivery-flat" parent="." instance=ExtResource("19_aju6j")]
+
+[node name="delivery" parent="." instance=ExtResource("20_mrlb5")]
+
+[node name="firetruck" parent="." instance=ExtResource("21_54w13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="garbage-truck" parent="." instance=ExtResource("22_fgv5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="police" parent="." instance=ExtResource("24_aanyk")]
+
+[node name="race-future" parent="." instance=ExtResource("25_ohuvn")]
+
+[node name="race" parent="." instance=ExtResource("26_c4hhj")]
+
+[node name="sedan-sports" parent="." instance=ExtResource("27_pvfiy")]
+
+[node name="sedan" parent="." instance=ExtResource("28_e5ii5")]
+
+[node name="suv-luxury" parent="." instance=ExtResource("29_hcnjo")]
+
+[node name="suv" parent="." instance=ExtResource("30_0bvtd")]
+
+[node name="taxi" parent="." instance=ExtResource("31_afq04")]
+
+[node name="tractor-police" parent="." instance=ExtResource("32_0ym06")]
+
+[node name="tractor-shovel" parent="." instance=ExtResource("33_vt24a")]
+
+[node name="tractor" parent="." instance=ExtResource("34_bnqm2")]
+
+[node name="truck-flat" parent="." instance=ExtResource("35_jftp8")]
+
+[node name="truck" parent="." instance=ExtResource("36_s4d0d")]
+
+[node name="van" parent="." instance=ExtResource("37_j1irx")]
+
+[node name="wheel-dark2" parent="." instance=ExtResource("38_837c1")]
+
+[node name="wheel-default2" parent="." instance=ExtResource("39_np6vk")]
+
+[node name="wheel-racing2" parent="." instance=ExtResource("40_mtf4y")]
+
+[node name="wheel-tractor-back2" parent="." instance=ExtResource("41_6gdre")]
+
+[node name="wheel-tractor-dark-back2" parent="." instance=ExtResource("42_42cef")]
+
+[node name="wheel-tractor-dark-front2" parent="." instance=ExtResource("43_c0hkh")]
+
+[node name="wheel-tractor-front2" parent="." instance=ExtResource("44_foew4")]
+
+[node name="wheel-truck2" parent="." instance=ExtResource("45_lrk07")]
