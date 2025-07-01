@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b0fgrwotp5mox"]
+[gd_scene load_steps=66 format=3 uid="uid://b0fgrwotp5mox"]
 
 [ext_resource type="PackedScene" uid="uid://c62crvhhb25w5" path="res://assets/kenney_road-kit/bridge-pillar-wide.glb" id="1_fvk62"]
 [ext_resource type="PackedScene" uid="uid://dk7qd1oxvrjck" path="res://assets/kenney_road-kit/bridge-pillar.glb" id="2_gfwft"]
@@ -12,10 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b4t6dcso42th0" path="res://assets/kenney_road-kit/light-square-double.glb" id="10_t0m2i"]
 [ext_resource type="PackedScene" uid="uid://1dbni7dgspj" path="res://assets/kenney_road-kit/light-square.glb" id="11_ywjke"]
 [ext_resource type="PackedScene" uid="uid://bl7opgo1n2ply" path="res://assets/kenney_road-kit/road-bend-barrier.glb" id="12_ny8gi"]
-[ext_resource type="PackedScene" uid="uid://dppc1ep6t04ep" path="res://assets/kenney_road-kit/road-bend-sidewalk.glb" id="13_qt0gv"]
 [ext_resource type="PackedScene" uid="uid://bwbpc2nbah8ln" path="res://assets/kenney_road-kit/road-bend-square-barrier.glb" id="14_bqkr1"]
 [ext_resource type="PackedScene" uid="uid://kqc45087hofi" path="res://assets/kenney_road-kit/road-bend-square.glb" id="15_uj507"]
-[ext_resource type="PackedScene" uid="uid://ci53mfjggjftq" path="res://assets/kenney_road-kit/road-bend.glb" id="16_xay7u"]
 [ext_resource type="PackedScene" uid="uid://dbuu6k6il6m6n" path="res://assets/kenney_road-kit/road-bridge.glb" id="17_3umdt"]
 [ext_resource type="PackedScene" uid="uid://d1jhh8urdq0sv" path="res://assets/kenney_road-kit/road-crossing.glb" id="18_p4qsg"]
 [ext_resource type="PackedScene" uid="uid://m4uux1mw0uwf" path="res://assets/kenney_road-kit/road-crossroad-barrier.glb" id="19_pkhf2"]
@@ -33,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://cy7hk30t1ygmx" path="res://assets/kenney_road-kit/road-end-barrier.glb" id="31_x71b8"]
 [ext_resource type="PackedScene" uid="uid://d2ia7squlg83t" path="res://assets/kenney_road-kit/road-end-round-barrier.glb" id="32_osnvq"]
 [ext_resource type="PackedScene" uid="uid://dhn2o38aspdgw" path="res://assets/kenney_road-kit/road-end-round.glb" id="33_l5lx5"]
-[ext_resource type="PackedScene" uid="uid://bu8mb5u6w8fj" path="res://assets/kenney_road-kit/road-end.glb" id="34_h4afv"]
 [ext_resource type="PackedScene" uid="uid://dd03d8spdpkvr" path="res://assets/kenney_road-kit/road-intersection-barrier.glb" id="35_pjjbc"]
 [ext_resource type="PackedScene" uid="uid://b5bfvfyqp1w6k" path="res://assets/kenney_road-kit/road-intersection-line.glb" id="36_r8eut"]
 [ext_resource type="PackedScene" uid="uid://c8i3rqnm30e0j" path="res://assets/kenney_road-kit/road-intersection-path.glb" id="37_rfw5r"]
@@ -105,34 +102,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, -0.103133)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18958, 0, 2.45954)
 
 [node name="road-bend-barrier2" parent="." instance=ExtResource("12_ny8gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
-
-[node name="road-bend-sidewalk2" parent="." instance=ExtResource("13_qt0gv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7298, 0, -0.103133)
 
 [node name="road-bend-square-barrier2" parent="." instance=ExtResource("14_bqkr1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-bend-square2" parent="." instance=ExtResource("15_uj507")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
-
-[node name="road-bend2" parent="." instance=ExtResource("16_xay7u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7656, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7298, 0, -0.103133)
 
 [node name="road-bridge2" parent="." instance=ExtResource("17_3umdt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -2.673)
 
 [node name="road-crossing2" parent="." instance=ExtResource("18_p4qsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-crossroad-barrier2" parent="." instance=ExtResource("19_pkhf2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-crossroad-line2" parent="." instance=ExtResource("20_cjjxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-crossroad2" parent="." instance=ExtResource("21_dme0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7298, 0, -1.10313)
 
 [node name="road-curve-barrier2" parent="." instance=ExtResource("22_x84oh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 4.42705)
@@ -150,37 +141,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.454, 0, 2.31522)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 5.48293)
 
 [node name="road-driveway-double-barrier2" parent="." instance=ExtResource("27_l8l2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-driveway-double2" parent="." instance=ExtResource("28_wg7o5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.20071, 0, 3.12204)
 
 [node name="road-driveway-single-barrier2" parent="." instance=ExtResource("29_n0ha7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-driveway-single2" parent="." instance=ExtResource("30_t5psg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7298, 0, -0.103133)
 
 [node name="road-end-barrier2" parent="." instance=ExtResource("31_x71b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-end-round-barrier2" parent="." instance=ExtResource("32_osnvq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7298, 0, -0.103133)
 
 [node name="road-end-round2" parent="." instance=ExtResource("33_l5lx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
-
-[node name="road-end2" parent="." instance=ExtResource("34_h4afv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7298, 0, -0.103133)
 
 [node name="road-intersection-barrier2" parent="." instance=ExtResource("35_pjjbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-intersection-line2" parent="." instance=ExtResource("36_r8eut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-intersection-path2" parent="." instance=ExtResource("37_rfw5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, -2.10313)
 
 [node name="road-roundabout-barrier2" parent="." instance=ExtResource("39_2ldju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 6.54626)
@@ -189,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 6.54626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.13383, 0, -0.103133)
 
 [node name="road-side-barrier2" parent="." instance=ExtResource("41_pk0pd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-side-entry-barrier2" parent="." instance=ExtResource("42_avaai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 2.15824)
@@ -198,10 +186,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 2.15824)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 3.19222)
 
 [node name="road-side-exit-barrier2" parent="." instance=ExtResource("44_0gu4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-side-exit2" parent="." instance=ExtResource("45_evecy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, -3.10313)
 
 [node name="road-side2" parent="." instance=ExtResource("46_h7em6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -2.80405)
@@ -225,7 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 1.40314)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -4.43248)
 
 [node name="road-slant-high-barrier2" parent="." instance=ExtResource("53_q4uej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, 1.89687)
 
 [node name="road-slant-high2" parent="." instance=ExtResource("54_p6jmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88972, 0, -0.103133)
@@ -234,25 +222,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88972, 0, -0.103133)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 4.21824)
 
 [node name="road-split-barrier2" parent="." instance=ExtResource("56_7p8ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-split2" parent="." instance=ExtResource("57_uhwer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, -5.10313)
 
 [node name="road-square-barrier2" parent="." instance=ExtResource("58_dhxtm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-square2" parent="." instance=ExtResource("59_yp7dq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5567, 0, -0.103133)
 
 [node name="road-straight-barrier-end2" parent="." instance=ExtResource("60_rnsyy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-straight-barrier-half2" parent="." instance=ExtResource("61_w4x5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-straight-barrier2" parent="." instance=ExtResource("62_wjsx6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, -0.103133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-straight-half2" parent="." instance=ExtResource("63_d0n1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7298, 0, 1.5572)

@@ -1,0 +1,145 @@
+[gd_scene load_steps=41 format=3 uid="uid://cusmncl2forgs"]
+
+[ext_resource type="PackedScene" uid="uid://b8nw4qos77ppq" path="res://assets/kenney_city-kit-suburban/building-type-a.glb" id="1_my6yq"]
+[ext_resource type="PackedScene" uid="uid://dhjis3rj6ljjb" path="res://assets/kenney_city-kit-suburban/building-type-b.glb" id="2_olhoy"]
+[ext_resource type="PackedScene" uid="uid://c14l7mhybvwya" path="res://assets/kenney_city-kit-suburban/building-type-c.glb" id="3_al0ry"]
+[ext_resource type="PackedScene" uid="uid://bpd4u5htvbjns" path="res://assets/kenney_city-kit-suburban/building-type-d.glb" id="4_ajc1c"]
+[ext_resource type="PackedScene" uid="uid://d0i6qkggm8fvn" path="res://assets/kenney_city-kit-suburban/building-type-e.glb" id="5_rlpk1"]
+[ext_resource type="PackedScene" uid="uid://d0lu4ekn2u525" path="res://assets/kenney_city-kit-suburban/building-type-f.glb" id="6_7klr1"]
+[ext_resource type="PackedScene" uid="uid://5brg7jkswfvf" path="res://assets/kenney_city-kit-suburban/building-type-g.glb" id="7_d5fli"]
+[ext_resource type="PackedScene" uid="uid://clq4lhq5q46ek" path="res://assets/kenney_city-kit-suburban/building-type-h.glb" id="8_843vh"]
+[ext_resource type="PackedScene" uid="uid://bfxcepd4woion" path="res://assets/kenney_city-kit-suburban/building-type-i.glb" id="9_qmaeh"]
+[ext_resource type="PackedScene" uid="uid://cyhfk4fhb8joy" path="res://assets/kenney_city-kit-suburban/building-type-j.glb" id="10_1ifki"]
+[ext_resource type="PackedScene" uid="uid://kqb4ytuh8au3" path="res://assets/kenney_city-kit-suburban/building-type-k.glb" id="11_hsdne"]
+[ext_resource type="PackedScene" uid="uid://b78vm0l44klbx" path="res://assets/kenney_city-kit-suburban/building-type-l.glb" id="12_rclfn"]
+[ext_resource type="PackedScene" uid="uid://dvqpaoqs0d4tc" path="res://assets/kenney_city-kit-suburban/building-type-m.glb" id="13_tcolf"]
+[ext_resource type="PackedScene" uid="uid://b7elcelnc7kg1" path="res://assets/kenney_city-kit-suburban/building-type-n.glb" id="14_6mkw5"]
+[ext_resource type="PackedScene" uid="uid://ym0h3q5jdd8e" path="res://assets/kenney_city-kit-suburban/building-type-o.glb" id="15_a1wlr"]
+[ext_resource type="PackedScene" uid="uid://bji5u4rdr73cy" path="res://assets/kenney_city-kit-suburban/building-type-p.glb" id="16_mvf7y"]
+[ext_resource type="PackedScene" uid="uid://pvt7vfpmg65y" path="res://assets/kenney_city-kit-suburban/building-type-q.glb" id="17_8sa6q"]
+[ext_resource type="PackedScene" uid="uid://gvaoi458cneb" path="res://assets/kenney_city-kit-suburban/building-type-r.glb" id="18_miuim"]
+[ext_resource type="PackedScene" uid="uid://de3bcj1e4ssf0" path="res://assets/kenney_city-kit-suburban/building-type-s.glb" id="19_mgmn8"]
+[ext_resource type="PackedScene" uid="uid://blolxxm6reihq" path="res://assets/kenney_city-kit-suburban/building-type-t.glb" id="20_h51f0"]
+[ext_resource type="PackedScene" uid="uid://bacvy85gfq1yc" path="res://assets/kenney_city-kit-suburban/building-type-u.glb" id="21_0u6n3"]
+[ext_resource type="PackedScene" uid="uid://21ef0usegdqr" path="res://assets/kenney_city-kit-suburban/driveway-long.glb" id="22_mkl7j"]
+[ext_resource type="PackedScene" uid="uid://bannxvxguojas" path="res://assets/kenney_city-kit-suburban/driveway-short.glb" id="23_dul7f"]
+[ext_resource type="PackedScene" uid="uid://bqu3h4fekn6ii" path="res://assets/kenney_city-kit-suburban/fence-1x2.glb" id="24_i02xo"]
+[ext_resource type="PackedScene" uid="uid://2fwg073jo6hf" path="res://assets/kenney_city-kit-suburban/fence-1x3.glb" id="25_nt132"]
+[ext_resource type="PackedScene" uid="uid://yukbm1nxqehd" path="res://assets/kenney_city-kit-suburban/fence-1x4.glb" id="26_5e3d7"]
+[ext_resource type="PackedScene" uid="uid://c65sa1wmm4uik" path="res://assets/kenney_city-kit-suburban/fence-2x2.glb" id="27_o0blx"]
+[ext_resource type="PackedScene" uid="uid://blppv7ydcfs5g" path="res://assets/kenney_city-kit-suburban/fence-2x3.glb" id="28_rrl8i"]
+[ext_resource type="PackedScene" uid="uid://ugoi51pnbgk1" path="res://assets/kenney_city-kit-suburban/fence-3x2.glb" id="29_sp5t7"]
+[ext_resource type="PackedScene" uid="uid://pcxvvlvko2im" path="res://assets/kenney_city-kit-suburban/fence-3x3.glb" id="30_gjc5v"]
+[ext_resource type="PackedScene" uid="uid://4q621aevbdib" path="res://assets/kenney_city-kit-suburban/fence-low.glb" id="31_sru3x"]
+[ext_resource type="PackedScene" uid="uid://b2rk6h7s1wfhk" path="res://assets/kenney_city-kit-suburban/fence.glb" id="32_n7n36"]
+[ext_resource type="PackedScene" uid="uid://dahgtknmml1o0" path="res://assets/kenney_city-kit-suburban/path-long.glb" id="33_c7gum"]
+[ext_resource type="PackedScene" uid="uid://d236gltxls0lv" path="res://assets/kenney_city-kit-suburban/path-short.glb" id="34_unoty"]
+[ext_resource type="PackedScene" uid="uid://blgatftpx2l34" path="res://assets/kenney_city-kit-suburban/path-stones-long.glb" id="35_0a83j"]
+[ext_resource type="PackedScene" uid="uid://c36adklfpqseg" path="res://assets/kenney_city-kit-suburban/path-stones-messy.glb" id="36_ribc3"]
+[ext_resource type="PackedScene" uid="uid://b0gjknvh2t2mj" path="res://assets/kenney_city-kit-suburban/path-stones-short.glb" id="37_y6w1v"]
+[ext_resource type="PackedScene" uid="uid://dywkw5o3ypuof" path="res://assets/kenney_city-kit-suburban/planter.glb" id="38_2c73y"]
+[ext_resource type="PackedScene" uid="uid://bglc2mvsvtawp" path="res://assets/kenney_city-kit-suburban/tree-large.glb" id="39_ir4x6"]
+[ext_resource type="PackedScene" uid="uid://bj6p5eih32hsh" path="res://assets/kenney_city-kit-suburban/tree-small.glb" id="40_l71tn"]
+
+[node name="CityKitSuburban" type="Node3D"]
+
+[node name="building-type-a2" parent="." instance=ExtResource("1_my6yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-b2" parent="." instance=ExtResource("2_olhoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-c2" parent="." instance=ExtResource("3_al0ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-d2" parent="." instance=ExtResource("4_ajc1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-e2" parent="." instance=ExtResource("5_rlpk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-f2" parent="." instance=ExtResource("6_7klr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-g2" parent="." instance=ExtResource("7_d5fli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-h2" parent="." instance=ExtResource("8_843vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-i2" parent="." instance=ExtResource("9_qmaeh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-j2" parent="." instance=ExtResource("10_1ifki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-k2" parent="." instance=ExtResource("11_hsdne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-l2" parent="." instance=ExtResource("12_rclfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-m2" parent="." instance=ExtResource("13_tcolf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-n2" parent="." instance=ExtResource("14_6mkw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-o2" parent="." instance=ExtResource("15_a1wlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-p2" parent="." instance=ExtResource("16_mvf7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-q2" parent="." instance=ExtResource("17_8sa6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-r2" parent="." instance=ExtResource("18_miuim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-s2" parent="." instance=ExtResource("19_mgmn8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-t2" parent="." instance=ExtResource("20_h51f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="building-type-u2" parent="." instance=ExtResource("21_0u6n3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="driveway-long2" parent="." instance=ExtResource("22_mkl7j")]
+
+[node name="driveway-short2" parent="." instance=ExtResource("23_dul7f")]
+
+[node name="fence-1x22" parent="." instance=ExtResource("24_i02xo")]
+
+[node name="fence-1x32" parent="." instance=ExtResource("25_nt132")]
+
+[node name="fence-1x42" parent="." instance=ExtResource("26_5e3d7")]
+
+[node name="fence-2x22" parent="." instance=ExtResource("27_o0blx")]
+
+[node name="fence-2x32" parent="." instance=ExtResource("28_rrl8i")]
+
+[node name="fence-3x22" parent="." instance=ExtResource("29_sp5t7")]
+
+[node name="fence-3x32" parent="." instance=ExtResource("30_gjc5v")]
+
+[node name="fence-low2" parent="." instance=ExtResource("31_sru3x")]
+
+[node name="fence2" parent="." instance=ExtResource("32_n7n36")]
+
+[node name="path-long2" parent="." instance=ExtResource("33_c7gum")]
+
+[node name="path-short2" parent="." instance=ExtResource("34_unoty")]
+
+[node name="path-stones-long2" parent="." instance=ExtResource("35_0a83j")]
+
+[node name="path-stones-messy2" parent="." instance=ExtResource("36_ribc3")]
+
+[node name="path-stones-short2" parent="." instance=ExtResource("37_y6w1v")]
+
+[node name="planter2" parent="." instance=ExtResource("38_2c73y")]
+
+[node name="tree-large2" parent="." instance=ExtResource("39_ir4x6")]
+
+[node name="tree-small2" parent="." instance=ExtResource("40_l71tn")]

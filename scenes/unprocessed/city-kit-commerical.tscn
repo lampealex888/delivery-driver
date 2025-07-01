@@ -1,13 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://waeejfyt5rye"]
+[gd_scene load_steps=38 format=3 uid="uid://waeejfyt5rye"]
 
 [ext_resource type="PackedScene" uid="uid://bgnc88vo1xtfr" path="res://assets/kenney_city-kit-commercial/building-a.glb" id="1_hw38b"]
 [ext_resource type="PackedScene" uid="uid://yueubpbsqwnk" path="res://assets/kenney_city-kit-commercial/building-b.glb" id="2_yk0bc"]
 [ext_resource type="PackedScene" uid="uid://uw5r6vyhfvrc" path="res://assets/kenney_city-kit-commercial/building-c.glb" id="3_c3pok"]
 [ext_resource type="PackedScene" uid="uid://bbyf531x187qe" path="res://assets/kenney_city-kit-commercial/building-d.glb" id="4_tporf"]
-[ext_resource type="PackedScene" uid="uid://c1issbtxoq0pf" path="res://assets/kenney_city-kit-commercial/building-e.glb" id="5_1xkom"]
 [ext_resource type="PackedScene" uid="uid://ws2hptb44s0n" path="res://assets/kenney_city-kit-commercial/building-f.glb" id="6_nnc87"]
 [ext_resource type="PackedScene" uid="uid://cypjjeertm0of" path="res://assets/kenney_city-kit-commercial/building-g.glb" id="7_ekfn2"]
-[ext_resource type="PackedScene" uid="uid://c31or2ums4ma4" path="res://assets/kenney_city-kit-commercial/building-h.glb" id="8_bcbfv"]
 [ext_resource type="PackedScene" uid="uid://cypeipyyh6tcb" path="res://assets/kenney_city-kit-commercial/building-i.glb" id="9_qauap"]
 [ext_resource type="PackedScene" uid="uid://wr0cusi0rva0" path="res://assets/kenney_city-kit-commercial/building-j.glb" id="10_w4v7e"]
 [ext_resource type="PackedScene" uid="uid://byvsdq7wknja6" path="res://assets/kenney_city-kit-commercial/building-k.glb" id="11_mmq84"]
@@ -54,17 +52,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34222, -1.19209e-07, 1.797
 [node name="building-d2" parent="." instance=ExtResource("4_tporf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6286, -1.19209e-07, 4.22814)
 
-[node name="building-e2" parent="." instance=ExtResource("5_1xkom")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228296, -1.19209e-07, 4.22814)
-
 [node name="building-f2" parent="." instance=ExtResource("6_nnc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.491, -1.19209e-07, 1.79749)
 
 [node name="building-g2" parent="." instance=ExtResource("7_ekfn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52916, -1.19209e-07, 4.22814)
-
-[node name="building-h2" parent="." instance=ExtResource("8_bcbfv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.20772, -1.19209e-07, 4.22814)
 
 [node name="building-i2" parent="." instance=ExtResource("9_qauap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2463, -1.19209e-07, -0.0305717)
