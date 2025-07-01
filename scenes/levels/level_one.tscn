@@ -1,10 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://be4ttwlu7qmsm"]
+[gd_scene load_steps=19 format=3 uid="uid://be4ttwlu7qmsm"]
 
+[ext_resource type="PackedScene" uid="uid://f2iqriiym1oh" path="res://scenes/prefabs/city-kit-commerical/building_c.tscn" id="1_a1u8d"]
+[ext_resource type="PackedScene" uid="uid://0lxoi5sajtnk" path="res://scenes/prefabs/city-kit-commerical/building_b.tscn" id="2_8ri5e"]
 [ext_resource type="MeshLibrary" uid="uid://bptc0apan2gpl" path="res://assets/mesh_libraries/nature-kit.tres" id="2_c6gv3"]
+[ext_resource type="PackedScene" uid="uid://dqv3864mnvrkc" path="res://scenes/prefabs/city-kit-commerical/building_i.tscn" id="3_6t0u7"]
 [ext_resource type="PackedScene" uid="uid://cxla8srgmjae5" path="res://scenes/prefabs/city-kit-commerical/building_e.tscn" id="4_5tayq"]
+[ext_resource type="PackedScene" uid="uid://crk0gr5w0delu" path="res://scenes/prefabs/city-kit-commerical/building_skyscraper_d.tscn" id="4_ajekx"]
+[ext_resource type="PackedScene" uid="uid://be2kylafs7b4h" path="res://scenes/prefabs/city-kit-commerical/building_l.tscn" id="5_6t0u7"]
 [ext_resource type="MeshLibrary" uid="uid://dgsvqxeyegg7a" path="res://assets/mesh_libraries/road-kit.tres" id="5_623cv"]
 [ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://scenes/prefabs/city-kit-commerical/building_h.tscn" id="5_c6gv3"]
+[ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://scenes/prefabs/city-kit-commerical/building_f.tscn" id="5_w53h0"]
+[ext_resource type="PackedScene" uid="uid://dlrfcq6cqqoro" path="res://scenes/prefabs/city-kit-commerical/building_skyscraper_a.tscn" id="6_623cv"]
+[ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://scenes/prefabs/city-kit-commerical/building_k.tscn" id="6_vsfy4"]
+[ext_resource type="PackedScene" uid="uid://baij5p0dwrfr0" path="res://scenes/prefabs/city-kit-commerical/building_skyscraper_b.tscn" id="7_u6gdm"]
 [ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://scenes/prefabs/car-kit/hatchback_sport.tscn" id="7_w53h0"]
+[ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://scenes/prefabs/city-kit-commerical/building_n.tscn" id="12_1057k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_63ct5"]
 size = Vector3(200, 1, 200)
@@ -37,7 +47,7 @@ cell_size = Vector3(5, 2, 5)
 cell_center_y = false
 cell_scale = 5.0
 data = {
-"cells": PackedInt32Array(1, 0, 1048576, 2, 0, 655362, 1, 65535, 1048578, 1, 1, 1048578, 65535, 0, 655365, 3, 0, 655361, 4, 0, 2, 5, 0, 2, 1, 65534, 1441794, 1, 65533, 1441794, 1, 65532, 1048581, 1, 2, 1048578, 1, 3, 1048578, 65534, 0, 1048579, 65534, 65535, 1048579, 65534, 65534, 3, 65535, 65535, 1048578, 65535, 65534, 1048579, 65535, 65533, 1048579, 65534, 65533, 1048579, 65535, 65532, 1048579, 65534, 65532, 1048579, 65535, 1, 1048579, 65534, 1, 1048579, 0, 1, 655363, 0, 0, 655362, 0, 65535, 1048579, 0, 65534, 1048579, 0, 65533, 1048579, 0, 65532, 1048579, 2, 65535, 1048579, 2, 65534, 1048579, 2, 65533, 1048579, 2, 65532, 2, 3, 65532, 1, 3, 65533, 1441794, 3, 65534, 1441794, 3, 65535, 1441794, 4, 65535, 655363, 4, 65534, 655363, 4, 65533, 655363, 5, 65533, 655363, 5, 65534, 655363, 5, 65535, 655363, 4, 65532, 2, 5, 65532, 2, 6, 65532, 0, 6, 65533, 1441794, 6, 65534, 1441794, 6, 65535, 1441794, 6, 0, 655361, 7, 0, 655362, 8, 0, 655361, 8, 65535, 1441798, 9, 0, 655362, 10, 0, 655362)
+"cells": PackedInt32Array(1, 0, 1048576, 2, 0, 655362, 1, 65535, 1048578, 1, 1, 1048578, 65535, 0, 655365, 3, 0, 655361, 4, 0, 2, 5, 0, 2, 1, 65534, 1441794, 1, 65533, 1441794, 1, 2, 1048578, 1, 3, 1048578, 65534, 0, 1048579, 65534, 65535, 1048579, 65534, 65534, 3, 65535, 65535, 1048578, 65535, 65534, 1048579, 65535, 65533, 1048579, 65534, 65533, 1048579, 65535, 65532, 1048579, 65534, 65532, 1048579, 65535, 1, 1048579, 65534, 1, 1048579, 0, 1, 655363, 0, 0, 655362, 0, 65535, 1048579, 0, 65534, 1048579, 0, 65533, 1048579, 0, 65532, 1048579, 2, 65535, 1048579, 2, 65534, 1048579, 2, 65533, 1048579, 2, 65532, 2, 3, 65532, 1, 3, 65533, 1441794, 3, 65534, 1441794, 3, 65535, 1441794, 4, 65535, 655363, 4, 65534, 655363, 4, 65533, 655363, 5, 65533, 655363, 5, 65534, 655363, 5, 65535, 655363, 4, 65532, 2, 5, 65532, 2, 6, 65532, 0, 6, 65533, 1441794, 6, 65534, 1441794, 6, 65535, 1441794, 6, 0, 655361, 7, 0, 655362, 8, 0, 655361, 8, 65535, 1441798, 9, 0, 655362, 10, 0, 655362, 1, 65532, 1048577, 1, 65531, 1441793, 0, 65531, 655362, 65535, 65531, 655362, 65534, 65531, 655362, 65533, 65531, 1048577, 65533, 65532, 1048578, 65533, 65533, 1048578, 65533, 65534, 1048578, 1, 65530, 1048577, 1, 65529, 1048578, 65533, 65530, 1048578, 65533, 65529, 1048578, 2, 65531, 1048579, 2, 65530, 2, 3, 65531, 1048579, 4, 65531, 1048579, 3, 65530, 2, 4, 65530, 2, 5, 65530, 2, 6, 65530, 1441793, 6, 65531, 1441794, 5, 65531, 1441795, 7, 65532, 2, 8, 65532, 2, 2, 65529, 1441795, 3, 65529, 1441795, 4, 65529, 1441795, 5, 65529, 1441795, 6, 65529, 1441794, 6, 65528, 1441792, 5, 65528, 655362, 4, 65528, 6, 3, 65528, 1441795, 6, 65527, 1441794, 6, 65526, 1441794, 5, 65527, 1441795, 5, 65526, 1441795, 4, 65526, 1441795, 4, 65527, 1441795, 3, 65526, 1441795, 3, 65527, 1441795, 2, 65528, 1441795, 2, 65527, 1441795, 2, 65526, 1441795, 7, 65528, 655362, 8, 65528, 655362, 9, 65528, 655362, 10, 65528, 5, 10, 65529, 1441794, 10, 65530, 1441794, 10, 65531, 1441794)
 }
 
 [node name="Nature" type="Node3D" parent="."]
@@ -48,17 +58,49 @@ cell_size = Vector3(5, 2, 5)
 cell_center_y = false
 cell_scale = 5.0
 data = {
-"cells": PackedInt32Array(3, 0, 655361, 4, 0, 2, 1, 2, 1048578, 1, 3, 1048578, 2, 65532, 2, 3, 65533, 1441794, 4, 65533, 655363, 5, 65533, 655363, 5, 65534, 655363, 6, 65533, 1441794, 6, 65534, 1441794, 8, 65535, 1441798, 9, 0, 655362, 10, 0, 655362, 0, 65534, 1048579, 65535, 65534, 1048579, 0, 65535, 1048579, 1, 65535, 1048578, 2, 1, 0, 3, 1, 0, 4, 1, 0, 4, 2, 0, 3, 2, 0, 2, 2, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0)
+"cells": PackedInt32Array(3, 0, 655361, 4, 0, 2, 1, 2, 1048578, 1, 3, 1048578, 2, 65532, 2, 3, 65533, 1441794, 4, 65533, 655363, 5, 65533, 655363, 5, 65534, 655363, 6, 65533, 1441794, 6, 65534, 1441794, 8, 65535, 1441798, 9, 0, 655362, 10, 0, 655362, 0, 65534, 1048579, 65535, 65534, 1048579, 0, 65535, 1048579, 1, 65535, 1048578, 2, 1, 0, 3, 1, 0, 4, 1, 0, 4, 2, 0, 3, 2, 0, 2, 2, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 9, 65531, 0, 9, 65530, 0, 9, 65529, 0, 8, 65529, 0, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 8, 65531, 0, 8, 65530, 0)
 }
 
 [node name="Buildings" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0, 0)
 
 [node name="BuildingE" parent="Buildings" instance=ExtResource("4_5tayq")]
-transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, -18.5, 0, -2.5)
+transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 24.5, 0, -2.5)
+
+[node name="BuildingE2" parent="Buildings" instance=ExtResource("4_5tayq")]
+transform = Transform3D(-5.36422e-07, 0, 5, 0, 5, 0, -5, 0, -5.36422e-07, 21.5, 0, 10)
 
 [node name="BuildingH" parent="Buildings" instance=ExtResource("5_c6gv3")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -30, 0, 8)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.5, 0, 8.5)
+
+[node name="BuildingF" parent="Buildings" instance=ExtResource("5_w53h0")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 37.694, 0, -2.661)
+
+[node name="BuildingSkyscraperA" parent="Buildings" instance=ExtResource("6_623cv")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 43, 0, -8.5)
+
+[node name="BuildingSkyscraperB" parent="Buildings" instance=ExtResource("7_u6gdm")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 52, 0, -4)
+
+[node name="BuildingK" parent="Buildings" instance=ExtResource("6_vsfy4")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 26.5559, 0, -9.90654)
+
+[node name="BuildingSkyscraperD" parent="Buildings" instance=ExtResource("4_ajekx")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 1.53708, -0.100001, -28.477)
+
+[node name="BuildingL" parent="Buildings" instance=ExtResource("5_6t0u7")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, -5.36425, -0.1, -28.6199)
+
+[node name="BuildingC" parent="Buildings" instance=ExtResource("1_a1u8d")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 2.5, 0, -2.5)
+
+[node name="BuildingB" parent="Buildings" instance=ExtResource("2_8ri5e")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 12.5, 0, -2.5)
+
+[node name="BuildingI" parent="Buildings" instance=ExtResource("3_6t0u7")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 38.5, 0, -23.5)
+
+[node name="BuildingN" parent="Buildings" instance=ExtResource("12_1057k")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -1, 0, -15)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
