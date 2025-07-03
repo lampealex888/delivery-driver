@@ -111,16 +111,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7298, 0, -0.103133)
 
 [node name="road-bridge2" parent="." instance=ExtResource("17_3umdt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, -2.673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90338, 0, -2.673)
 
 [node name="road-crossing2" parent="." instance=ExtResource("18_p4qsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 5.89687)
 
 [node name="road-crossroad-barrier2" parent="." instance=ExtResource("19_pkhf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-crossroad-line2" parent="." instance=ExtResource("20_cjjxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 3.89687)
 
 [node name="road-crossroad2" parent="." instance=ExtResource("21_dme0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7298, 0, -1.10313)
@@ -165,10 +165,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7298, 0, -0.103133)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
 
 [node name="road-intersection-line2" parent="." instance=ExtResource("36_r8eut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 1.89687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7298, 0, 7.89687)
 
 [node name="road-intersection-path2" parent="." instance=ExtResource("37_rfw5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, -2.10313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7298, 0, -1.10313)
 
 [node name="road-roundabout-barrier2" parent="." instance=ExtResource("39_2ldju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90338, 0, 6.54626)

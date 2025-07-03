@@ -1,10 +1,5 @@
-[gd_scene load_steps=27 format=3 uid="uid://waeejfyt5rye"]
+[gd_scene load_steps=22 format=3 uid="uid://waeejfyt5rye"]
 
-[ext_resource type="PackedScene" uid="uid://bgnc88vo1xtfr" path="res://assets/kenney_city-kit-commercial/building-a.glb" id="1_hw38b"]
-[ext_resource type="PackedScene" uid="uid://bbyf531x187qe" path="res://assets/kenney_city-kit-commercial/building-d.glb" id="4_tporf"]
-[ext_resource type="PackedScene" uid="uid://wr0cusi0rva0" path="res://assets/kenney_city-kit-commercial/building-j.glb" id="10_w4v7e"]
-[ext_resource type="PackedScene" uid="uid://0x3e5illw48t" path="res://assets/kenney_city-kit-commercial/building-m.glb" id="13_6qjd6"]
-[ext_resource type="PackedScene" uid="uid://d1odmxdajeoop" path="res://assets/kenney_city-kit-commercial/building-skyscraper-e.glb" id="19_1wgui"]
 [ext_resource type="PackedScene" uid="uid://b46g1lt2ggjg2" path="res://assets/kenney_city-kit-commercial/detail-awning-wide.glb" id="20_2017g"]
 [ext_resource type="PackedScene" uid="uid://dph2v4un8n23o" path="res://assets/kenney_city-kit-commercial/detail-awning.glb" id="21_yk2g2"]
 [ext_resource type="PackedScene" uid="uid://w2rgjixlm3u1" path="res://assets/kenney_city-kit-commercial/detail-overhang-wide.glb" id="22_y4fcp"]
@@ -28,21 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://xw7588jm5lcs" path="res://assets/kenney_city-kit-commercial/low-detail-building-wide-a.glb" id="40_n7s0q"]
 
 [node name="City-kit-commerical" type="Node3D"]
-
-[node name="building-a2" parent="." instance=ExtResource("1_hw38b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76422, -1.19209e-07, 4.22814)
-
-[node name="building-d2" parent="." instance=ExtResource("4_tporf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6286, -1.19209e-07, 4.22814)
-
-[node name="building-j2" parent="." instance=ExtResource("10_w4v7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37355, -1.19209e-07, -0.0305717)
-
-[node name="building-m2" parent="." instance=ExtResource("13_6qjd6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95456, -1.19209e-07, 1.79749)
-
-[node name="building-skyscraper-e2" parent="." instance=ExtResource("19_1wgui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00272, -1.19209e-07, 1.79749)
 
 [node name="detail-awning-wide2" parent="." instance=ExtResource("20_2017g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49248, -1.19209e-07, 5.36445)

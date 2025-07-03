@@ -1,0 +1,71 @@
+[gd_scene load_steps=18 format=3 uid="uid://bhqgwjeq1vcxk"]
+
+[ext_resource type="PackedScene" uid="uid://t6030k8ahy6" path="res://assets/kenney_blocky-characters/character-a.glb" id="1_ijag4"]
+[ext_resource type="PackedScene" uid="uid://bu85e6xlbql8s" path="res://assets/kenney_blocky-characters/character-b.glb" id="2_vwuqi"]
+[ext_resource type="PackedScene" uid="uid://c5eug85jg4q0i" path="res://assets/kenney_blocky-characters/character-c.glb" id="3_4oelw"]
+[ext_resource type="PackedScene" uid="uid://pq3ruwhruy1s" path="res://assets/kenney_blocky-characters/character-d.glb" id="4_rubjr"]
+[ext_resource type="PackedScene" uid="uid://vf5pittr5f5a" path="res://assets/kenney_blocky-characters/character-e.glb" id="5_cp8dj"]
+[ext_resource type="PackedScene" uid="uid://cnipwr81qjkp0" path="res://assets/kenney_blocky-characters/character-f.glb" id="6_l7lv2"]
+[ext_resource type="PackedScene" uid="uid://bbdh85i40ctp5" path="res://assets/kenney_blocky-characters/character-g.glb" id="7_1jqye"]
+[ext_resource type="PackedScene" uid="uid://b80cj830rde38" path="res://assets/kenney_blocky-characters/character-h.glb" id="8_r10gh"]
+[ext_resource type="PackedScene" uid="uid://cemts7que6iio" path="res://assets/kenney_blocky-characters/character-i.glb" id="9_vj5ka"]
+[ext_resource type="PackedScene" uid="uid://cyj6divjwq427" path="res://assets/kenney_blocky-characters/character-j.glb" id="10_g6qxa"]
+[ext_resource type="PackedScene" uid="uid://hx52m65gapb3" path="res://assets/kenney_blocky-characters/character-k.glb" id="11_6fjec"]
+[ext_resource type="PackedScene" uid="uid://ce6u0v72126xq" path="res://assets/kenney_blocky-characters/character-l.glb" id="12_mbkyk"]
+[ext_resource type="PackedScene" uid="uid://dtvrslmkycemt" path="res://assets/kenney_blocky-characters/character-m.glb" id="13_lxrbb"]
+[ext_resource type="PackedScene" uid="uid://c2y2v7av5t2sv" path="res://assets/kenney_blocky-characters/character-n.glb" id="14_yhov6"]
+[ext_resource type="PackedScene" uid="uid://coc1k8nsgf374" path="res://assets/kenney_blocky-characters/character-o.glb" id="15_fu48n"]
+[ext_resource type="PackedScene" uid="uid://cyu54p7nssxaj" path="res://assets/kenney_blocky-characters/character-p.glb" id="16_2hr01"]
+[ext_resource type="PackedScene" uid="uid://3uov8st7g41h" path="res://assets/kenney_blocky-characters/character-r.glb" id="18_c38e1"]
+
+[node name="Blocky-characters" type="Node3D"]
+
+[node name="character-a2" parent="." instance=ExtResource("1_ijag4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="character-b2" parent="." instance=ExtResource("2_vwuqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="character-c2" parent="." instance=ExtResource("3_4oelw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="character-d2" parent="." instance=ExtResource("4_rubjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="character-e2" parent="." instance=ExtResource("5_cp8dj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="character-f2" parent="." instance=ExtResource("6_l7lv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="character-g2" parent="." instance=ExtResource("7_1jqye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="character-h2" parent="." instance=ExtResource("8_r10gh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="character-i2" parent="." instance=ExtResource("9_vj5ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="character-j2" parent="." instance=ExtResource("10_g6qxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="character-k2" parent="." instance=ExtResource("11_6fjec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="character-l2" parent="." instance=ExtResource("12_mbkyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="character-m2" parent="." instance=ExtResource("13_lxrbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="character-n2" parent="." instance=ExtResource("14_yhov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+
+[node name="character-o2" parent="." instance=ExtResource("15_fu48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="character-p2" parent="." instance=ExtResource("16_2hr01")]
+
+[node name="character-r2" parent="." instance=ExtResource("18_c38e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)

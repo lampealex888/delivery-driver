@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1odmxdajeoop"
-path="res://.godot/imported/building-skyscraper-e.glb-373dd77185837c61347cadf550bfbb0f.scn"
+uid="uid://cyj6divjwq427"
+path="res://.godot/imported/character-j.glb-053009e98723d74d3b8137c5eee9a2bd.scn"
 
 [deps]
 
-source_file="res://assets/kenney_city-kit-commercial/building-skyscraper-e.glb"
-dest_files=["res://.godot/imported/building-skyscraper-e.glb-373dd77185837c61347cadf550bfbb0f.scn"]
+source_file="res://assets/kenney_blocky-characters/character-j.glb"
+dest_files=["res://.godot/imported/character-j.glb-053009e98723d74d3b8137c5eee9a2bd.scn"]
 
 [params]
 

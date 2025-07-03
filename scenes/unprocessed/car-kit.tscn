@@ -60,83 +60,121 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="debris-bolt2" parent="." instance=ExtResource("5_0j2kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
 
 [node name="debris-bumper2" parent="." instance=ExtResource("6_n2o1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="debris-door-window2" parent="." instance=ExtResource("7_myypw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="debris-door2" parent="." instance=ExtResource("8_iv1og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="debris-drivetrain-axle2" parent="." instance=ExtResource("9_63txb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
 
 [node name="debris-drivetrain2" parent="." instance=ExtResource("10_f1j0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
 
 [node name="debris-nut2" parent="." instance=ExtResource("11_by0cu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
 
 [node name="debris-plate-a2" parent="." instance=ExtResource("12_0wekh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
 [node name="debris-plate-b2" parent="." instance=ExtResource("13_dcdsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 
 [node name="debris-plate-small-a2" parent="." instance=ExtResource("14_e2mj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 0)
 
 [node name="debris-plate-small-b2" parent="." instance=ExtResource("15_j2h80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="debris-spoiler-a2" parent="." instance=ExtResource("16_d8u80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0)
 
 [node name="debris-spoiler-b2" parent="." instance=ExtResource("17_xu4xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
 [node name="debris-tire2" parent="." instance=ExtResource("18_fbn7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 0)
 
 [node name="delivery-flat" parent="." instance=ExtResource("19_aju6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
 
 [node name="delivery" parent="." instance=ExtResource("20_mrlb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 
 [node name="firetruck" parent="." instance=ExtResource("21_54w13")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="garbage-truck" parent="." instance=ExtResource("22_fgv5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="police" parent="." instance=ExtResource("24_aanyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
 
 [node name="race-future" parent="." instance=ExtResource("25_ohuvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 0)
 
 [node name="race" parent="." instance=ExtResource("26_c4hhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="sedan-sports" parent="." instance=ExtResource("27_pvfiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0, 0)
 
 [node name="sedan" parent="." instance=ExtResource("28_e5ii5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 0)
 
 [node name="suv-luxury" parent="." instance=ExtResource("29_hcnjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
 
 [node name="suv" parent="." instance=ExtResource("30_0bvtd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
 
 [node name="taxi" parent="." instance=ExtResource("31_afq04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
 
 [node name="tractor-police" parent="." instance=ExtResource("32_0ym06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
 [node name="tractor-shovel" parent="." instance=ExtResource("33_vt24a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
 
 [node name="tractor" parent="." instance=ExtResource("34_bnqm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
 
 [node name="truck-flat" parent="." instance=ExtResource("35_jftp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 
 [node name="truck" parent="." instance=ExtResource("36_s4d0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
 
 [node name="van" parent="." instance=ExtResource("37_j1irx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
 
 [node name="wheel-dark2" parent="." instance=ExtResource("38_837c1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
 
 [node name="wheel-default2" parent="." instance=ExtResource("39_np6vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="wheel-racing2" parent="." instance=ExtResource("40_mtf4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
 
 [node name="wheel-tractor-back2" parent="." instance=ExtResource("41_6gdre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
 
 [node name="wheel-tractor-dark-back2" parent="." instance=ExtResource("42_42cef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
 [node name="wheel-tractor-dark-front2" parent="." instance=ExtResource("43_c0hkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="wheel-tractor-front2" parent="." instance=ExtResource("44_foew4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
 [node name="wheel-truck2" parent="." instance=ExtResource("45_lrk07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)

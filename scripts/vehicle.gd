@@ -1,18 +1,31 @@
 extends VehicleBody3D
 
-const STEER_SPEED = 1.5
-const STEER_LIMIT = 0.4
-const BRAKE_STRENGTH = 2.0
+const STEER_SPEED := 1.5
+const STEER_LIMIT := 0.4
+const BRAKE_STRENGTH := 2.0
 
 @export var engine_force_value := 40.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
+var passenger_manager: PassengerManager
+var current_passenger: Passenger
 
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
+func _ready() -> void:
+	_setup_passenger_system()	
+
+
+func _setup_passenger_system() -> void:
+	add_to_group(&"player_car")
+	passenger_manager = get_tree().get_first_node_in_group(&"passenger_manager")
+	if not passenger_manager:
+		push_warning("No PassengerManager found")
+
+
 func _physics_process(delta: float):
-	var fwd_mps := (linear_velocity * transform.basis).x
+	# var fwd_mps := (linear_velocity * transform.basis).x
 
 	_steer_target = Input.get_axis(&"turn_right", &"turn_left")
 	_steer_target *= STEER_LIMIT
@@ -59,3 +72,9 @@ func _physics_process(delta: float):
 	steering = move_toward(steering, _steer_target, STEER_SPEED * delta)
 
 	previous_speed = linear_velocity.length()
+	_handle_passenger_system(delta)
+
+# Add this to your _physics_process function (after your existing movement code)
+func _handle_passenger_system(_delta: float) -> void:
+	if passenger_manager:
+		current_passenger = passenger_manager.get_current_passenger()
