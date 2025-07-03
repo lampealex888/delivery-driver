@@ -14,11 +14,6 @@ config/name="Delivery Driver"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-GameManager="*res://scripts/game_manager.gd"
-CharacterManager="*res://scripts/character_manager.gd"
-
 [input]
 
 accelerate={
