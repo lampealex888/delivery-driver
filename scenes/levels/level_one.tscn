@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dlrfcq6cqqoro" path="res://scenes/world/buildings/building_skyscraper_a.tscn" id="6_623cv"]
 [ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://scenes/world/buildings/building_k.tscn" id="6_vsfy4"]
 [ext_resource type="PackedScene" uid="uid://baij5p0dwrfr0" path="res://scenes/world/buildings/building_skyscraper_b.tscn" id="7_u6gdm"]
-[ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://scenes/cars/hatchback_sport.tscn" id="7_w53h0"]
+[ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://scenes/cars/taxi.tscn" id="7_w53h0"]
 [ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://scenes/world/buildings/building_n.tscn" id="12_1057k"]
 [ext_resource type="PackedScene" uid="uid://3bly18t31tyn" path="res://scenes/mechanics/destination_point.tscn" id="15_pschm"]
 [ext_resource type="PackedScene" uid="uid://dyu3rxv73fcjg" path="res://scenes/world/buildings/building_d.tscn" id="16_47t11"]
@@ -137,7 +137,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40.5, 0, -43.5)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
 
-[node name="HatchbackSport" parent="." instance=ExtResource("7_w53h0")]
+[node name="Taxi" parent="." instance=ExtResource("7_w53h0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 3)
 
 [node name="PassengerManager" type="Node3D" parent="." groups=["passenger_manager"]]
