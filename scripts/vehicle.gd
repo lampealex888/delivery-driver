@@ -77,4 +77,4 @@ func _physics_process(delta: float):
 # Add this to your _physics_process function (after your existing movement code)
 func _handle_passenger_system(_delta: float) -> void:
 	if passenger_manager:
-		current_passenger = passenger_manager.get_current_passenger()
+		current_passenger = passenger_manager._get_passenger_in_car()

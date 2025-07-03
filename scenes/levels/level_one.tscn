@@ -23,9 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://d0oprfm53tvyr" path="res://scenes/prefabs/city-kit-commerical/building_m.tscn" id="19_ddm7d"]
 [ext_resource type="PackedScene" uid="uid://5ladp8hkwvih" path="res://scenes/prefabs/city-kit-commerical/building_j.tscn" id="19_tikvp"]
 [ext_resource type="PackedScene" uid="uid://cvhgyel7jau0b" path="res://scenes/prefabs/blocky-characters/character_q.tscn" id="21_x3kkr"]
-[ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://scenes/destination_arrow.tscn" id="23_hwqpy"]
+[ext_resource type="PackedScene" path="res://scenes/destination_arrow.tscn" id="23_hwqpy"]
 [ext_resource type="PackedScene" uid="uid://bgn4srqmsvu67" path="res://scenes/prefabs/passenger_spawn_point.tscn" id="24_7me8y"]
-[ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://scenes/hud.tscn" id="26_2oc46"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="26_2oc46"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_63ct5"]
 size = Vector3(200, 1, 200)
