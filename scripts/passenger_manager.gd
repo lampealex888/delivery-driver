@@ -1,7 +1,7 @@
 extends Node3D
 class_name PassengerManager
 
-const MAX_PASSENGERS := 1
+const MAX_PASSENGERS := 3
 const SPAWN_INTERVAL := 8.0
 const DELIVERY_RADIUS := 4.0
 const GAME_TIME := 90.0  # 90 seconds like Crazy Taxi

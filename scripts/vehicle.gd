@@ -12,7 +12,7 @@ var _steer_target := 0.0
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
 func _ready() -> void:
-	add_to_group(&"player_car")
+	pass
 
 func _physics_process(delta: float):
 	_steer_target = Input.get_axis(&"turn_right", &"turn_left")

@@ -228,7 +228,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Taxi" type="Node3D"]
 
-[node name="Body" type="VehicleBody3D" parent="."]
+[node name="Body" type="VehicleBody3D" parent="." groups=["player_car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
 center_of_mass_mode = 1
@@ -238,7 +238,7 @@ script = ExtResource("1_r806m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473678, 0.115169, 0.80416)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
 suspension_travel = 2.0
@@ -253,7 +253,7 @@ skeleton = NodePath("")
 [node name="Wheel2" type="VehicleWheel3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474, 0.115, -0.716)
 use_as_traction = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
 suspension_travel = 2.0
@@ -269,7 +269,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473678, 0.115169, 0.80416)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
 suspension_travel = 2.0
@@ -284,7 +284,7 @@ skeleton = NodePath("")
 [node name="Wheel4" type="VehicleWheel3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.474, 0.115, -0.716336)
 use_as_traction = true
-wheel_roll_influence = 0.4
+wheel_roll_influence = 1.0
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
 suspension_travel = 2.0
