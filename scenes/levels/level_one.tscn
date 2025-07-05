@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://be4ttwlu7qmsm"]
+[gd_scene load_steps=41 format=3 uid="uid://be4ttwlu7qmsm"]
 
 [ext_resource type="PackedScene" uid="uid://f2iqriiym1oh" path="res://scenes/world/buildings/building_c.tscn" id="1_a1u8d"]
 [ext_resource type="Script" uid="uid://c85s32ybtvimm" path="res://scripts/passenger_manager.gd" id="1_iqgpd"]
@@ -30,9 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://d0oprfm53tvyr" path="res://scenes/world/buildings/building_m.tscn" id="19_ddm7d"]
 [ext_resource type="PackedScene" uid="uid://5ladp8hkwvih" path="res://scenes/world/buildings/building_j.tscn" id="19_tikvp"]
 [ext_resource type="PackedScene" uid="uid://cvhgyel7jau0b" path="res://scenes/npcs/passenger.tscn" id="21_x3kkr"]
-[ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://scenes/mechanics/destination_arrow.tscn" id="23_hwqpy"]
+[ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://scenes/ui/destination_arrow.tscn" id="23_hwqpy"]
 [ext_resource type="PackedScene" uid="uid://bgn4srqmsvu67" path="res://scenes/mechanics/passenger_spawn_point.tscn" id="24_7me8y"]
 [ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://scenes/ui/hud.tscn" id="26_2oc46"]
+[ext_resource type="Script" uid="uid://7nc4yblee5n6" path="res://scripts/arrow_manager.gd" id="34_bj4k1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oc46"]
 sky_top_color = Color(1, 0.411765, 0.705882, 1)
@@ -58,8 +59,73 @@ size = Vector3(200, 1, 200)
 
 [node name="LevelOne" type="Node3D"]
 
+[node name="Taxi" parent="." instance=ExtResource("7_w53h0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 3)
+
+[node name="GameplayElements" type="Node3D" parent="."]
+
+[node name="Destinations" type="Node3D" parent="GameplayElements"]
+
+[node name="DestinationPoint" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.2, -8)
+destination_name = "Hospital"
+
+[node name="DestinationPoint2" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0.2, -32.5)
+destination_name = "Skyline Tower"
+
+[node name="DestinationPoint3" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0.2, -29.5176)
+destination_name = "Edge Condos"
+
+[node name="DestinationPoint4" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0.2, -2.5)
+destination_name = "Horizon Hub"
+
+[node name="SpawnPoints" type="Node3D" parent="GameplayElements"]
+
+[node name="PassengerSpawnPoint" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 0.644751, -13)
+
+[node name="PassengerSpawnPoint2" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 0.644751, -7.6)
+
+[node name="PassengerSpawnPoint3" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80055, 0.644751, -8.1)
+
+[node name="PassengerSpawnPoint4" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4507, 0.644751, -32.4963)
+
+[node name="PassengerManager" type="Node3D" parent="." groups=["passenger_manager"]]
+script = ExtResource("1_iqgpd")
+passenger_scene = ExtResource("21_x3kkr")
+
+[node name="SpawnTimer" type="Timer" parent="PassengerManager"]
+wait_time = 8.0
+autostart = true
+
+[node name="GameTimer" type="Timer" parent="PassengerManager"]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="DeliveryCheckTimer" type="Timer" parent="PassengerManager"]
+wait_time = 0.5
+autostart = true
+
+[node name="ArrowManager" type="Node3D" parent="."]
+script = ExtResource("34_bj4k1")
+arrow_scene = ExtResource("23_hwqpy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("26_2oc46")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2oc46")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -206,61 +272,9 @@ transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 26.5, 
 [node name="BuildingJ" parent="Buildings" instance=ExtResource("19_tikvp")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40.5, 0, -43.5)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13, 0)
-
-[node name="Taxi" parent="." instance=ExtResource("7_w53h0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 3)
-
-[node name="PassengerManager" type="Node3D" parent="." groups=["passenger_manager"]]
-script = ExtResource("1_iqgpd")
-passenger_scene = ExtResource("21_x3kkr")
-arrow_scene = ExtResource("23_hwqpy")
-
-[node name="SpawnTimer" type="Timer" parent="PassengerManager"]
-wait_time = 8.0
-
-[node name="GameTimer" type="Timer" parent="PassengerManager"]
-wait_time = 90.0
-one_shot = true
-
-[node name="DeliveryCheckTimer" type="Timer" parent="PassengerManager"]
-wait_time = 0.5
-
-[node name="GameplayElements" type="Node3D" parent="."]
-
-[node name="Destinations" type="Node3D" parent="GameplayElements"]
-
-[node name="DestinationPoint" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.2, -8)
-destination_name = "Hospital"
-
-[node name="DestinationPoint2" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0.2, -32.5)
-destination_name = "Skyline Tower"
-
-[node name="DestinationPoint3" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0.2, -29.5176)
-destination_name = "Edge Condos"
-
-[node name="DestinationPoint4" parent="GameplayElements/Destinations" instance=ExtResource("15_pschm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 0.2, -2.5)
-destination_name = "Horizon Hub"
-
-[node name="SpawnPoints" type="Node3D" parent="GameplayElements"]
-
-[node name="PassengerSpawnPoint" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 0.644751, -13)
-
-[node name="PassengerSpawnPoint2" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 0.644751, -7.6)
-
-[node name="PassengerSpawnPoint3" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80055, 0.644751, -8.1)
-
-[node name="PassengerSpawnPoint4" parent="GameplayElements/SpawnPoints" instance=ExtResource("24_7me8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4507, 0.644751, -32.4963)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("26_2oc46")]
+[connection signal="passenger_delivered" from="PassengerManager" to="ArrowManager" method="_on_passenger_manager_passenger_delivered"]
+[connection signal="passenger_picked_up" from="PassengerManager" to="ArrowManager" method="_on_passenger_manager_passenger_picked_up"]
+[connection signal="passenger_timeout" from="PassengerManager" to="ArrowManager" method="_on_passenger_manager_passenger_timeout"]
+[connection signal="timeout" from="PassengerManager/SpawnTimer" to="PassengerManager" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="PassengerManager/GameTimer" to="PassengerManager" method="_on_game_timer_timeout"]
+[connection signal="timeout" from="PassengerManager/DeliveryCheckTimer" to="PassengerManager" method="_on_delivery_check_timer_timeout"]

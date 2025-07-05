@@ -16,22 +16,14 @@ const DISTANCE_MEDIUM := 50.0
 @onready var arrow_head: MeshInstance3D = $ArrowHead
 @onready var arrow_shaft: MeshInstance3D = $ArrowShaft
 @onready var distance_label: Label = $SubViewport/Control/DistanceLabel
-@onready var update_timer: Timer = $UpdateTimer
 
 var head_material: StandardMaterial3D
 var shaft_material: StandardMaterial3D
 
 func _ready() -> void:
-	_setup_materials()
-	_setup_timer()
+	setup_materials()
 
-func _setup_timer() -> void:
-	# Update arrow every 0.1 seconds instead of every frame
-	update_timer.wait_time = 0.1
-	update_timer.timeout.connect(_update_arrow)
-	update_timer.start()
-
-func _setup_materials() -> void:
+func setup_materials() -> void:
 	# Create materials for both arrow parts
 	head_material = StandardMaterial3D.new()
 	head_material.albedo_color = COLOR_FAR
@@ -51,29 +43,30 @@ func _setup_materials() -> void:
 	if arrow_shaft:
 		arrow_shaft.material_override = shaft_material
 
-func _update_arrow() -> void:
+# This now runs every frame for smooth updates
+func _process(delta: float) -> void:
 	if not follow_target:
 		return
 	
-	_update_arrow_position()
-	_update_arrow_rotation()
-	_update_arrow_color()
-	_update_distance_display()
+	update_arrow_position()
+	update_arrow_rotation()
+	update_arrow_color()
+	update_distance_display()
 
-func _update_arrow_position() -> void:
+func update_arrow_position() -> void:
 	# Position arrow directly above the car
 	var car_pos := follow_target.global_position
 	global_position = car_pos + Vector3.UP * ARROW_HEIGHT
 
-func _update_arrow_rotation() -> void:
+func update_arrow_rotation() -> void:
 	if target_position == Vector3.ZERO:
 		return
 	
 	# Point arrow toward destination
 	var direction := (target_position - global_position).normalized()
-	look_at(global_position - direction, Vector3.UP)
+	look_at(global_position + direction, Vector3.UP)
 
-func _update_arrow_color() -> void:
+func update_arrow_color() -> void:
 	if not follow_target or target_position == Vector3.ZERO:
 		return
 	
@@ -99,7 +92,7 @@ func _update_arrow_color() -> void:
 		shaft_material.albedo_color = color
 		shaft_material.emission = color * 0.3
 
-func _update_distance_display() -> void:
+func update_distance_display() -> void:
 	if not follow_target or not distance_label:
 		return
 	
