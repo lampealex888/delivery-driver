@@ -12,23 +12,24 @@ const DISTANCE_MEDIUM := 50.0
 @export var target_position := Vector3.ZERO
 @export var follow_target: Node3D
 
-# References to the arrow parts (will be set in editor)
+# References to the arrow parts
 @onready var arrow_head: MeshInstance3D = $ArrowHead
 @onready var arrow_shaft: MeshInstance3D = $ArrowShaft
 @onready var distance_label: Label = $SubViewport/Control/DistanceLabel
+@onready var update_timer: Timer = $UpdateTimer
 
 var head_material: StandardMaterial3D
 var shaft_material: StandardMaterial3D
 
 func _ready() -> void:
 	_setup_materials()
+	_setup_timer()
 
-func _process(_delta: float) -> void:
-	if follow_target:
-		_update_arrow_position()
-		_update_arrow_rotation()
-		_update_arrow_color()
-		_update_distance_display()
+func _setup_timer() -> void:
+	# Update arrow every 0.1 seconds instead of every frame
+	update_timer.wait_time = 0.1
+	update_timer.timeout.connect(_update_arrow)
+	update_timer.start()
 
 func _setup_materials() -> void:
 	# Create materials for both arrow parts
@@ -50,10 +51,16 @@ func _setup_materials() -> void:
 	if arrow_shaft:
 		arrow_shaft.material_override = shaft_material
 
-func _update_arrow_position() -> void:
+func _update_arrow() -> void:
 	if not follow_target:
 		return
 	
+	_update_arrow_position()
+	_update_arrow_rotation()
+	_update_arrow_color()
+	_update_distance_display()
+
+func _update_arrow_position() -> void:
 	# Position arrow directly above the car
 	var car_pos := follow_target.global_position
 	global_position = car_pos + Vector3.UP * ARROW_HEIGHT
@@ -64,8 +71,6 @@ func _update_arrow_rotation() -> void:
 	
 	# Point arrow toward destination
 	var direction := (target_position - global_position).normalized()
-	
-	# Use look_at to orient the arrow
 	look_at(global_position - direction, Vector3.UP)
 
 func _update_arrow_color() -> void:

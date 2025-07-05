@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://be4ttwlu7qmsm"]
+[gd_scene load_steps=33 format=3 uid="uid://be4ttwlu7qmsm"]
 
 [ext_resource type="PackedScene" uid="uid://f2iqriiym1oh" path="res://scenes/world/buildings/building_c.tscn" id="1_a1u8d"]
 [ext_resource type="Script" uid="uid://c85s32ybtvimm" path="res://scripts/game.gd" id="1_iqgpd"]
@@ -27,6 +27,19 @@
 [ext_resource type="PackedScene" uid="uid://bgn4srqmsvu67" path="res://scenes/mechanics/passenger_spawn_point.tscn" id="24_7me8y"]
 [ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://scenes/ui/hud.tscn" id="26_2oc46"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oc46"]
+sky_top_color = Color(1, 0.411765, 0.705882, 1)
+sky_horizon_color = Color(0.637792, 0.793114, 0.490363, 1)
+ground_bottom_color = Color(0.133143, 0.192876, 0.133745, 1)
+ground_horizon_color = Color(0.705113, 0.705113, 3.85046e-07, 1)
+
+[sub_resource type="Sky" id="Sky_rr72q"]
+sky_material = SubResource("ProceduralSkyMaterial_2oc46")
+
+[sub_resource type="Environment" id="Environment_2oc46"]
+background_mode = 2
+sky = SubResource("Sky_rr72q")
+
 [sub_resource type="BoxMesh" id="BoxMesh_63ct5"]
 size = Vector3(200, 1, 200)
 
@@ -37,6 +50,9 @@ albedo_color = Color(0.317647, 0.317647, 0.34902, 1)
 size = Vector3(200, 1, 200)
 
 [node name="LevelOne" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2oc46")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -144,6 +160,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 
 script = ExtResource("1_iqgpd")
 passenger_scene = ExtResource("21_x3kkr")
 arrow_scene = ExtResource("23_hwqpy")
+
+[node name="SpawnTimer" type="Timer" parent="PassengerManager"]
+wait_time = 8.0
+
+[node name="GameTimer" type="Timer" parent="PassengerManager"]
+wait_time = 90.0
+one_shot = true
+
+[node name="DeliveryCheckTimer" type="Timer" parent="PassengerManager"]
+wait_time = 0.5
 
 [node name="GameplayElements" type="Node3D" parent="."]
 

@@ -16,7 +16,6 @@ var destination_points: Array[Vector3] = []
 var building_names: Array[String] = []
 var active_passengers: Array[Passenger] = []
 var destination_arrow: DestinationArrow
-var spawn_timer := 0.0
 var player_car: VehicleBody3D
 var spawn_point_nodes: Array[Node3D] = []
 var destination_point_nodes: Array[Node3D] = []
@@ -26,6 +25,11 @@ var game_timer := GAME_TIME
 var game_active := true
 var total_score := 0
 
+# Timer nodes
+@onready var spawn_timer: Timer = $SpawnTimer
+@onready var game_timer_node: Timer = $GameTimer
+@onready var delivery_check_timer: Timer = $DeliveryCheckTimer
+
 signal passenger_spawned(passenger: Passenger)
 signal passenger_completed(tip: int)
 signal passenger_failed()
@@ -34,9 +38,9 @@ signal game_over(final_score: int)
 signal time_extended(amount: float)
 
 func _ready() -> void:
+	_setup_timers()
 	_find_player_car()
 	_setup_points()
-	spawn_timer = SPAWN_INTERVAL
 	
 	# Initialize timer system
 	game_timer = GAME_TIME
@@ -44,29 +48,36 @@ func _ready() -> void:
 	total_score = 0
 	timer_updated.emit(game_timer)
 
+func _setup_timers() -> void:
+	# Setup spawn timer
+	spawn_timer.wait_time = SPAWN_INTERVAL
+	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
+	spawn_timer.start()
+	
+	# Setup game timer
+	game_timer_node.wait_time = GAME_TIME
+	game_timer_node.timeout.connect(_on_game_timer_timeout)
+	game_timer_node.start()
+	
+	# Setup delivery check timer (check every 0.5 seconds instead of every frame)
+	delivery_check_timer.wait_time = 0.5
+	delivery_check_timer.timeout.connect(_check_deliveries)
+	delivery_check_timer.start()
+
+func _on_spawn_timer_timeout() -> void:
+	if game_active and active_passengers.size() < MAX_PASSENGERS:
+		_spawn_passenger()
+
+func _on_game_timer_timeout() -> void:
+	_end_game()
 
 func _physics_process(delta: float) -> void:
 	if not game_active:
 		return
 	
-	# Update game timer
-	game_timer -= delta
+	# Update game timer display
+	game_timer = game_timer_node.time_left
 	timer_updated.emit(game_timer)
-	
-	# Check for game over
-	if game_timer <= 0.0:
-		_end_game()
-		return
-	
-	# Spawn passengers
-	spawn_timer -= delta
-	
-	if spawn_timer <= 0.0 and active_passengers.size() < MAX_PASSENGERS:
-		_spawn_passenger()
-		spawn_timer = SPAWN_INTERVAL
-	
-	_check_deliveries()
-
 
 func _find_player_car() -> void:
 	player_car = get_tree().get_first_node_in_group(&"player_car")
@@ -175,7 +186,7 @@ func _connect_passenger_signals(passenger: Passenger) -> void:
 
 
 func _check_deliveries() -> void:
-	if not player_car:
+	if not player_car or not game_active:
 		return
 	
 	var passenger_in_car := _get_passenger_in_car()
@@ -203,7 +214,7 @@ func _on_passenger_picked_up(passenger: Passenger) -> void:
 	_create_destination_arrow(passenger)
 	
 	# Add time bonus for picking up passenger
-	game_timer += PICKUP_TIME_BONUS
+	game_timer_node.wait_time += PICKUP_TIME_BONUS
 	time_extended.emit(PICKUP_TIME_BONUS)
 	print("Time extended by ", PICKUP_TIME_BONUS, " seconds! Time remaining: ", game_timer)
 
@@ -215,7 +226,7 @@ func _on_passenger_delivered(passenger: Passenger, tip: int) -> void:
 	
 	# Add score and time bonus for successful delivery
 	total_score += tip
-	game_timer += DELIVERY_TIME_BONUS
+	game_timer_node.wait_time += DELIVERY_TIME_BONUS
 	time_extended.emit(DELIVERY_TIME_BONUS)
 	print("Delivery bonus! +$", tip, " score, +", DELIVERY_TIME_BONUS, " seconds. Total score: $", total_score)
 
@@ -249,12 +260,14 @@ func _destroy_destination_arrow() -> void:
 
 func _end_game() -> void:
 	game_active = false
+	spawn_timer.stop()
+	delivery_check_timer.stop()
 	game_over.emit(total_score)
 	print("Game Over! Final Score: $", total_score)
 
 # Timer system helper functions
 func get_time_remaining() -> float:
-	return game_timer
+	return game_timer_node.time_left
 
 func get_total_score() -> int:
 	return total_score
@@ -267,6 +280,12 @@ func restart_game() -> void:
 	game_active = true
 	total_score = 0
 	
+	# Reset timers
+	game_timer_node.wait_time = GAME_TIME
+	game_timer_node.start()
+	spawn_timer.start()
+	delivery_check_timer.start()
+	
 	# Clear existing passengers
 	for passenger in active_passengers:
 		passenger.queue_free()
@@ -274,9 +293,6 @@ func restart_game() -> void:
 	
 	# Clear destination arrow
 	_destroy_destination_arrow()
-	
-	# Reset spawn timer
-	spawn_timer = SPAWN_INTERVAL
 	
 	timer_updated.emit(game_timer)
 	print("Game restarted! Time: ", game_timer, " seconds")

@@ -21,7 +21,6 @@ const PICKUP_DISTANCE := 1.5  # Distance from car when passenger gets in
 var state := State.WAITING
 var destination_position := Vector3.ZERO
 var destination_building_name := ""
-var patience_timer := PATIENCE_TIME
 var is_in_pickup_range := false
 var player_car: VehicleBody3D
 var walking_target: Vector3
@@ -32,17 +31,39 @@ var original_position: Vector3
 @onready var patience_bar: ProgressBar = $SubViewport/Control/VBoxContainer/PatienceBar
 @onready var destination_label: Label = $SubViewport/Control/VBoxContainer/DestinationLabel
 @onready var pickup_prompt: Label = $SubViewport/Control/VBoxContainer/PickupPrompt
+@onready var patience_timer: Timer = $PatienceTimer
 
 signal passenger_picked_up(passenger: Passenger)
 signal passenger_delivered(passenger: Passenger, tip: int)
 signal passenger_timeout(passenger: Passenger)
 
 func _ready() -> void:
+	_setup_timers()
 	_setup_ui()
 	_connect_signals()
-	patience_timer = PATIENCE_TIME * impatience_factor
 	original_position = global_position
 	_find_player_car()
+
+func _setup_timers() -> void:
+	# Setup patience timer
+	patience_timer.wait_time = PATIENCE_TIME * impatience_factor
+	patience_timer.timeout.connect(_on_patience_timeout)
+	patience_timer.start()
+	
+	# Setup timer to update patience bar
+	var update_timer = Timer.new()
+	update_timer.wait_time = 0.1  # Update every 0.1 seconds
+	update_timer.timeout.connect(_update_patience_bar)
+	update_timer.start()
+	add_child(update_timer)
+
+func _update_patience_bar() -> void:
+	if patience_bar and patience_timer:
+		patience_bar.value = patience_timer.time_left
+		_update_patience_visual()
+
+func _on_patience_timeout() -> void:
+	_timeout()
 
 func _find_player_car() -> void:
 	var cars = get_tree().get_nodes_in_group("player_car")
@@ -79,14 +100,6 @@ func _connect_signals() -> void:
 	pickup_area.body_exited.connect(_on_pickup_area_exited)
 
 func _handle_waiting_state(delta: float) -> void:
-	patience_timer -= delta
-	patience_bar.value = patience_timer
-	
-	_update_patience_visual()
-	
-	if patience_timer <= 0.0:
-		_timeout()
-	
 	# Check if car is stopped nearby
 	if player_car and is_in_pickup_range:
 		var car_speed = player_car.linear_velocity.length()
@@ -140,7 +153,7 @@ func _pickup_passenger() -> void:
 	print("Passenger picked up automatically!")
 
 func _update_patience_visual() -> void:
-	var patience_ratio := patience_timer / PATIENCE_TIME
+	var patience_ratio := patience_timer.time_left / (PATIENCE_TIME * impatience_factor)
 	
 	if patience_ratio > 0.6:
 		patience_bar.modulate = Color.GREEN
@@ -164,7 +177,7 @@ func deliver() -> void:
 	state = State.DELIVERED
 	
 	# Calculate tip based on remaining patience
-	var time_bonus := int(patience_timer * 2.0)
+	var time_bonus := int(patience_timer.time_left * 2.0)
 	var total_tip := BASE_TIP + time_bonus
 	
 	passenger_delivered.emit(self, total_tip)
