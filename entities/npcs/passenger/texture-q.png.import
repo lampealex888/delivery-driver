@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkchfveq6se57"
-path.s3tc="res://.godot/imported/texture-q.png-46f0ffabb497259efc9656a9f3ca04f6.s3tc.ctex"
+path.s3tc="res://.godot/imported/texture-q.png-f29a60013ccb0c2f9459e953e9e6b1e5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kenney_blocky-characters/Textures/texture-q.png"
-dest_files=["res://.godot/imported/texture-q.png-46f0ffabb497259efc9656a9f3ca04f6.s3tc.ctex"]
+source_file="res://entities/npcs/passenger/texture-q.png"
+dest_files=["res://.godot/imported/texture-q.png-f29a60013ccb0c2f9459e953e9e6b1e5.s3tc.ctex"]
 
 [params]
 

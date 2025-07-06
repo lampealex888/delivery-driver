@@ -6,7 +6,6 @@ class_name PassengerSpawner
 @export var navigation_region: NavigationRegion3D
 @export var spawn_timer: Timer
 @export var max_passengers: int = 8
-@export var spawn_interval: float = 2.0
 @export var spawn_radius: float = 50.0
 @export var initial_spawn_count: int = 3
 @export var spawn_burst_size: int = 1
@@ -24,11 +23,6 @@ func _ready():
 
 
 func _setup_spawn_timer():
-	if not spawn_timer:
-		spawn_timer = Timer.new()
-		add_child(spawn_timer)
-	
-	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(_try_spawn_passenger)
 
 
@@ -157,7 +151,6 @@ func disable_spawning():
 
 
 func set_spawn_rate(interval: float):
-	spawn_interval = interval
 	if spawn_timer:
 		spawn_timer.wait_time = interval
 

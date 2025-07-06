@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://c85s32ybtvimm" path="res://utilities/game/passenger_manager.gd" id="4_7psst"]
 [ext_resource type="Script" uid="uid://d6xmst84nvxu" path="res://utilities/game/game_manager.gd" id="4_pkjaa"]
 [ext_resource type="Script" uid="uid://dtqws6bgobnjo" path="res://utilities/game/passenger_spawner.gd" id="4_tengx"]
-[ext_resource type="PackedScene" uid="uid://cvhgyel7jau0b" path="res://entities/npcs/passenger/passenger.tscn" id="5_sg6tc"]
+[ext_resource type="PackedScene" uid="uid://cu82m3v6d733l" path="res://entities/npcs/passenger/passenger.tscn" id="5_sg6tc"]
 [ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://entities/ui/hud/hud.tscn" id="8_vq70k"]
 [ext_resource type="PackedScene" uid="uid://decg5lw8q2ypa" path="res://stages/roads/props/sign_highway_detailed/sign_highway_detailed.tscn" id="9_p5q0a"]
 [ext_resource type="PackedScene" uid="uid://bvp38ntqrefqp" path="res://stages/roads/barriers/road_slant_curve_barrier/road_slant_curve_barrier.tscn" id="10_s4adw"]
@@ -84,7 +84,11 @@ autostart = true
 script = ExtResource("4_tengx")
 passenger_scene = ExtResource("5_sg6tc")
 navigation_region = NodePath("../../../NavigationRegion3D")
-spawn_timer = NodePath("")
+spawn_timer = NodePath("SpawnTimer")
+
+[node name="SpawnTimer" type="Timer" parent="Systems/GameManager/PassengerSpawner"]
+wait_time = 3.0
+autostart = true
 
 [node name="PassengerManager" type="Node3D" parent="Systems/GameManager" node_paths=PackedStringArray("passenger_spawner") groups=["passenger_manager"]]
 script = ExtResource("4_7psst")
