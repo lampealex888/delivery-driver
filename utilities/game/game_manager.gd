@@ -1,4 +1,4 @@
-# game_manager.gd - Updated to work with new passenger system
+# game_manager.gd
 extends Node
 class_name GameManager
 
@@ -33,7 +33,7 @@ func _ready() -> void:
 	
 	# Setup spawner
 	if passenger_spawner:
-		passenger_spawner.pause_spawning()  # Don't spawn until game starts
+		passenger_spawner.disable_spawning()  # Don't spawn until game starts
 
 func _process(delta: float) -> void:
 	if is_game_active:
@@ -49,13 +49,14 @@ func start_game() -> void:
 	game_timer.wait_time = GAME_DURATION
 	game_timer.start()
 	
-	# Start passenger spawning
-	if passenger_spawner:
-		passenger_spawner.resume_spawning()
-	
-	# Clear any existing passengers
 	if passenger_manager:
 		passenger_manager.cleanup_all_passengers()
+	if passenger_spawner:
+		passenger_spawner.cleanup_all_passengers()
+	
+	# Start passenger spawning with initial burst
+	if passenger_spawner:
+		passenger_spawner.enable_spawning()
 	
 	# Emit signals
 	score_updated.emit(total_score)
@@ -104,11 +105,13 @@ func _end_game() -> void:
 	
 	# Stop passenger spawning
 	if passenger_spawner:
-		passenger_spawner.pause_spawning()
+		passenger_spawner.disable_spawning()
 	
 	# Clean up passengers
 	if passenger_manager:
 		passenger_manager.cleanup_all_passengers()
+	if passenger_spawner:
+		passenger_spawner.cleanup_all_passengers()
 	
 	game_over.emit(total_score)
 

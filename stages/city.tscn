@@ -84,10 +84,7 @@ autostart = true
 script = ExtResource("4_tengx")
 passenger_scene = ExtResource("5_sg6tc")
 navigation_region = NodePath("../../../NavigationRegion3D")
-spawn_timer = NodePath("SpawnTimer")
-
-[node name="SpawnTimer" type="Timer" parent="Systems/GameManager/PassengerSpawner"]
-autostart = true
+spawn_timer = NodePath("")
 
 [node name="PassengerManager" type="Node3D" parent="Systems/GameManager" node_paths=PackedStringArray("passenger_spawner") groups=["passenger_manager"]]
 script = ExtResource("4_7psst")
@@ -282,5 +279,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80055, 0.644751, -8.1)
 
 [node name="PassengerSpawnPoint4" parent="GameplayElements/SpawnPoints" instance=ExtResource("3_ctbpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4507, 0.644751, -32.4963)
-
-[connection signal="timeout" from="Systems/GameManager/PassengerSpawner/SpawnTimer" to="Systems/GameManager/PassengerSpawner" method="_on_spawn_timer_timeout"]

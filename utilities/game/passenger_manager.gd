@@ -30,7 +30,12 @@ func _on_passenger_expired(passenger: Passenger):
 	active_passengers.erase(passenger)
 
 func _on_passenger_picked_up(passenger: Passenger):
+	if current_passenger != null:
+		print("Cannot pick up passenger - car is occupied")
+		return
+	
 	current_passenger = passenger
+	_notify_passengers_car_occupied()
 	passenger_picked_up.emit(passenger)
 
 func _on_passenger_delivered(passenger: Passenger, tip: int):
@@ -38,6 +43,7 @@ func _on_passenger_delivered(passenger: Passenger, tip: int):
 	if current_passenger == passenger:
 		current_passenger = null
 	
+	_notify_passengers_car_available()
 	passenger_delivered.emit(passenger, tip)
 
 func _on_passenger_timeout(passenger: Passenger):
@@ -45,7 +51,22 @@ func _on_passenger_timeout(passenger: Passenger):
 	if current_passenger == passenger:
 		current_passenger = null
 	
+	_notify_passengers_car_available()
 	passenger_timeout.emit(passenger)
+
+
+func _notify_passengers_car_occupied():
+	for passenger in active_passengers:
+		if passenger != current_passenger and is_instance_valid(passenger):
+			passenger.call("_on_car_occupied")
+
+
+
+func _notify_passengers_car_available():
+	for passenger in active_passengers:
+		if is_instance_valid(passenger):
+			passenger.call("_on_car_available")
+
 
 # Public methods for HUD and other systems
 func get_current_passenger() -> Passenger:

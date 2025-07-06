@@ -1864,6 +1864,7 @@ radius = 3.37061
 viewport_path = NodePath("RigidBody3D/SubViewport")
 
 [node name="Passenger" type="CharacterBody3D"]
+collision_layer = 4
 script = ExtResource("1_jtq1q")
 destination_arrow_scene = ExtResource("2_t40mi")
 

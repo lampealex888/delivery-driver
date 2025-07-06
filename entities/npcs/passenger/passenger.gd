@@ -29,6 +29,7 @@ var player_car: VehicleBody3D
 var walking_target: Vector3
 var original_position: Vector3
 var destination_arrow: DestinationArrow
+var car_is_available := true
 
 @onready var mesh_instance: Node3D = $"character-q"
 @onready var pickup_area: Area3D = $PickupArea
@@ -42,13 +43,14 @@ func setup(car: VehicleBody3D, dest_pos: Vector3, building_name: String):
 	destination_position = dest_pos
 	destination_building_name = building_name
 	original_position = global_position
-	_create_destination_arrow()
-	_connect_signals()
 
-func _create_destination_arrow() -> void:
 	if destination_arrow_scene:
 		destination_arrow = destination_arrow_scene.instantiate()
 		get_tree().current_scene.add_child(destination_arrow)
+
+	pickup_area.body_entered.connect(_on_pickup_area_entered)
+	pickup_area.body_exited.connect(_on_pickup_area_exited)
+
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -61,19 +63,22 @@ func _physics_process(delta: float) -> void:
 		State.DELIVERED:
 			pass
 
-func _connect_signals() -> void:
-	pickup_area.body_entered.connect(_on_pickup_area_entered)
-	pickup_area.body_exited.connect(_on_pickup_area_exited)
 
 func _handle_waiting_state(delta: float) -> void:
-	if player_car and is_in_pickup_range:
+	if player_car and is_in_pickup_range and car_is_available:
 		var car_speed = player_car.linear_velocity.length()
 		if car_speed <= STOPPED_SPEED_THRESHOLD:
-			_start_walking_to_car()
+			if state != State.WAITING or not car_is_available:
+				return
+			state = State.WALKING_TO_CAR
 
 func _handle_walking_state(delta: float) -> void:
 	if not player_car:
 		state = State.WAITING
+		return
+
+	if not car_is_available:
+		_cancel_pickup()
 		return
 	
 	walking_target = player_car.global_position
@@ -90,6 +95,7 @@ func _handle_walking_state(delta: float) -> void:
 	if distance_to_car <= PICKUP_DISTANCE:
 		_pickup_passenger()
 
+
 func _handle_in_car_state(_delta: float) -> void:
 	visible = false
 	
@@ -100,13 +106,9 @@ func _handle_in_car_state(_delta: float) -> void:
 		if distance_to_destination <= DELIVERY_DISTANCE and car_speed <= STOPPED_SPEED_THRESHOLD:
 			deliver()
 
-func _start_walking_to_car() -> void:
-	if state != State.WAITING:
-		return
-	state = State.WALKING_TO_CAR
 
 func _pickup_passenger() -> void:
-	if state != State.WALKING_TO_CAR:
+	if state != State.WALKING_TO_CAR or not car_is_available:
 		return
 	state = State.IN_CAR
 	
@@ -115,9 +117,26 @@ func _pickup_passenger() -> void:
 	
 	passenger_picked_up.emit(self)
 
+func _cancel_pickup() -> void:
+	if state == State.WALKING_TO_CAR:
+		state = State.WAITING
+		global_position = original_position
+
+
+func _on_car_occupied():
+	car_is_available = false
+	if state == State.WALKING_TO_CAR:
+		_cancel_pickup()
+
+
+func _on_car_available():
+	car_is_available = true
+
+
 func set_destination(pos: Vector3, building_name: String) -> void:
 	destination_position = pos
 	destination_building_name = building_name
+
 
 func deliver() -> void:
 	if state != State.IN_CAR:
@@ -131,6 +150,7 @@ func deliver() -> void:
 	passenger_delivered.emit(self, BASE_TIP)
 	queue_free()
 
+
 func _timeout() -> void:
 	state = State.DELIVERED
 	if destination_arrow:
@@ -138,9 +158,11 @@ func _timeout() -> void:
 	passenger_timeout.emit(self)
 	queue_free()
 
+
 func _on_pickup_area_entered(body: Node3D) -> void:
 	if body.is_in_group(&"player_car") and state == State.WAITING:
 		is_in_pickup_range = true
+
 
 func _on_pickup_area_exited(body: Node3D) -> void:
 	if body.is_in_group(&"player_car"):

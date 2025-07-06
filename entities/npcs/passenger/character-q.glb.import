@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dyb1wmrceg55q"
-path="res://.godot/imported/character-q.glb-1ec7f99c75df269eb4606acc70cc730c.scn"
+path="res://.godot/imported/character-q.glb-40907ecf2b6004af2f27ffd04d6f7c26.scn"
 
 [deps]
 
-source_file="res://assets/kenney_blocky-characters/character-q.glb"
-dest_files=["res://.godot/imported/character-q.glb-1ec7f99c75df269eb4606acc70cc730c.scn"]
+source_file="res://entities/npcs/passenger/character-q.glb"
+dest_files=["res://.godot/imported/character-q.glb-40907ecf2b6004af2f27ffd04d6f7c26.scn"]
 
 [params]
 
