@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxhnnlypr35r1"]
+
+[ext_resource type="MeshLibrary" uid="uid://blch7bb0lbtv5" path="res://stages/tileset/road-kit.tres" id="1_1anp3"]
+[ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="2_cf5t2"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_cf5t2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1anp3"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cf5t2"]
+albedo_color = Color(0.0745098, 0.427451, 0.0823529, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nvav"]
+size = Vector3(200, 1, 200)
+
+[node name="TestCity" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_cf5t2")
+
+[node name="Roads" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D/Roads"]
+mesh_library = ExtResource("1_1anp3")
+cell_size = Vector3(6.66, 6.66, 6.66)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+cell_scale = 6.66
+data = {
+"cells": PackedInt32Array(0, 0, 4, 1, 0, 7, 65535, 0, 7, 0, 1, 1441799, 0, 65535, 1441799, 0, 65534, 1441799, 2, 0, 655367, 0, 2, 1048583, 65534, 0, 7, 0, 3, 655366, 65533, 0, 1048582, 0, 65533, 6, 3, 0, 1441798, 65533, 1, 1441799, 65533, 2, 1441799, 65534, 3, 655367, 65535, 3, 655367, 1, 3, 655367, 2, 3, 655367, 3, 2, 1048583, 3, 1, 1048583, 3, 65535, 1048583, 3, 65534, 1048583, 2, 65533, 7, 1, 65533, 7, 65535, 65533, 7, 65534, 65533, 7, 65533, 65534, 1441799, 65533, 65535, 1441799, 3, 3, 1441793, 65533, 3, 655361, 65533, 65533, 1048577, 3, 65533, 1)
+}
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1)
+mesh = SubResource("BoxMesh_1anp3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cf5t2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7nvav")
+
+[node name="PlayerCar" parent="." instance=ExtResource("2_cf5t2")]

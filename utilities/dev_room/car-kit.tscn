@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dvukpnyckd6bb" path="res://assets/kenney_car-kit/sedan.glb" id="28_e5ii5"]
 [ext_resource type="PackedScene" uid="uid://bcqlq84xrrry2" path="res://assets/kenney_car-kit/suv-luxury.glb" id="29_hcnjo"]
 [ext_resource type="PackedScene" uid="uid://cbrkbtgvy1las" path="res://assets/kenney_car-kit/suv.glb" id="30_0bvtd"]
-[ext_resource type="PackedScene" uid="uid://bqcg1rylguy7x" path="res://entities/vehicles/taxi/taxi.glb" id="31_afq04"]
+[ext_resource type="PackedScene" uid="uid://bqcg1rylguy7x" path="res://entities/vehicles/player_car/taxi.glb" id="31_afq04"]
 [ext_resource type="PackedScene" uid="uid://blhp4mpjc4t4l" path="res://assets/kenney_car-kit/tractor-police.glb" id="32_0ym06"]
 [ext_resource type="PackedScene" uid="uid://4hkqt0kjol4c" path="res://assets/kenney_car-kit/tractor-shovel.glb" id="33_vt24a"]
 [ext_resource type="PackedScene" uid="uid://beuq1m2oeg4ps" path="res://assets/kenney_car-kit/tractor.glb" id="34_bnqm2"]

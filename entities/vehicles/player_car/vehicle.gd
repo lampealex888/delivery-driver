@@ -46,9 +46,9 @@ func _physics_process(delta: float):
 	if Input.is_action_pressed(&"reverse"):
 		var speed := linear_velocity.length()
 		if speed < 5.0 and not is_zero_approx(speed):
-			engine_force = -clampf(engine_force_value * BRAKE_STRENGTH * 5.0 / speed, 0.0, 100.0)
+			engine_force = -clampf(engine_force_value * 5.0 / speed, 0.0, 100.0)
 		else:
-			engine_force = -engine_force_value * BRAKE_STRENGTH
+			engine_force = -engine_force_value
 
 		engine_force *= Input.get_action_strength(&"reverse")
 
