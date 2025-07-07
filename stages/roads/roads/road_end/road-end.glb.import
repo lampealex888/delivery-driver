@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvsxaxhjso41n"
-path="res://.godot/imported/road-crossroad.glb-fa83e0abdb8efe55deec16007f234d97.scn"
+uid="uid://bu8mb5u6w8fj"
+path="res://.godot/imported/road-end.glb-344886ced82ef1401578637bed4e7902.scn"
 
 [deps]
 
-source_file="res://assets/kenney_road-kit/road-crossroad.glb"
-dest_files=["res://.godot/imported/road-crossroad.glb-fa83e0abdb8efe55deec16007f234d97.scn"]
+source_file="res://stages/roads/roads/road_end/road-end.glb"
+dest_files=["res://.godot/imported/road-end.glb-344886ced82ef1401578637bed4e7902.scn"]
 
 [params]
 

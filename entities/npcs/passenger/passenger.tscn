@@ -1859,6 +1859,9 @@ height = 1.1
 radius = 3.0
 
 [node name="Passenger" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 3
+lock_rotation = true
 script = ExtResource("1_jtq1q")
 destination_arrow_scene = ExtResource("2_t40mi")
 
@@ -1909,6 +1912,8 @@ libraries = {
 }
 
 [node name="PickupArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)

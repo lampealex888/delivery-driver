@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ci53mfjggjftq"
-path="res://.godot/imported/road-bend.glb-0899d8e983f1e21ca87a276c8e61aff2.scn"
+uid="uid://d1jhh8urdq0sv"
+path="res://.godot/imported/road-crossing.glb-463a3b886fa8cd9e4839c1642423f844.scn"
 
 [deps]
 
-source_file="res://assets/kenney_road-kit/road-bend.glb"
-dest_files=["res://.godot/imported/road-bend.glb-0899d8e983f1e21ca87a276c8e61aff2.scn"]
+source_file="res://stages/roads/roads/road_crossing/road-crossing.glb"
+dest_files=["res://.godot/imported/road-crossing.glb-463a3b886fa8cd9e4839c1642423f844.scn"]
 
 [params]
 

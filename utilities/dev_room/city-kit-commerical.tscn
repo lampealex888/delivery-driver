@@ -1,25 +1,43 @@
-[gd_scene load_steps=22 format=3 uid="uid://waeejfyt5rye"]
+[gd_scene load_steps=40 format=3 uid="uid://waeejfyt5rye"]
 
 [ext_resource type="PackedScene" uid="uid://b46g1lt2ggjg2" path="res://assets/kenney_city-kit-commercial/detail-awning-wide.glb" id="20_2017g"]
 [ext_resource type="PackedScene" uid="uid://dph2v4un8n23o" path="res://assets/kenney_city-kit-commercial/detail-awning.glb" id="21_yk2g2"]
+[ext_resource type="PackedScene" uid="uid://dlrfcq6cqqoro" path="res://stages/districts/commercial/skyscrapers/building_skyscraper_a/building_skyscraper_a.tscn" id="22_2ehof"]
 [ext_resource type="PackedScene" uid="uid://w2rgjixlm3u1" path="res://assets/kenney_city-kit-commercial/detail-overhang-wide.glb" id="22_y4fcp"]
+[ext_resource type="PackedScene" uid="uid://baij5p0dwrfr0" path="res://stages/districts/commercial/skyscrapers/building_skyscraper_b/building_skyscraper_b.tscn" id="23_r3e0s"]
 [ext_resource type="PackedScene" uid="uid://dj4jlhk1si7is" path="res://assets/kenney_city-kit-commercial/detail-overhang.glb" id="23_vqg88"]
 [ext_resource type="PackedScene" uid="uid://chdpu83qj8xro" path="res://assets/kenney_city-kit-commercial/detail-parasol-a.glb" id="24_n5ul5"]
+[ext_resource type="PackedScene" uid="uid://dcsw1x0ahfm3r" path="res://stages/districts/commercial/skyscrapers/building_skyscraper_c/building_skyscraper_c.tscn" id="24_vrh8v"]
+[ext_resource type="PackedScene" uid="uid://crk0gr5w0delu" path="res://stages/districts/commercial/skyscrapers/building_skyscraper_d/building_skyscraper_d.tscn" id="25_mnkwb"]
 [ext_resource type="PackedScene" uid="uid://c8876h6soasav" path="res://assets/kenney_city-kit-commercial/detail-parasol-b.glb" id="25_wsje2"]
 [ext_resource type="PackedScene" uid="uid://cim6yujgrht8w" path="res://assets/kenney_city-kit-commercial/low-detail-building-a.glb" id="26_ja3w8"]
+[ext_resource type="PackedScene" uid="uid://b0hvvlqoc3uq7" path="res://stages/districts/commercial/buildings/building_a/building_a.tscn" id="26_luvq1"]
 [ext_resource type="PackedScene" uid="uid://dq4x1mv1dleyk" path="res://assets/kenney_city-kit-commercial/low-detail-building-b.glb" id="27_5l4ri"]
+[ext_resource type="PackedScene" uid="uid://0lxoi5sajtnk" path="res://stages/districts/commercial/buildings/building_b/building_b.tscn" id="27_r0hlw"]
+[ext_resource type="PackedScene" uid="uid://f2iqriiym1oh" path="res://stages/districts/commercial/buildings/building_c/building_c.tscn" id="28_kx3ef"]
 [ext_resource type="PackedScene" uid="uid://dscycq8gkmfs" path="res://assets/kenney_city-kit-commercial/low-detail-building-c.glb" id="28_wbewe"]
+[ext_resource type="PackedScene" uid="uid://dyu3rxv73fcjg" path="res://stages/districts/commercial/buildings/building_d/building_d.tscn" id="29_jebcy"]
 [ext_resource type="PackedScene" uid="uid://cqhnjo08277yr" path="res://assets/kenney_city-kit-commercial/low-detail-building-d.glb" id="29_vl86n"]
 [ext_resource type="PackedScene" uid="uid://wiv13ou1bj41" path="res://assets/kenney_city-kit-commercial/low-detail-building-e.glb" id="30_uxvr6"]
+[ext_resource type="PackedScene" uid="uid://cxla8srgmjae5" path="res://stages/districts/commercial/buildings/building_e/building_e.tscn" id="30_vxgta"]
 [ext_resource type="PackedScene" uid="uid://cc2bm18rs8ne3" path="res://assets/kenney_city-kit-commercial/low-detail-building-f.glb" id="31_1r4wx"]
+[ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://stages/districts/commercial/buildings/building_f/building_f.tscn" id="31_qb21v"]
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/districts/commercial/buildings/building_g/building_g.tscn" id="32_m58b8"]
 [ext_resource type="PackedScene" uid="uid://ujfj40ah4gn" path="res://assets/kenney_city-kit-commercial/low-detail-building-g.glb" id="32_xhewv"]
+[ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/districts/commercial/buildings/building_h/building_h.tscn" id="33_aqtvp"]
 [ext_resource type="PackedScene" uid="uid://cen77ekp1fflc" path="res://assets/kenney_city-kit-commercial/low-detail-building-h.glb" id="33_gh73c"]
+[ext_resource type="PackedScene" uid="uid://dqv3864mnvrkc" path="res://stages/districts/commercial/buildings/building_i/building_i.tscn" id="34_01k12"]
 [ext_resource type="PackedScene" uid="uid://cfv3htkjil2y6" path="res://assets/kenney_city-kit-commercial/low-detail-building-i.glb" id="34_wvr48"]
+[ext_resource type="PackedScene" uid="uid://5ladp8hkwvih" path="res://stages/districts/commercial/buildings/building_j/building_j.tscn" id="35_as36d"]
 [ext_resource type="PackedScene" uid="uid://bp41iej3yg8u8" path="res://assets/kenney_city-kit-commercial/low-detail-building-j.glb" id="35_q6ubs"]
 [ext_resource type="PackedScene" uid="uid://bfkvd0yhqh2k0" path="res://assets/kenney_city-kit-commercial/low-detail-building-k.glb" id="36_jaibl"]
+[ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://stages/districts/commercial/buildings/building_k/building_k.tscn" id="36_tg80i"]
+[ext_resource type="PackedScene" uid="uid://be2kylafs7b4h" path="res://stages/districts/commercial/buildings/building_l/building_l.tscn" id="37_h7pn4"]
 [ext_resource type="PackedScene" uid="uid://bhxncpjygoab0" path="res://assets/kenney_city-kit-commercial/low-detail-building-l.glb" id="37_stanq"]
 [ext_resource type="PackedScene" uid="uid://d23mhetnog3tt" path="res://assets/kenney_city-kit-commercial/low-detail-building-m.glb" id="38_2cumx"]
+[ext_resource type="PackedScene" uid="uid://d0oprfm53tvyr" path="res://stages/districts/commercial/buildings/building_m/building_m.tscn" id="38_6bej0"]
 [ext_resource type="PackedScene" uid="uid://bjiajpqbroh0n" path="res://assets/kenney_city-kit-commercial/low-detail-building-n.glb" id="39_04a3c"]
+[ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://stages/districts/commercial/buildings/building_n/building_n.tscn" id="39_vl88x"]
 [ext_resource type="PackedScene" uid="uid://xw7588jm5lcs" path="res://assets/kenney_city-kit-commercial/low-detail-building-wide-a.glb" id="40_n7s0q"]
 
 [node name="City-kit-commerical" type="Node3D"]
@@ -86,3 +104,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80865, -1.19209e-07, 5.364
 
 [node name="low-detail-building-wide-a2" parent="." instance=ExtResource("40_n7s0q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228296, -1.19209e-07, 2.00573)
+
+[node name="BuildingSkyscraperA" parent="." instance=ExtResource("22_2ehof")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 22, 0, -10)
+
+[node name="BuildingSkyscraperB" parent="." instance=ExtResource("23_r3e0s")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 8, 0, -10)
+
+[node name="BuildingSkyscraperC" parent="." instance=ExtResource("24_vrh8v")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1, 0, -10)
+
+[node name="BuildingSkyscraperD" parent="." instance=ExtResource("25_mnkwb")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 15, 0, -10)
+
+[node name="BuildingA" parent="." instance=ExtResource("26_luvq1")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -36, 0, 32)
+
+[node name="BuildingB" parent="." instance=ExtResource("27_r0hlw")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -49, 0, 32)
+
+[node name="BuildingC" parent="." instance=ExtResource("28_kx3ef")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 12, 0, 32)
+
+[node name="BuildingD" parent="." instance=ExtResource("29_jebcy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -42, 0, 32)
+
+[node name="BuildingE" parent="." instance=ExtResource("30_vxgta")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 58, 0, 32)
+
+[node name="BuildingF" parent="." instance=ExtResource("31_qb21v")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6, 0, 32)
+
+[node name="BuildingG" parent="." instance=ExtResource("32_m58b8")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 49, 0, 32)
+
+[node name="BuildingH" parent="." instance=ExtResource("33_aqtvp")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 65, 0, 32)
+
+[node name="BuildingI" parent="." instance=ExtResource("34_01k12")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33, 0, 32)
+
+[node name="BuildingJ" parent="." instance=ExtResource("35_as36d")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3, 0, 32)
+
+[node name="BuildingK" parent="." instance=ExtResource("36_tg80i")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -23, 0, 32)
+
+[node name="BuildingL" parent="." instance=ExtResource("37_h7pn4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41, 0, 32)
+
+[node name="BuildingM" parent="." instance=ExtResource("38_6bej0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -12, 0, 32)
+
+[node name="BuildingN" parent="." instance=ExtResource("39_vl88x")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 22, 0, 32)

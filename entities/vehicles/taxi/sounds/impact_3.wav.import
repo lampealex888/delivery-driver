@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bjg3u4csos6l7"
-path="res://.godot/imported/impact_3.wav-6a6aa41f53ac86d6552ba11c1b12d2d4.sample"
+path="res://.godot/imported/impact_3.wav-067513d38ac55ec7dac0dd97b577aa8a.sample"
 
 [deps]
 
-source_file="res://assets/sounds/impact_3.wav"
-dest_files=["res://.godot/imported/impact_3.wav-6a6aa41f53ac86d6552ba11c1b12d2d4.sample"]
+source_file="res://entities/vehicles/taxi/sounds/impact_3.wav"
+dest_files=["res://.godot/imported/impact_3.wav-067513d38ac55ec7dac0dd97b577aa8a.sample"]
 
 [params]
 

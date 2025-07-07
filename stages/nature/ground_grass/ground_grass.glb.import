@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cola8i6mnwtpl"
-path="res://.godot/imported/tile-low.glb-0c57c6084a5a925cea75d7069c0310f5.scn"
+uid="uid://j07cn2j2qjhs"
+path="res://.godot/imported/ground_grass.glb-861fd15dd3dfe3c3efae6531abd56328.scn"
 
 [deps]
 
-source_file="res://assets/kenney_road-kit/tile-low.glb"
-dest_files=["res://.godot/imported/tile-low.glb-0c57c6084a5a925cea75d7069c0310f5.scn"]
+source_file="res://stages/nature/ground_grass/ground_grass.glb"
+dest_files=["res://.godot/imported/ground_grass.glb-861fd15dd3dfe3c3efae6531abd56328.scn"]
 
 [params]
 

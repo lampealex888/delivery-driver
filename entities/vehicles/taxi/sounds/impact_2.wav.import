@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://botvhwrdobypr"
-path="res://.godot/imported/impact_2.wav-95ce4e54ba52e6695381847d4dd5deb5.sample"
+path="res://.godot/imported/impact_2.wav-6bd16dbce0a4c30c9bff10e40ac860e2.sample"
 
 [deps]
 
-source_file="res://assets/sounds/impact_2.wav"
-dest_files=["res://.godot/imported/impact_2.wav-95ce4e54ba52e6695381847d4dd5deb5.sample"]
+source_file="res://entities/vehicles/taxi/sounds/impact_2.wav"
+dest_files=["res://.godot/imported/impact_2.wav-6bd16dbce0a4c30c9bff10e40ac860e2.sample"]
 
 [params]
 

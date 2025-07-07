@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dppc1ep6t04ep"
-path="res://.godot/imported/road-bend-sidewalk.glb-05dd9938bcea9a66b0b54bf2481f74b2.scn"
+uid="uid://bn5gkenme5af3"
+path="res://.godot/imported/road-intersection.glb-8ce39f1f4b485982661e3b31c6ae0f6c.scn"
 
 [deps]
 
-source_file="res://assets/kenney_road-kit/road-bend-sidewalk.glb"
-dest_files=["res://.godot/imported/road-bend-sidewalk.glb-05dd9938bcea9a66b0b54bf2481f74b2.scn"]
+source_file="res://stages/roads/roads/road_intersection/road-intersection.glb"
+dest_files=["res://.godot/imported/road-intersection.glb-8ce39f1f4b485982661e3b31c6ae0f6c.scn"]
 
 [params]
 

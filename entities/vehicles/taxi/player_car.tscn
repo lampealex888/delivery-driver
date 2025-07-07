@@ -1,15 +1,15 @@
 [gd_scene load_steps=29 format=4 uid="uid://c1uai3rvx8hul"]
 
 [ext_resource type="Script" uid="uid://b28iw7h1wn875" path="res://entities/vehicles/taxi/vehicle.gd" id="1_r806m"]
-[ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://assets/particle_smoke.png" id="2_1gkvk"]
+[ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://entities/vehicles/taxi/particle_smoke.png" id="2_1gkvk"]
 [ext_resource type="Texture2D" uid="uid://ce1xw1asb4saq" path="res://assets/kenney_car-kit/Textures/colormap.png" id="2_p68hu"]
 [ext_resource type="Script" uid="uid://dsxeyshdgs80" path="res://entities/vehicles/taxi/follow_camera.gd" id="4_6igu8"]
-[ext_resource type="AudioStream" uid="uid://cd0f75qntnynp" path="res://assets/sounds/engine.wav" id="5_m8g7o"]
-[ext_resource type="AudioStream" uid="uid://bohxsvof8glxd" path="res://assets/sounds/impact_1.wav" id="6_kq567"]
-[ext_resource type="AudioStream" uid="uid://botvhwrdobypr" path="res://assets/sounds/impact_2.wav" id="7_e8n8v"]
-[ext_resource type="AudioStream" uid="uid://bjg3u4csos6l7" path="res://assets/sounds/impact_3.wav" id="8_mh5uv"]
-[ext_resource type="AudioStream" uid="uid://cp2d7tyaq7lch" path="res://assets/sounds/impact_4.wav" id="9_bomp1"]
-[ext_resource type="Texture2D" uid="uid://phtuo2wj38h6" path="res://assets/blob_shadow.png" id="11_3ryw5"]
+[ext_resource type="AudioStream" uid="uid://cd0f75qntnynp" path="res://entities/vehicles/taxi/sounds/engine.wav" id="5_m8g7o"]
+[ext_resource type="AudioStream" uid="uid://bohxsvof8glxd" path="res://entities/vehicles/taxi/sounds/impact_1.wav" id="6_kq567"]
+[ext_resource type="AudioStream" uid="uid://botvhwrdobypr" path="res://entities/vehicles/taxi/sounds/impact_2.wav" id="7_e8n8v"]
+[ext_resource type="AudioStream" uid="uid://bjg3u4csos6l7" path="res://entities/vehicles/taxi/sounds/impact_3.wav" id="8_mh5uv"]
+[ext_resource type="AudioStream" uid="uid://cp2d7tyaq7lch" path="res://entities/vehicles/taxi/sounds/impact_4.wav" id="9_bomp1"]
+[ext_resource type="Texture2D" uid="uid://phtuo2wj38h6" path="res://entities/vehicles/taxi/blob_shadow.png" id="11_3ryw5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5
@@ -230,6 +230,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Body" type="VehicleBody3D" parent="." groups=["player_car"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
+collision_layer = 2
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
 center_of_mass_mode = 1
 script = ExtResource("1_r806m")

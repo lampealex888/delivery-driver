@@ -11,13 +11,13 @@ enum State {
 
 const PATIENCE_TIME := 30.0
 const BASE_TIP := 50
-const PICKUP_RADIUS := 5.0
-const WALK_FORCE := 500.0
-const WALK_SPEED := 2.0
+const PICKUP_RADIUS := 4.0
+const WALK_FORCE := 200.0
+const WALK_SPEED := 1.5
 const STOPPED_SPEED_THRESHOLD := 0.5
-const PICKUP_DISTANCE := 3
+const PICKUP_DISTANCE := 3.0
 const DELIVERY_DISTANCE := 5.0
-const MOVEMENT_DAMPING := 0.8  # To prevent sliding
+const MOVEMENT_DAMPING := 0.95  # To prevent sliding
 const ROTATION_SPEED := 8.0
 
 
@@ -35,6 +35,7 @@ var original_position: Vector3
 var destination_arrow: DestinationArrow
 var car_is_available := true
 var pickup_tween: Tween
+var collision_body: CollisionShape3D
 
 @onready var pickup_area: Area3D = $PickupArea
 @onready var animation_player: AnimationPlayer = $"character-q2/AnimationPlayer"
@@ -42,7 +43,6 @@ var pickup_tween: Tween
 signal passenger_picked_up(passenger: Passenger)
 signal passenger_delivered(passenger: Passenger, tip: int)
 signal passenger_timeout(passenger: Passenger)
-
 
 func setup(car: VehicleBody3D, dest_pos: Vector3, building_name: String):
 	player_car = car
@@ -56,7 +56,7 @@ func setup(car: VehicleBody3D, dest_pos: Vector3, building_name: String):
 
 	pickup_area.body_entered.connect(_on_pickup_area_entered)
 	pickup_area.body_exited.connect(_on_pickup_area_exited)
-
+	body_entered.connect(_on_body_collision_entered)
 
 func _physics_process(delta: float) -> void:
 	match state:
@@ -122,14 +122,16 @@ func _handle_in_car_state(_delta: float) -> void:
 		if distance_to_destination <= DELIVERY_DISTANCE and car_speed <= STOPPED_SPEED_THRESHOLD:
 			deliver()
 
+func _on_body_collision_entered(body: Node):
+	if body.is_in_group("player_car") and state == State.WALKING_TO_CAR and car_is_available:
+		_pickup_passenger()
+
 func _start_walking_animation():
-	# Play walking animation if available
 	if animation_player and animation_player.has_animation("walk"):
 		animation_player.play("walk")
 
 
 func _stop_walking_animation():
-	# Stop walking animation and return to idle
 	if animation_player and animation_player.has_animation("idle"):
 		animation_player.play("idle")
 
@@ -153,16 +155,15 @@ func _animate_pickup_to_car():
 	pickup_tween = create_tween()
 	pickup_tween.set_parallel(true)
 	
+	freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+	freeze = true
+	
 	# Animate position to car
-	var car_position = player_car.global_position + Vector3(0, 1, 0)  # Slightly above car
+	var car_position = player_car.global_position + Vector3(0, 1, 0)
 	pickup_tween.tween_property(self, "global_position", car_position, 0.5)
 	
 	# Animate scale down (getting into car effect)
 	pickup_tween.tween_property(self, "scale", Vector3(0.1, 0.1, 0.1), 0.5)
-	
-	# Disable physics during pickup
-	freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
-	freeze = true
 	
 	# Re-enable physics after animation (in case needed)
 	pickup_tween.tween_callback(_complete_pickup).set_delay(0.5)
@@ -170,7 +171,7 @@ func _animate_pickup_to_car():
 func _complete_pickup():
 	# Complete the pickup process
 	visible = false
-	freeze = false
+	freeze = true
 	freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
 
 
@@ -185,8 +186,21 @@ func _cancel_pickup() -> void:
 			pickup_tween.kill()
 		
 		pickup_tween = create_tween()
+		pickup_tween.set_parallel(true)
+		freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+		freeze = true
 		pickup_tween.tween_property(self, "global_position", original_position, 0.3)
 		pickup_tween.tween_property(self, "scale", Vector3.ONE, 0.3)
+		pickup_tween.tween_callback(_restore_physics).set_delay(0.3)
+
+
+func _restore_physics():
+	freeze = false
+	freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
+	# Reset velocities
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+
 
 func _on_car_occupied():
 	car_is_available = false
@@ -228,12 +242,12 @@ func _timeout() -> void:
 
 
 func _on_pickup_area_entered(body: Node3D) -> void:
-	if body.is_in_group(&"player_car") and state == State.WAITING:
+	if body.is_in_group("player_car") and state == State.WAITING:
 		is_in_pickup_range = true
 
 
 func _on_pickup_area_exited(body: Node3D) -> void:
-	if body.is_in_group(&"player_car"):
+	if body.is_in_group("player_car"):
 		is_in_pickup_range = false
 		
 		if state == State.WALKING_TO_CAR:
@@ -243,9 +257,12 @@ func _on_pickup_area_exited(body: Node3D) -> void:
 			if pickup_tween:
 				pickup_tween.kill()
 			pickup_tween = create_tween()
+			pickup_tween.set_parallel(true)
+			freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+			freeze = true
 			pickup_tween.tween_property(self, "global_position", original_position, 0.3)
 			pickup_tween.tween_property(self, "scale", Vector3.ONE, 0.3)
-
+			pickup_tween.tween_callback(_restore_physics).set_delay(0.3)
 
 # Additional helper methods for RigidBody3D
 func reset_physics():
