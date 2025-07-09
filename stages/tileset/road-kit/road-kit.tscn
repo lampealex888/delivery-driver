@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://u8n33ibougme"]
+
+[ext_resource type="PackedScene" uid="uid://dvqq8d63d0tq5" path="res://stages/road-kit/roads/road_bend/road_bend.tscn" id="1_jstjd"]
+[ext_resource type="PackedScene" uid="uid://bl7mo0fx1lb1g" path="res://stages/road-kit/roads/road_bend_sidewalk/road_bend_sidewalk.tscn" id="2_wjwn6"]
+[ext_resource type="PackedScene" uid="uid://jdyis0wydily" path="res://stages/road-kit/roads/road_crossing/road_crossing.tscn" id="3_johvl"]
+[ext_resource type="PackedScene" uid="uid://bbm1u6b7ageo2" path="res://stages/road-kit/roads/road_crossroad/road_crossroad.tscn" id="4_jnn3t"]
+[ext_resource type="PackedScene" uid="uid://dvcnornaweku0" path="res://stages/road-kit/roads/road_crossroad_path/road_crossroad_path.tscn" id="5_v4375"]
+[ext_resource type="PackedScene" uid="uid://bw63p37xdon5i" path="res://stages/road-kit/roads/road_end/road_end.tscn" id="6_l2tpy"]
+[ext_resource type="PackedScene" uid="uid://c70hywf58e5n4" path="res://stages/road-kit/roads/road_intersection/road_intersection.tscn" id="7_10x8v"]
+[ext_resource type="PackedScene" uid="uid://ccv5g0yuiu5ei" path="res://stages/road-kit/roads/road_straight/road_straight.tscn" id="8_8cukg"]
+[ext_resource type="PackedScene" uid="uid://c4m484jvc0lac" path="res://stages/road-kit/roads/tile_low/tile_low.tscn" id="9_enwbl"]
+
+[node name="RoadKit" type="Node3D"]
+
+[node name="RoadBend" parent="." instance=ExtResource("1_jstjd")]
+
+[node name="RoadBendSidewalk" parent="." instance=ExtResource("2_wjwn6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="RoadCrossing" parent="." instance=ExtResource("3_johvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="RoadCrossroad" parent="." instance=ExtResource("4_jnn3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+
+[node name="RoadCrossroadPath" parent="." instance=ExtResource("5_v4375")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="RoadEnd" parent="." instance=ExtResource("6_l2tpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
+
+[node name="RoadIntersection" parent="." instance=ExtResource("7_10x8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+
+[node name="RoadStraight" parent="." instance=ExtResource("8_8cukg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 0)
+
+[node name="TileLow" parent="." instance=ExtResource("9_enwbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)

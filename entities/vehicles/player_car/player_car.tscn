@@ -1,15 +1,15 @@
 [gd_scene load_steps=29 format=4 uid="uid://c1uai3rvx8hul"]
 
 [ext_resource type="Script" uid="uid://b28iw7h1wn875" path="res://entities/vehicles/player_car/vehicle.gd" id="1_r806m"]
-[ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://entities/vehicles/shared/particle_smoke.png" id="2_1gkvk"]
-[ext_resource type="Texture2D" uid="uid://ce1xw1asb4saq" path="res://assets/kenney_car-kit/Textures/colormap.png" id="2_p68hu"]
+[ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://entities/vehicles/shared/textures/particle_smoke.png" id="2_1gkvk"]
+[ext_resource type="Texture2D" uid="uid://ce1xw1asb4saq" path="res://entities/vehicles/shared/textures/colormap.png" id="2_p68hu"]
 [ext_resource type="Script" uid="uid://dsxeyshdgs80" path="res://entities/vehicles/player_car/follow_camera.gd" id="4_6igu8"]
 [ext_resource type="AudioStream" uid="uid://cd0f75qntnynp" path="res://entities/vehicles/shared/sounds/engine.wav" id="5_m8g7o"]
 [ext_resource type="AudioStream" uid="uid://bohxsvof8glxd" path="res://entities/vehicles/shared/sounds/impact_1.wav" id="6_kq567"]
 [ext_resource type="AudioStream" uid="uid://botvhwrdobypr" path="res://entities/vehicles/shared/sounds/impact_2.wav" id="7_e8n8v"]
 [ext_resource type="AudioStream" uid="uid://bjg3u4csos6l7" path="res://entities/vehicles/shared/sounds/impact_3.wav" id="8_mh5uv"]
 [ext_resource type="AudioStream" uid="uid://cp2d7tyaq7lch" path="res://entities/vehicles/shared/sounds/impact_4.wav" id="9_bomp1"]
-[ext_resource type="Texture2D" uid="uid://phtuo2wj38h6" path="res://entities/vehicles/shared/blob_shadow.png" id="11_3ryw5"]
+[ext_resource type="Texture2D" uid="uid://phtuo2wj38h6" path="res://entities/vehicles/shared/textures/blob_shadow.png" id="11_3ryw5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l7i2k"]
 friction = 0.5

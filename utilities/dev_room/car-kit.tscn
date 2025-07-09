@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bipm4nnxfffge" path="res://assets/kenney_car-kit/debris-spoiler-b.glb" id="17_xu4xo"]
 [ext_resource type="PackedScene" uid="uid://cw6372y3ntl6x" path="res://assets/kenney_car-kit/debris-tire.glb" id="18_fbn7b"]
 [ext_resource type="PackedScene" uid="uid://lxxkm8b3bsai" path="res://assets/kenney_car-kit/delivery-flat.glb" id="19_aju6j"]
-[ext_resource type="PackedScene" uid="uid://c56esbrymcnq4" path="res://assets/kenney_car-kit/delivery.glb" id="20_mrlb5"]
+[ext_resource type="PackedScene" uid="uid://c56esbrymcnq4" path="res://entities/vehicles/delivery/delivery.glb" id="20_mrlb5"]
 [ext_resource type="PackedScene" uid="uid://du60hxm3iatjm" path="res://assets/kenney_car-kit/firetruck.glb" id="21_54w13"]
 [ext_resource type="PackedScene" uid="uid://c1omxw8i1fqcx" path="res://assets/kenney_car-kit/garbage-truck.glb" id="22_fgv5g"]
 [ext_resource type="PackedScene" uid="uid://ck3l8rld5hmqg" path="res://assets/kenney_car-kit/police.glb" id="24_aanyk"]

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu82m3v6d733l" path="res://entities/npcs/passenger/passenger.tscn" id="5_sg6tc"]
 [ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://entities/ui/hud/hud.tscn" id="8_vq70k"]
 [ext_resource type="MeshLibrary" uid="uid://bptc0apan2gpl" path="res://stages/tileset/nature-kit.tres" id="9_p7kdm"]
-[ext_resource type="MeshLibrary" uid="uid://blch7bb0lbtv5" path="res://stages/tileset/road-kit.tres" id="19_tengx"]
+[ext_resource type="MeshLibrary" uid="uid://blch7bb0lbtv5" path="res://stages/tileset/road-kit/road-kit.tres" id="19_tengx"]
 [ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/districts/commercial/buildings/building_h/building_h.tscn" id="19_vocs6"]
 [ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://stages/districts/commercial/buildings/building_f/building_f.tscn" id="20_rfkmw"]
 [ext_resource type="PackedScene" uid="uid://baij5p0dwrfr0" path="res://stages/districts/commercial/skyscrapers/building_skyscraper_b/building_skyscraper_b.tscn" id="22_mmbfq"]
