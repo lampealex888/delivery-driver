@@ -70,9 +70,10 @@ boost={
 [layer_names]
 
 3d_physics/layer_1="World/Environment"
-3d_physics/layer_2="Player Vehicle"
+3d_physics/layer_2="Player Car"
 3d_physics/layer_3="Passengers"
 3d_physics/layer_4="Path Transmitter"
+3d_physics/layer_5="Vehicles"
 
 [rendering]
 

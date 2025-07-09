@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ccv5g0yuiu5ei"]
+[gd_scene load_steps=30 format=4 uid="uid://ccv5g0yuiu5ei"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://assets/kenney_road-kit/Textures/colormap.png" id="1_o20og"]
 [ext_resource type="Script" uid="uid://dk6ihvcaegk0x" path="res://entities/vehicles/shared/ai_car.gd" id="2_a0ktb"]
@@ -276,6 +276,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bpeyd")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_15rdl"]
+size = Vector3(1.2, 1.2, 2.9)
+
 [sub_resource type="Curve3D" id="Curve3D_a0ktb"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.66, 0, 0),
@@ -314,53 +317,68 @@ progress = 3.33
 loop = false
 script = ExtResource("2_a0ktb")
 
-[node name="delivery" type="Node3D" parent="PathTransmitterWest/Path3D/AICar"]
+[node name="RigidBody3D" type="RigidBody3D" parent="PathTransmitterWest/Path3D/AICar"]
+collision_layer = 16
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 10
+
+[node name="delivery" type="Node3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
-[node name="body" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="body" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
 material_override = SubResource("StandardMaterial3D_elfia")
 mesh = SubResource("ArrayMesh_kwk31")
 skeleton = NodePath("")
 
-[node name="door" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="door" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.475)
 mesh = SubResource("ArrayMesh_4jasj")
 skeleton = NodePath("")
 
-[node name="wheel-back-left" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="wheel-back-left" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, -0.61)
 material_override = SubResource("StandardMaterial3D_takau")
 mesh = SubResource("ArrayMesh_g5wrl")
 skeleton = NodePath("")
 
-[node name="wheel-back-right" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="wheel-back-right" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, -0.61)
 material_override = SubResource("StandardMaterial3D_ank6c")
 mesh = SubResource("ArrayMesh_3vy0m")
 skeleton = NodePath("")
 
-[node name="wheel-front-left" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="wheel-front-left" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 1.01)
 material_override = SubResource("StandardMaterial3D_0o36q")
 mesh = SubResource("ArrayMesh_jecdv")
 skeleton = NodePath("")
 
-[node name="wheel-front-right" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/delivery"]
+[node name="wheel-front-right" type="MeshInstance3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/delivery"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 1.01)
 material_override = SubResource("StandardMaterial3D_bpeyd")
 mesh = SubResource("ArrayMesh_t1lhi")
 skeleton = NodePath("")
 
-[node name="RayCast3D" type="RayCast3D" parent="PathTransmitterWest/Path3D/AICar"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57628e-07, 0.900001, 0.05)
+shape = SubResource("BoxShape3D_15rdl")
+
+[node name="RayCast3D" type="RayCast3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 2.38419e-07, 1.00001, 1.5)
 target_position = Vector3(0, 0, -4)
 collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Camera3D" type="Camera3D" parent="PathTransmitterWest/Path3D/AICar"]
-transform = Transform3D(1, -6.55672e-08, -1.75686e-08, 6.55669e-08, 0.86603, 0.500001, -1.75686e-08, -0.500003, 0.866028, 7.15256e-07, 3.00002, 5.00002)
+[node name="Area3D" type="Area3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest/Path3D/AICar/RigidBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57628e-07, 0.900001, 0.05)
+shape = SubResource("BoxShape3D_15rdl")
 
 [node name="PathTransmitterEast" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33, 0, 1.11)
@@ -374,3 +392,5 @@ shape = SubResource("BoxShape3D_a0ktb")
 [node name="Path3D" type="Path3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 curve = SubResource("Curve3D_a0ktb")
+
+[connection signal="body_entered" from="PathTransmitterWest/Path3D/AICar/RigidBody3D" to="PathTransmitterWest/Path3D/AICar" method="_on_rigid_body_3d_body_entered"]
