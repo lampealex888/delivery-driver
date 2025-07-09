@@ -56,15 +56,18 @@ func on_player_collision(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
 		despawn_timer.start()
-		var pos = rigid_body.global_position
-		var rot = rigid_body.global_rotation
-		remove_child(rigid_body)
-		get_tree().current_scene.add_child(rigid_body)
-		rigid_body.global_position = pos
-		rigid_body.global_rotation = rot
+		call_deferred("handle_collision_cleanup")
 		path_ray_cast.enabled = false
 		traffic_ray_cast.enabled = false
-		process_mode = Node.PROCESS_MODE_DISABLED
+
+func handle_collision_cleanup():
+	var pos = rigid_body.global_position
+	var rot = rigid_body.global_rotation
+	remove_child(rigid_body)
+	get_tree().current_scene.add_child(rigid_body)
+	rigid_body.global_position = pos
+	rigid_body.global_rotation = rot
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 func despawn():
 	if rigid_body and is_instance_valid(rigid_body):
