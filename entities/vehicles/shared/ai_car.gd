@@ -1,81 +1,72 @@
 extends PathFollow3D
 
-signal path_end_reached
-
 const PATH_TRANSMITTER = 4
-@export var car_velocity: float = 2.0
-var _new_path
-var _is_following_path: bool = true
+const VEHICLES = 5
+const PLAYER_CAR = 2
 
-@onready var _raycast = $RigidBody3D/RayCast3D
-@onready var _rigid_body = $RigidBody3D
-@onready var _area3d = $RigidBody3D/Area3D
-@onready var despawn_timer = $RigidBody3D/DespawnTimer
+@export var max_speed: float = 2.0
+
+var new_path
+var is_following_path: bool = true
+
+@onready var rigid_body = $RigidBody3D
+@onready var path_ray_cast = rigid_body.get_node("PathRayCast3D")
+@onready var traffic_ray_cast = rigid_body.get_node("TrafficRayCast3D")
+@onready var car_collision_area3d = rigid_body.get_node("CarCollisionArea3D")
+@onready var despawn_timer = rigid_body.get_node("DespawnTimer")
 
 func _ready():
-	_area3d.body_entered.connect(_on_player_collision)
+	car_collision_area3d.body_entered.connect(on_player_collision)
 	despawn_timer.timeout.connect(despawn)
 
-
 func _process(delta):
-	# If we're on the path, follow the path. Otherwise start despawning
-	if _is_following_path:
-		# Movement
-		progress += car_velocity * delta
-		# Check for next path
-		if _raycast.is_colliding():
-			_check_raycast_collisions()
-		# Check if we've reached the end (progress_ratio goes from 0 to 1)
-		if progress_ratio >= 1.0:
-			_on_path_end_reached()
-
-
-func _on_path_end_reached() -> void:
-	if not _is_following_path:
+	if not is_following_path:
 		return
-	# Remove current path when end is reached
-	var old_path = get_parent()
-	old_path.remove_child(self)
-	# Get new path
-	if _new_path != null:
-		_new_path.add_child(self)
-	# Reset progress for smooth transition
-	progress = 0.0
+	
+	# Stop if traffic ahead, otherwise move at max speed
+	var speed
+	if traffic_ray_cast.is_colliding() and (traffic_ray_cast.get_collider().get_collision_layer_value(VEHICLES) or traffic_ray_cast.get_collider().get_collision_layer_value(PLAYER_CAR)):
+		speed = 0.0
+	else:
+		speed = max_speed
+	
+	# Check for path transmitter
+	if path_ray_cast.is_colliding():
+		var transmitter = path_ray_cast.get_collider()
+		if transmitter and transmitter.get_collision_layer_value(PATH_TRANSMITTER):
+			var paths = transmitter.get_children().filter(func(child): return child is Path3D)
+			if paths.size() > 0:
+				new_path = paths[randi_range(0, paths.size() - 1)]
+	
+	progress += speed * delta
+	
+	if progress_ratio >= 1.0:
+		_switch_to_new_path()
 
-
-func _check_raycast_collisions():
-	var collision_object = _raycast.get_collider()
-	if collision_object and collision_object.get_collision_layer_value(PATH_TRANSMITTER):
-		# Ask transmitter for number of paths
-		var number_of_paths := 0
-		for child in collision_object.get_children():
-			if child is Path3D:
-				number_of_paths += 1
-		# Get random path between 1 and number_of_paths
-		var random_path_index = randi_range(1, number_of_paths)
-		_new_path = collision_object.get_child(random_path_index)
-
-
-func _on_player_collision(body):
-	# If the player hits an ai car, detach from pathfollow3d and attach 
-	# to root as rigid body
-	if body.is_in_group("player_car"):
-		if not _is_following_path:
-			return # Already detached
-		_is_following_path = false
+func _switch_to_new_path():
+	get_parent().remove_child(self)
+	if new_path and is_instance_valid(new_path):
+		new_path.add_child(self)
+		progress = 0.0
+	else:
+		is_following_path = false
 		despawn_timer.start()
-		var current_global_position = _rigid_body.global_position
-		var current_global_rotation = _rigid_body.global_rotation
-		var root = get_tree().current_scene
-		remove_child(_rigid_body)
-		root.add_child(_rigid_body)
-		_rigid_body.global_position = current_global_position
-		_rigid_body.global_rotation = current_global_rotation
-		_raycast.enabled = false
+
+func on_player_collision(body):
+	if body.is_in_group("player_car") and is_following_path:
+		is_following_path = false
+		despawn_timer.start()
+		var pos = rigid_body.global_position
+		var rot = rigid_body.global_rotation
+		remove_child(rigid_body)
+		get_tree().current_scene.add_child(rigid_body)
+		rigid_body.global_position = pos
+		rigid_body.global_rotation = rot
+		path_ray_cast.enabled = false
+		traffic_ray_cast.enabled = false
 		process_mode = Node.PROCESS_MODE_DISABLED
 
 func despawn():
-	if _rigid_body and is_instance_valid(_rigid_body):
-		_rigid_body.queue_free()
-		# Remove the PathFollow3D node as well
-		queue_free()
+	if rigid_body and is_instance_valid(rigid_body):
+		rigid_body.queue_free()
+	queue_free()
