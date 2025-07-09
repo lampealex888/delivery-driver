@@ -1,8 +1,7 @@
-[gd_scene load_steps=83 format=4 uid="uid://dxhnnlypr35r1"]
+[gd_scene load_steps=82 format=4 uid="uid://dxhnnlypr35r1"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://assets/kenney_road-kit/Textures/colormap.png" id="1_7nvav"]
 [ext_resource type="Script" uid="uid://cmme8veleh46d" path="res://stages/tileset/road-kit/road_grid_map.gd" id="2_7nvav"]
-[ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="2_cf5t2"]
 [ext_resource type="Texture2D" uid="uid://ce1xw1asb4saq" path="res://entities/vehicles/shared/textures/colormap.png" id="5_l0p5u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0elm8"]
@@ -821,9 +820,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cf5t2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_7nvav")
 
-[node name="PlayerCar" parent="." groups=["player_car"] instance=ExtResource("2_cf5t2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -27)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0)
 
@@ -878,3 +874,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="delivery/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, -0.0499998)
 shape = SubResource("BoxShape3D_mx63m")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)

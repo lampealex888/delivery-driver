@@ -25,8 +25,18 @@ func _process(delta):
 	
 	# Stop if traffic ahead, otherwise move at max speed
 	var speed
-	if traffic_ray_cast.is_colliding() and (traffic_ray_cast.get_collider().get_collision_layer_value(VEHICLES) or traffic_ray_cast.get_collider().get_collision_layer_value(PLAYER_CAR)):
-		speed = 0.0
+	if traffic_ray_cast.is_colliding():
+		var collider = traffic_ray_cast.get_collider()
+		if (collider.get_collision_layer_value(VEHICLES)):
+			var my_forward = -rigid_body.global_transform.basis.z
+			var other_forward = -collider.global_transform.basis.z
+			var dot_product = my_forward.dot(other_forward)
+			if dot_product > 0.1:
+				speed = 0.0
+			else:
+				speed = max_speed
+		if (collider.get_collision_layer_value(PLAYER_CAR)):
+			speed = 0.0
 	else:
 		speed = max_speed
 	
