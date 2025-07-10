@@ -313,6 +313,7 @@ curve = SubResource("Curve3D_ab100")
 
 [node name="AICar" type="PathFollow3D" parent="PathTransmitterWest/Path3D" groups=["ai_car"]]
 transform = Transform3D(-4.37112e-08, 0, 0.999992, 0, 0.999993, 0, -0.999995, 0, -4.3711e-08, -3.99614, 0, 0)
+visible = false
 progress = 3.996
 loop = false
 script = ExtResource("2_a0ktb")
