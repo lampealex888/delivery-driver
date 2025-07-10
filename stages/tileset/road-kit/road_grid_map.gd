@@ -4,11 +4,13 @@ extends GridMap
 @onready var intersection_lanes = preload("res://stages/road-kit/roads/road_intersection/road_intersection.tscn")
 @onready var crossroad_lanes = preload("res://stages/road-kit/roads/road_crossroad/road_crossroad.tscn")
 @onready var bend_sidewalk_lanes = preload("res://stages/road-kit/roads/road_bend_sidewalk/road_bend_sidewalk.tscn")
+@onready var crossroad_path_lanes = preload("res://stages/road-kit/roads/road_crossroad_path/road_crossroad_path.tscn")
 
 const STRAIGHT = 7
 const INTERSECTION = 6
 const CROSSROAD = 3
 const BEND_SIDEWALK = 1
+const CROSSROAD_PATH = 4
 
 const NORTH = 10
 const EAST = 16
@@ -25,6 +27,8 @@ func _ready() -> void:
 			add_traffic_nodes(cell, crossroad_lanes)
 		if get_cell_item(Vector3i(cell.x, cell.y, cell.z)) == BEND_SIDEWALK:
 			add_traffic_nodes(cell, bend_sidewalk_lanes)
+		if get_cell_item(Vector3i(cell.x, cell.y, cell.z)) == CROSSROAD_PATH:
+			add_traffic_nodes(cell, crossroad_path_lanes)
 
 func add_traffic_nodes(cell, traffic_node):
 	var traffic_node_instance = traffic_node.instantiate()

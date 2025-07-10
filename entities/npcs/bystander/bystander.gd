@@ -1,114 +1,68 @@
-extends CharacterBody3D
+extends PathFollow3D
 
-@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var movement_timer: Timer = $MovementTimer
-@onready var idle_timer: Timer = $IdleTimer
-
-enum State {
-	IDLE,
-	WALKING,
-	PANICKING
-}
-
-var current_state: State = State.IDLE
-var normal_speed: float = 2.0
-var panic_speed: float = 7.0
-var current_speed: float = 2.0
-var panic_distance: float = 10.0
+const SIDEWALK_TRANSMITTER: int = 7
+const PLAYER_CAR: int = 2
+@export var max_speed: float = 1.0
+var new_path: Path3D
+var is_following_path: bool = true
+@onready var rigid_body: RigidBody3D = $RigidBody3D
+@onready var path_ray_cast: RayCast3D = rigid_body.get_node("PathRayCast3D")
+@onready var car_collision_area3d = rigid_body.get_node("CarCollisionArea3D")
+@onready var despawn_timer = rigid_body.get_node("DespawnTimer")
 
 func _ready():
-	movement_timer.timeout.connect(_on_movement_timeout)
-	idle_timer.timeout.connect(_on_idle_timeout)
-	
-	# Start with random behavior
-	if randf() > 0.5:
-		start_walking()
-	else:
-		start_idle()
+	car_collision_area3d.body_entered.connect(on_player_collision)
+	despawn_timer.timeout.connect(despawn)
 
-func _physics_process(delta: float) -> void:
-	check_for_vehicles()
-	
-	match current_state:
-		State.IDLE:
-			velocity = Vector3.ZERO
-		State.WALKING:
-			handle_walking()
-		State.PANICKING:
-			handle_panic()
-	
-	move_and_slide()
 
-func handle_walking():
-	if navigation_agent_3d.is_navigation_finished():
-		start_idle()
+func _process(delta):
+	if not is_following_path:
 		return
 	
-	var destination = navigation_agent_3d.get_next_path_position()
-	var direction = (destination - global_position).normalized()
-	velocity = direction * current_speed
-
-func handle_panic():
-	# Run away from nearest vehicle
-	var nearest_vehicle = get_nearest_vehicle()
-	if nearest_vehicle:
-		var escape_direction = (global_position - nearest_vehicle.global_position).normalized()
-		velocity = escape_direction * panic_speed
-		
-		# Stop panicking when far enough away
-		if global_position.distance_to(nearest_vehicle.global_position) > panic_distance * 1.5:
-			start_idle()
-
-func start_walking():
-	current_state = State.WALKING
-	current_speed = normal_speed + randf_range(-0.5, 0.5)  # Vary speed slightly
+	# Check for path transmitter
+	if path_ray_cast.is_colliding():
+		var transmitter = path_ray_cast.get_collider()
+		if transmitter and transmitter.get_collision_layer_value(SIDEWALK_TRANSMITTER):
+			var paths = transmitter.get_children().filter(func(child): return child is Path3D)
+			if paths.size() > 0:
+				new_path = paths[randi_range(0, paths.size() - 1)]
 	
-	# Pick a random destination nearby
-	var random_position = global_position + Vector3(
-		randf_range(-15.0, 15.0),
-		0,
-		randf_range(-15.0, 15.0)
-	)
-	navigation_agent_3d.set_target_position(random_position)
+	# Always move at max speed
+	progress += max_speed * delta
 	
-	# Walk for a random duration
-	movement_timer.start(randf_range(5.0, 12.0))
+	# Switch to new path when reaching the end
+	if progress_ratio >= 1.0:
+		_switch_to_new_path()
 
-func start_idle():
-	current_state = State.IDLE
-	velocity = Vector3.ZERO
-	# Stay idle for a random duration
-	idle_timer.start(randf_range(2.0, 6.0))
 
-func start_panic():
-	current_state = State.PANICKING
-	current_speed = panic_speed
-	movement_timer.stop()
-	idle_timer.stop()
+func _switch_to_new_path():
+	get_parent().remove_child(self)
+	if new_path and is_instance_valid(new_path):
+		new_path.add_child(self)
+		progress = 0.0
+	else:
+		queue_free()  # Remove if no new path found
 
-func check_for_vehicles():
-	var nearest_vehicle = get_nearest_vehicle()
-	if nearest_vehicle and current_state != State.PANICKING:
-		var distance = global_position.distance_to(nearest_vehicle.global_position)
-		
-		if distance < panic_distance:
-			start_panic()
 
-func get_nearest_vehicle() -> Node3D:
-	var vehicles = get_tree().get_nodes_in_group("vehicles")
-	var nearest_vehicle = null
-	var min_distance = INF
-	
-	for vehicle in vehicles:
-		var distance = global_position.distance_to(vehicle.global_position)
-		if distance < min_distance:
-			min_distance = distance
-			nearest_vehicle = vehicle
-	
-	return nearest_vehicle
+func on_player_collision(body):
+	if body.is_in_group("player_car") and is_following_path:
+		is_following_path = false
+		despawn_timer.start()
+		call_deferred("handle_collision_cleanup")
+		path_ray_cast.enabled = false
 
-func _on_movement_timeout():
-	start_idle()
 
-func _on_idle_timeout():
-	start_walking()
+func handle_collision_cleanup():
+	var pos = rigid_body.global_position
+	var rot = rigid_body.global_rotation
+	remove_child(rigid_body)
+	get_tree().current_scene.add_child(rigid_body)
+	rigid_body.global_position = pos
+	rigid_body.global_rotation = rot
+	process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func despawn():
+	if rigid_body and is_instance_valid(rigid_body):
+		rigid_body.queue_free()
+	queue_free()

@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://bl7mo0fx1lb1g"]
+[gd_scene load_steps=11 format=4 uid="uid://bl7mo0fx1lb1g"]
 
-[ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://assets/kenney_road-kit/Textures/colormap.png" id="1_jccwg"]
+[ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_jccwg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dxkw"]
 resource_name = "colormap"
@@ -59,6 +59,15 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnagb"]
+
+[sub_resource type="Curve3D" id="Curve3D_pvh0i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, -1, 0, -1, -0.77, 0, -5.44, 0, 0, 0, 0, 0, 0, -6.33, 0, -6.33),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="RoadBendSidewalk" type="Node3D"]
 
 [node name="RoadBendSidewalkMesh" type="MeshInstance3D" parent="."]
@@ -71,8 +80,21 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalkMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_u2dqm")
 
-[node name="PathTransmitterWest" type="Area3D" parent="."]
+[node name="PathTransmitterSouth" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11, 0, 3.33)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_hgs0k")
+
+[node name="Path3D" type="Path3D" parent="PathTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+curve = SubResource("Curve3D_nnagb")
+
+[node name="PathTransmitterWest" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.33, 0, 1.11)
 collision_layer = 8
 collision_mask = 0
 
@@ -82,17 +104,15 @@ shape = SubResource("BoxShape3D_hgs0k")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-curve = SubResource("Curve3D_nnagb")
-
-[node name="PathTransmitterWest2" type="Area3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.33, 0, 1.11)
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_hgs0k")
-
-[node name="Path3D" type="Path3D" parent="PathTransmitterWest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 curve = SubResource("Curve3D_hgs0k")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.33)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_nnagb")
+
+[node name="Path3D" type="Path3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+curve = SubResource("Curve3D_pvh0i")

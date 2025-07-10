@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dvo6rqfhhii07"]
 
-[ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://assets/kenney_road-kit/Textures/colormap.png" id="1_esd6o"]
+[ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_esd6o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1da1w"]
 resource_name = "colormap"

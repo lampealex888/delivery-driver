@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w3c7x42rskgi"
-path.s3tc="res://.godot/imported/colormap.png-cff4497b6a1f2309f1e58be3f8a2755e.s3tc.ctex"
+path.s3tc="res://.godot/imported/colormap.png-fa5c4b8d696a6ff7641c31952bb08bb1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kenney_road-kit/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-cff4497b6a1f2309f1e58be3f8a2755e.s3tc.ctex"]
+source_file="res://stages/road-kit/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-fa5c4b8d696a6ff7641c31952bb08bb1.s3tc.ctex"]
 
 [params]
 
