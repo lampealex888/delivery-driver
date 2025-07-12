@@ -226,19 +226,15 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_p5xtl"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="PlayerCar" type="Node3D"]
-
-[node name="Body" type="VehicleBody3D" parent="." groups=["player_car"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
+[node name="PlayerCar" type="VehicleBody3D" groups=["player_car"]]
 collision_layer = 2
-collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
 center_of_mass_mode = 1
 contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_r806m")
 
-[node name="Wheel1" type="VehicleWheel3D" parent="Body"]
+[node name="Wheel1" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.473678, 0.115169, 0.80416)
 use_as_traction = true
 use_as_steering = true
@@ -249,12 +245,12 @@ suspension_travel = 2.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
-[node name="wheel-front-left" type="MeshInstance3D" parent="Body/Wheel1"]
+[node name="wheel-front-left" type="MeshInstance3D" parent="Wheel1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
 mesh = SubResource("ArrayMesh_syjme")
 skeleton = NodePath("")
 
-[node name="Wheel2" type="VehicleWheel3D" parent="Body"]
+[node name="Wheel2" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474, 0.115, -0.716)
 use_as_traction = true
 wheel_roll_influence = 1.0
@@ -264,12 +260,12 @@ suspension_travel = 2.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
-[node name="wheel-back-left" type="MeshInstance3D" parent="Body/Wheel2"]
+[node name="wheel-back-left" type="MeshInstance3D" parent="Wheel2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
 mesh = SubResource("ArrayMesh_k4tvg")
 skeleton = NodePath("")
 
-[node name="Wheel3" type="VehicleWheel3D" parent="Body"]
+[node name="Wheel3" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473678, 0.115169, 0.80416)
 use_as_traction = true
 use_as_steering = true
@@ -280,12 +276,12 @@ suspension_travel = 2.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
-[node name="wheel-front-right" type="MeshInstance3D" parent="Body/Wheel3"]
+[node name="wheel-front-right" type="MeshInstance3D" parent="Wheel3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 mesh = SubResource("ArrayMesh_r7khk")
 skeleton = NodePath("")
 
-[node name="Wheel4" type="VehicleWheel3D" parent="Body"]
+[node name="Wheel4" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.474, 0.115, -0.716336)
 use_as_traction = true
 wheel_roll_influence = 1.0
@@ -295,24 +291,24 @@ suspension_travel = 2.0
 suspension_stiffness = 40.0
 damping_compression = 0.88
 
-[node name="wheel-back-right" type="MeshInstance3D" parent="Body/Wheel4"]
+[node name="wheel-back-right" type="MeshInstance3D" parent="Wheel4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 mesh = SubResource("ArrayMesh_ql367")
 skeleton = NodePath("")
 
-[node name="body" type="MeshInstance3D" parent="Body"]
+[node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("ArrayMesh_wos03")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00307022, 0.638269, -0.00926387)
 shape = SubResource("BoxShape3D_x74tc")
 
-[node name="CameraBase" type="Node3D" parent="Body"]
+[node name="CameraBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97449, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Body/CameraBase"]
+[node name="Camera3D" type="Camera3D" parent="CameraBase"]
 transform = Transform3D(-1, 2.11495e-08, -8.48259e-08, 0, 0.970296, 0.241922, 8.74228e-08, 0.241922, -0.970296, 0, 2.032, -4.394)
 fov = 74.0
 near = 0.1
@@ -321,19 +317,19 @@ min_distance = 4.0
 max_distance = 5.0
 height = 1.25
 
-[node name="EngineSound" type="AudioStreamPlayer3D" parent="Body"]
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_m8g7o")
 pitch_scale = 0.05
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 
-[node name="ImpactSound" type="AudioStreamPlayer3D" parent="Body"]
+[node name="ImpactSound" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_bpr2q")
 volume_db = -9.0
 max_polyphony = 3
 attenuation_filter_cutoff_hz = 20500.0
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Body"]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, -0.022867, -1.10448)
 amount = 125
 lifetime = 1.25
@@ -348,7 +344,7 @@ angle_max = 360.0
 scale_amount_curve = SubResource("Curve_4j5vd")
 color_ramp = SubResource("Gradient_p5xtl")
 
-[node name="BlobShadow" type="Decal" parent="Body"]
+[node name="BlobShadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 size = Vector3(1.6, 4, 3)
 texture_albedo = ExtResource("11_3ryw5")
@@ -356,11 +352,11 @@ upper_fade = 2.0
 lower_fade = 1.0
 cull_mask = 1048573
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Body"]
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
 current = true
 
-[node name="InteriorCameraPosition" type="Marker3D" parent="Body"]
+[node name="InteriorCameraPosition" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9, 0.9)
 
-[node name="TopDownCameraPosition" type="Marker3D" parent="Body"]
+[node name="TopDownCameraPosition" type="Marker3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0.00169557, 15.7771, 0.0955178)

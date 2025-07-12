@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy3kx31hltphu"]
+[gd_scene load_steps=11 format=3 uid="uid://cy3kx31hltphu"]
 
 [ext_resource type="Script" uid="uid://d6xmst84nvxu" path="res://utilities/game/game_manager.gd" id="1_1iefr"]
 [ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="1_n5gmi"]
 [ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://stages/districts/commercial/buildings/building_n/building_n.tscn" id="2_1iefr"]
 [ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://entities/ui/hud/hud.tscn" id="2_x41wx"]
 [ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://stages/districts/commercial/buildings/building_k/building_k.tscn" id="3_x41wx"]
+[ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://stages/gameplay/2x2_zone.tscn" id="6_qumse"]
+[ext_resource type="PackedScene" uid="uid://bb6ewhn2tdbhu" path="res://stages/gameplay/1x2_zone.tscn" id="7_bikw8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1anp3"]
 size = Vector3(200, 1, 200)
@@ -21,7 +23,6 @@ script = ExtResource("1_1iefr")
 [node name="HUD" parent="." instance=ExtResource("2_x41wx")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1)
@@ -45,5 +46,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.6, 0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.8, 0, -11)
 
 [node name="GameTimer" type="Timer" parent="."]
+
+[node name="UpdateTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="2x2Zone" parent="." instance=ExtResource("6_qumse")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.6, 0, -9.3)
+
+[node name="1x2Zone" parent="." instance=ExtResource("7_bikw8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.5, 0, -11)
 
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
