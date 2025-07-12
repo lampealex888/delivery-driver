@@ -1,10 +1,14 @@
-[gd_scene load_steps=46 format=4 uid="uid://cu82m3v6d733l"]
+[gd_scene load_steps=54 format=4 uid="uid://bghsicfexp3ed"]
 
-[ext_resource type="Script" uid="uid://corxa2vwbfbd7" path="res://entities/npcs/passenger/passenger-backup.gd" id="1_jtq1q"]
+[ext_resource type="Script" uid="uid://b3ryahe2eu2yd" path="res://entities/npcs/passenger/passenger.gd" id="1_jtq1q"]
+[ext_resource type="Texture2D" uid="uid://bkchfveq6se57" path="res://entities/npcs/passenger/texture-q.png" id="1_lut3f"]
 [ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://entities/ui/destination_arrow/destination_arrow.tscn" id="2_t40mi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35de1"]
-size = Vector3(0.6, 1.1, 0.2)
+size = Vector3(0.6, 1, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6jdc"]
+albedo_texture = ExtResource("1_lut3f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2ynf"]
 resource_name = "texture-q"
@@ -43,6 +47,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bs8e3")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t40mi"]
+albedo_texture = ExtResource("1_lut3f")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_euurr"]
 _surfaces = [{
 "aabb": AABB(-0.2, -1, -0.2, 0.4, 1, 0.4),
@@ -74,6 +81,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_euurr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5x0d"]
+albedo_texture = ExtResource("1_lut3f")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hagx3"]
 _surfaces = [{
@@ -107,6 +117,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hagx3")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_172i7"]
+albedo_texture = ExtResource("1_lut3f")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_21tun"]
 _surfaces = [{
 "aabb": AABB(-1.63914e-08, -1, -0.2, 0.4, 1.1, 0.4),
@@ -139,6 +152,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_21tun")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n83wv"]
+albedo_texture = ExtResource("1_lut3f")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_mkq1j"]
 _surfaces = [{
 "aabb": AABB(-0.4, -1, -0.2, 0.4, 1.1, 0.4),
@@ -170,6 +186,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mkq1j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gintg"]
+albedo_texture = ExtResource("1_lut3f")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kc4qc"]
 _surfaces = [{
@@ -1854,20 +1873,22 @@ _data = {
 &"wheelchair-sit": SubResource("Animation_o13sx")
 }
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lut3f"]
-height = 1.1
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t40mi"]
+height = 1.0
 radius = 3.0
 
-[node name="Passenger" type="RigidBody3D"]
+[sub_resource type="TorusMesh" id="TorusMesh_t40mi"]
+inner_radius = 2.95
+outer_radius = 3.0
+
+[node name="Passenger" type="CharacterBody3D" groups=["passengers"]]
 collision_layer = 4
-collision_mask = 3
-lock_rotation = true
 script = ExtResource("1_jtq1q")
-destination_arrow_scene = ExtResource("2_t40mi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 2.98023e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.55, 1.49012e-08)
 shape = SubResource("BoxShape3D_35de1")
+disabled = true
 
 [node name="character-q2" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -1878,31 +1899,37 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
 [node name="leg-left" type="MeshInstance3D" parent="character-q2/character-q/root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1, 2.03489e-14)
+material_override = SubResource("StandardMaterial3D_k6jdc")
 mesh = SubResource("ArrayMesh_dyhxi")
 skeleton = NodePath("")
 
 [node name="leg-right" type="MeshInstance3D" parent="character-q2/character-q/root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1, 2.18378e-14)
+material_override = SubResource("StandardMaterial3D_t40mi")
 mesh = SubResource("ArrayMesh_1h1r8")
 skeleton = NodePath("")
 
 [node name="torso" type="MeshInstance3D" parent="character-q2/character-q/root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+material_override = SubResource("StandardMaterial3D_d5x0d")
 mesh = SubResource("ArrayMesh_pp3m6")
 skeleton = NodePath("")
 
 [node name="arm-left" type="MeshInstance3D" parent="character-q2/character-q/root/torso"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.1, -0.0999999)
+material_override = SubResource("StandardMaterial3D_172i7")
 mesh = SubResource("ArrayMesh_kd7ng")
 skeleton = NodePath("")
 
 [node name="arm-right" type="MeshInstance3D" parent="character-q2/character-q/root/torso"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.1, -0.0999999)
+material_override = SubResource("StandardMaterial3D_n83wv")
 mesh = SubResource("ArrayMesh_25fxx")
 skeleton = NodePath("")
 
 [node name="head" type="MeshInstance3D" parent="character-q2/character-q/root/torso"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.2, 0)
+material_override = SubResource("StandardMaterial3D_gintg")
 mesh = SubResource("ArrayMesh_rnc7g")
 skeleton = NodePath("")
 
@@ -1911,10 +1938,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_vnvgl")
 }
 
-[node name="PickupArea" type="Area3D" parent="."]
-collision_layer = 0
+[node name="DestinationArrow" parent="." instance=ExtResource("2_t40mi")]
+visible = false
+
+[node name="PickupArea3D" type="Area3D" parent="."]
+collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-shape = SubResource("CylinderShape3D_lut3f")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_t40mi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PickupArea3D"]
+mesh = SubResource("TorusMesh_t40mi")

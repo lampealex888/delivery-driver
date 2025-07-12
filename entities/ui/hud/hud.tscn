@@ -21,11 +21,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Time: 01:30"
 
-[node name="PassengerInfo" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Passenger: None"
-
 [node name="DestinationLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24

@@ -8,13 +8,25 @@ const BRAKE_STRENGTH := 2.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
+var disabled
 
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
-func _ready() -> void:
-	pass
+func _ready():
+	disabled = true
+	await get_tree().process_frame
+	var game_manager = get_tree().get_first_node_in_group("game_manager")
+	game_manager.game_started.connect(enable_vehicle)
+
+
+func enable_vehicle():
+	disabled = false
+
 
 func _physics_process(delta: float):
+	if disabled:
+		return
+	
 	_steer_target = Input.get_axis(&"turn_right", &"turn_left")
 	_steer_target *= STEER_LIMIT
 

@@ -31,7 +31,7 @@ func _process(delta):
 			var my_forward = -rigid_body.global_transform.basis.z
 			var other_forward = -collider.global_transform.basis.z
 			var dot_product = my_forward.dot(other_forward)
-			if dot_product > 0.1:
+			if dot_product > 0:
 				speed = 0.0
 			else:
 				speed = max_speed

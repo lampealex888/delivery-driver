@@ -2316,7 +2316,7 @@ collision_mask = 3
 max_contacts_reported = 10
 
 [node name="character-a2" type="Node3D" parent="SidewalkTransmitterEast/Path3D/Bystander/RigidBody3D"]
-transform = Transform3D(-0.33, 0, -2.88495e-08, 0, 0.33, 0, 2.88495e-08, 0, -0.33, 0, 0, 0)
+transform = Transform3D(-0.4, 0, -6.03983e-08, 0, 0.4, 0, 6.03983e-08, 0, -0.4, 0, 0, 0)
 
 [node name="character-a" type="Node3D" parent="SidewalkTransmitterEast/Path3D/Bystander/RigidBody3D/character-a2"]
 

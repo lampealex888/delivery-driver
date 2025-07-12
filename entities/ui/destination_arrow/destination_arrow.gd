@@ -43,7 +43,7 @@ func setup_materials() -> void:
 	if arrow_shaft:
 		arrow_shaft.material_override = shaft_material
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not is_active or not follow_target:
 		return
 	
