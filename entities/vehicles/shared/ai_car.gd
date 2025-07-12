@@ -27,7 +27,7 @@ func _process(delta):
 	var speed
 	if traffic_ray_cast.is_colliding():
 		var collider = traffic_ray_cast.get_collider()
-		if (collider.get_collision_layer_value(VEHICLES)):
+		if collider and collider.get_collision_layer_value(VEHICLES):
 			var my_forward = -rigid_body.global_transform.basis.z
 			var other_forward = -collider.global_transform.basis.z
 			var dot_product = my_forward.dot(other_forward)

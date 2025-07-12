@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bghsicfexp3ed"]
+[gd_scene load_steps=8 format=3 uid="uid://bghsicfexp3ed"]
 
 [ext_resource type="Script" uid="uid://b3ryahe2eu2yd" path="res://entities/npcs/passenger/passenger.gd" id="1_jtq1q"]
 [ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://entities/ui/destination_arrow/destination_arrow.tscn" id="2_t40mi"]
@@ -13,6 +13,12 @@ radius = 3.0
 [sub_resource type="TorusMesh" id="TorusMesh_t40mi"]
 inner_radius = 2.95
 outer_radius = 3.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_k6jdc"]
+inner_radius = 0.8
+
+[sub_resource type="TextMesh" id="TextMesh_k6jdc"]
+text = "$"
 
 [node name="Passenger" type="CharacterBody3D" groups=["passengers"]]
 collision_layer = 4
@@ -33,5 +39,17 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_t40mi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickupArea3D"]
+[node name="AreaMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("TorusMesh_t40mi")
+skeleton = NodePath("../PickupArea3D")
+
+[node name="RingMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, 0)
+mesh = SubResource("TorusMesh_k6jdc")
+
+[node name="DollarMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.01, 0, 0, 0, 8.01, 0, 0, 0, 8.01, 0.05, 3.1, 0)
+mesh = SubResource("TextMesh_k6jdc")
+
+[node name="PatienceTimer" type="Timer" parent="."]
+wait_time = 30.0

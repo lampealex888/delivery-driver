@@ -12,6 +12,7 @@ var is_game_active := false
 
 @onready var game_timer: Timer = $GameTimer
 @onready var update_timer: Timer = $UpdateTimer
+@onready var hud: Control = $HUD
 
 signal score_updated(new_score: int)
 signal timer_updated(time_remaining: float)
@@ -23,6 +24,7 @@ func _ready() -> void:
 	game_timer.wait_time = GAME_DURATION
 	game_timer.timeout.connect(_end_game)
 	update_timer.timeout.connect(_on_update_timer_timeout)
+	hud.start_game.connect(_on_hud_start_game)
 	await get_tree().process_frame
 	var buildings = get_tree().get_nodes_in_group("buildings")
 	for building in buildings:

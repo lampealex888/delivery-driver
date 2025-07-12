@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu3e7y753xu8k"]
+
+[ext_resource type="Script" uid="uid://d6xmst84nvxu" path="res://utilities/game/game_manager.gd" id="1_nivug"]
+[ext_resource type="PackedScene" uid="uid://dyywp583ng84c" path="res://entities/ui/hud/hud.tscn" id="2_ealrw"]
+
+[node name="GameManager" type="Node3D" groups=["game_manager"]]
+script = ExtResource("1_nivug")
+
+[node name="HUD" parent="." instance=ExtResource("2_ealrw")]
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="UpdateTimer" type="Timer" parent="."]
+autostart = true

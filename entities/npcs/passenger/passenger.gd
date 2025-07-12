@@ -2,14 +2,18 @@ extends CharacterBody3D
 
 var destination_building
 var current_building
-var fare: int = 50
 
 @onready var destination_arrow: Node3D = $DestinationArrow
 @onready var pickup_area: Area3D = $PickupArea3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
+@onready var area_mesh: MeshInstance3D = $AreaMesh
+@onready var ring_mesh: MeshInstance3D = $RingMesh
+@onready var dollar_mesh: MeshInstance3D = $DollarMesh
+@onready var patience_timer: Timer = $PatienceTimer
 
 var current_characater = null
 var character_paths = [
+	"res://entities/npcs/character_b/character_b.tscn",
 	"res://entities/npcs/character_c/character_c.tscn",
 	"res://entities/npcs/character_b/character_b.tscn",
 	"res://entities/npcs/character_d/character_d.tscn",
@@ -33,11 +37,36 @@ signal destination_set(destination: String)
 
 func _ready():
 	pickup_area.body_entered.connect(_on_pickup_area_entered)
+	
+	patience_timer.timeout.connect(_on_patience_timer_timeout)
+	patience_timer.start()
+	
 	var random_char_path = character_paths[randi() % character_paths.size()]
 	var character_scene = load(random_char_path)
 	var random_character = character_scene.instantiate()
 	add_child(random_character)
 	current_characater = random_character
+
+
+func _process(delta: float):
+	var patience_ratio = patience_timer.time_left / patience_timer.wait_time
+	var color: Color
+	if patience_ratio > 0.66:
+		color = Color.GREEN
+	elif patience_ratio > 0.33:
+		color = Color.YELLOW
+	else:
+		color = Color.RED
+	
+	var new_material = StandardMaterial3D.new()
+	new_material.albedo_color = color
+	new_material.emission_enabled = true
+	new_material.emission = color * 0.3
+	new_material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	
+	area_mesh.material_override = new_material
+	ring_mesh.material_override = new_material
+	dollar_mesh.material_override = new_material
 
 
 func _on_pickup_area_entered(body):
@@ -46,14 +75,16 @@ func _on_pickup_area_entered(body):
 		for child in body.get_children():
 			if child.is_in_group("passengers"):
 				return
-		collision_shape.disabled = true
 		current_characater.visible = false
-		pickup_area.visible = false
+		area_mesh.visible = false
+		ring_mesh.visible = false
+		dollar_mesh.visible = false
 		get_parent().call_deferred("remove_child", self)
 		body.call_deferred("add_child", self)
 		call_deferred("_set_up_trip", body)
 
 func _set_up_trip(body):
+	collision_shape.disabled = true
 	global_position = body.global_position
 	var buildings = get_tree().get_nodes_in_group("buildings")
 	buildings.erase(current_building)
@@ -69,3 +100,7 @@ func dropoff_at_building(building) -> bool:
 		queue_free()
 		return true
 	return false
+
+
+func _on_patience_timer_timeout():
+	queue_free()
