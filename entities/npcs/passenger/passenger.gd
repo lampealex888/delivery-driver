@@ -12,7 +12,8 @@ var destination_building: Node3D
 var current_building: Node3D
 var car_in_range: bool = false
 var current_characater: Node3D = null
-var character_paths: Array[String] = [
+
+static var character_paths: Array[String] = [
 	"res://entities/npcs/character_b/character_b.tscn",
 	"res://entities/npcs/character_c/character_c.tscn",
 	"res://entities/npcs/character_b/character_b.tscn",

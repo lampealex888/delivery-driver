@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://c6lpl55rklfwc"]
+[gd_scene load_steps=10 format=4 uid="uid://c6lpl55rklfwc"]
 
+[ext_resource type="Script" uid="uid://vr3sexaj7w5y" path="res://stages/road-kit/props/light_curved/light_curved.gd" id="1_1716o"]
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_oi3l1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oi3l1"]
 size = Vector3(0.2, 3.4, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1716o"]
+size = Vector3(1, 0.2, 0.9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qny8l"]
 resource_name = "colormap"
@@ -62,10 +66,26 @@ cap_bottom = false
 
 [node name="LightCurved" type="RigidBody3D"]
 collision_mask = 3
+lock_rotation = true
+freeze_mode = 1
+max_contacts_reported = 10
+script = ExtResource("1_1716o")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 1.7, -2.98023e-08)
+shape = SubResource("BoxShape3D_oi3l1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 1.7, -2.98023e-08)
 shape = SubResource("BoxShape3D_oi3l1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3, -0.55)
+shape = SubResource("BoxShape3D_1716o")
 
 [node name="light-curved" type="MeshInstance3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -74,6 +94,10 @@ skeleton = NodePath("")
 
 [node name="light-curved2" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Light" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61918, -0.857287)
 mesh = SubResource("CylinderMesh_1716o")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
