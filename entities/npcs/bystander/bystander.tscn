@@ -1,7 +1,7 @@
 [gd_scene load_steps=51 format=4 uid="uid://bekg7hyi32j23"]
 
 [ext_resource type="Script" uid="uid://cea1osyabq4gx" path="res://entities/npcs/bystander/bystander.gd" id="1_idv85"]
-[ext_resource type="Texture2D" uid="uid://dxydafkl262oa" path="res://entities/npcs/bystander/texture-a.png" id="2_jmaqb"]
+[ext_resource type="Texture2D" uid="uid://dxydafkl262oa" path="res://entities/npcs/character_a/texture-a.png" id="2_jmaqb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikl8o"]
 albedo_texture = ExtResource("2_jmaqb")

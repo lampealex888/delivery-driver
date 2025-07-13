@@ -14,6 +14,7 @@ var car_in_range: bool = false
 var current_characater: Node3D = null
 
 static var character_paths: Array[String] = [
+	"res://entities/npcs/character_a/character_a.tscn",
 	"res://entities/npcs/character_b/character_b.tscn",
 	"res://entities/npcs/character_c/character_c.tscn",
 	"res://entities/npcs/character_b/character_b.tscn",

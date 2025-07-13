@@ -39,7 +39,7 @@ static var vehicle_paths: Array[String] = [
 
 func _ready():
 	car_collision_area3d.body_entered.connect(on_player_collision)
-	despawn_timer.timeout.connect(despawn)
+	despawn_timer.timeout.connect(queue_free)
 	
 	var random_vehicle_path = vehicle_paths[randi() % vehicle_paths.size()]
 	var vehicle_scene = load(random_vehicle_path)
@@ -106,8 +106,3 @@ func handle_collision_cleanup():
 	rigid_body.global_position = pos
 	rigid_body.global_rotation = rot
 	process_mode = Node.PROCESS_MODE_DISABLED
-
-func despawn():
-	if rigid_body and is_instance_valid(rigid_body):
-		rigid_body.queue_free()
-	queue_free()
