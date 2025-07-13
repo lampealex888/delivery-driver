@@ -41,7 +41,9 @@ func _ready():
 	var random_bystander_path = bystander_paths[randi() % bystander_paths.size()]
 	var bystander_scene = load(random_bystander_path)
 	var random_bystander = bystander_scene.instantiate()
+	random_bystander.rotation.y = deg_to_rad(180)
 	rigid_body.add_child(random_bystander)
+
 
 func _process(delta):
 	if not is_following_path:
