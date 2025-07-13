@@ -1,8 +1,5 @@
 extends CharacterBody3D	
 
-var destination_building
-var current_building
-
 @onready var destination_arrow: Node3D = $DestinationArrow
 @onready var pickup_area: Area3D = $PickupArea3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
@@ -11,8 +8,11 @@ var current_building
 @onready var dollar_mesh: MeshInstance3D = $DollarMesh
 @onready var patience_timer: Timer = $PatienceTimer
 
-var current_characater = null
-var character_paths = [
+var destination_building: Node3D
+var current_building: Node3D
+var car_in_range: bool = false
+var current_characater: Node3D = null
+var character_paths: Array[String] = [
 	"res://entities/npcs/character_b/character_b.tscn",
 	"res://entities/npcs/character_c/character_c.tscn",
 	"res://entities/npcs/character_b/character_b.tscn",
@@ -36,7 +36,8 @@ var character_paths = [
 signal destination_set(destination: String)
 
 func _ready():
-	pickup_area.body_entered.connect(_on_pickup_area_entered)
+	pickup_area.body_entered.connect(_on_pickup_area_body_entered)
+	pickup_area.body_exited.connect(_on_pickup_area_body_exited)
 	
 	patience_timer.timeout.connect(_on_patience_timer_timeout)
 	patience_timer.start()
@@ -67,21 +68,37 @@ func _process(delta: float):
 	area_mesh.material_override = new_material
 	ring_mesh.material_override = new_material
 	dollar_mesh.material_override = new_material
+	
+	# Add this walking logic
+	if car_in_range and current_characater:
+		var car = get_tree().get_first_node_in_group("player_car")
+		if car and car.linear_velocity.length() < 0.5:
+			var direction = (car.global_position - current_characater.global_position).normalized()
+			var distance_to_car = current_characater.global_position.distance_to(car.global_position)
+			if distance_to_car < 1:
+				current_characater.visible = false
+				area_mesh.visible = false
+				ring_mesh.visible = false
+				dollar_mesh.visible = false
+				get_parent().call_deferred("remove_child", self)
+				car.call_deferred("add_child", self)
+				call_deferred("_set_up_trip", car)
+			else:
+				current_characater.global_position += direction * 2 * delta
+				car.engine_force = 0.0
 
-
-func _on_pickup_area_entered(body):
-	# Check if the body is the player car (by group)
+func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player_car"):
+		car_in_range = true
 		for child in body.get_children():
 			if child.is_in_group("passengers"):
 				return
-		current_characater.visible = false
-		area_mesh.visible = false
-		ring_mesh.visible = false
-		dollar_mesh.visible = false
-		get_parent().call_deferred("remove_child", self)
-		body.call_deferred("add_child", self)
-		call_deferred("_set_up_trip", body)
+
+
+func _on_pickup_area_body_exited(body):
+	if body.is_in_group("player_car"):
+		car_in_range = false
+
 
 func _set_up_trip(body):
 	collision_shape.disabled = true
@@ -93,13 +110,6 @@ func _set_up_trip(body):
 		destination_arrow.activate(destination_building.global_position, self)
 		destination_arrow.visible = true
 	destination_set.emit(destination_building.building_name)
-
-
-func dropoff_at_building(building) -> bool:
-	if building == destination_building:
-		queue_free()
-		return true
-	return false
 
 
 func _on_patience_timer_timeout():

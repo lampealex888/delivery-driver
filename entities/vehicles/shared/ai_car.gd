@@ -35,7 +35,7 @@ func _process(delta):
 				speed = 0.0
 			else:
 				speed = max_speed
-		if (collider.get_collision_layer_value(PLAYER_CAR)):
+		if collider and collider.get_collision_layer_value(PLAYER_CAR):
 			speed = 0.0
 	else:
 		speed = max_speed
