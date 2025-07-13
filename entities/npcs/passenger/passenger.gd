@@ -35,13 +35,11 @@ static var character_paths: Array[String] = [
 	"res://entities/npcs/character_r/character_r.tscn"
 ]
 
-signal destination_set(destination: String)
-
 func _ready():
 	pickup_area.body_entered.connect(_on_pickup_area_body_entered)
 	pickup_area.body_exited.connect(_on_pickup_area_body_exited)
 	
-	patience_timer.timeout.connect(_on_patience_timer_timeout)
+	patience_timer.timeout.connect(queue_free)
 	patience_timer.start()
 	
 	var random_char_path = character_paths[randi() % character_paths.size()]
@@ -116,8 +114,4 @@ func _set_up_trip(body):
 	if destination_arrow and destination_building:
 		destination_arrow.activate(destination_building.global_position, self)
 		destination_arrow.visible = true
-	destination_set.emit(destination_building.building_name)
-
-
-func _on_patience_timer_timeout():
-	queue_free()
+	destination_building.get_node("DestinationArea3D/DestinationOutline").visible = true

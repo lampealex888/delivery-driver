@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb6ewhn2tdbhu"]
+[gd_scene load_steps=4 format=3 uid="uid://bb6ewhn2tdbhu"]
 
 [ext_resource type="Script" uid="uid://d2mn2rog7e6fg" path="res://stages/gameplay/zone.gd" id="1_txwa7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vor0"]
 size = Vector3(13.33, 2, 6.66)
 
-[sub_resource type="Gradient" id="Gradient_dwsm7"]
-colors = PackedColorArray(0, 1, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_txwa7"]
-gradient = SubResource("Gradient_dwsm7")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txwa7"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 2.0
 
 [node name="1x2Zone" type="Node3D" groups=["buildings"]]
 script = ExtResource("1_txwa7")
@@ -22,11 +22,15 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_6vor0")
 
-[node name="Decal" type="Decal" parent="DestinationArea3D"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.47035e-07, 0.781, -0.7)
+[node name="DestinationOutline" type="CSGBox3D" parent="DestinationArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
 visible = false
-size = Vector3(1.4, 13.4, 6.66)
-texture_albedo = SubResource("GradientTexture1D_txwa7")
+size = Vector3(13.33, 0.01, 6.66)
+material = SubResource("StandardMaterial3D_txwa7")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="DestinationArea3D/DestinationOutline"]
+operation = 2
+size = Vector3(12.88, 0.01, 6.11)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 10.0

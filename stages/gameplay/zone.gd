@@ -1,10 +1,12 @@
 extends Node3D
 
+var spawnpoints_index: int = 0
+
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var spawnpoints: Array[Marker3D] = [$SpawnPoint1, $SpawnPoint2]
-var spawnpoints_index: int = 0
 @onready var passenger_scene: PackedScene = preload("res://entities/npcs/passenger/passenger.tscn")
 @onready var destination_area: Area3D = $DestinationArea3D
+@onready var destination_outline: CSGBox3D = destination_area.get_node("DestinationOutline")
 @export var building_name: String = "Building"
 
 signal passenger_delivered
@@ -50,3 +52,4 @@ func _on_destination_area_entered(body):
 			body.remove_child(current_passenger)
 			current_passenger.queue_free()
 			passenger_delivered.emit()
+			destination_outline.visible = false
