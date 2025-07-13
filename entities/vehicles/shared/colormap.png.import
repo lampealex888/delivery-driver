@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce1xw1asb4saq"
-path.s3tc="res://.godot/imported/colormap.png-c2bed4db30bd82d53f9b39bce304e098.s3tc.ctex"
+path.s3tc="res://.godot/imported/colormap.png-afc59a4ad759b6e6c45ca8ab8293b554.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://entities/vehicles/shared/textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-c2bed4db30bd82d53f9b39bce304e098.s3tc.ctex"]
+source_file="res://entities/vehicles/shared/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-afc59a4ad759b6e6c45ca8ab8293b554.s3tc.ctex"]
 
 [params]
 

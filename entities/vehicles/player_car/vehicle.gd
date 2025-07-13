@@ -31,7 +31,7 @@ func _physics_process(delta: float):
 	_steer_target *= STEER_LIMIT
 
 	# Engine sound simulation
-	desired_engine_pitch = 0.05 + linear_velocity.length() / (engine_force_value * 0.5)
+	desired_engine_pitch = 1.0 + linear_velocity.length() / (engine_force_value * 0.5)
 	$EngineSound.pitch_scale = lerpf($EngineSound.pitch_scale, desired_engine_pitch, 0.2)
 
 	if abs(linear_velocity.length() - previous_speed) > 1.0:
