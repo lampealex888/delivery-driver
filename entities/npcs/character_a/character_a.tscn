@@ -1876,13 +1876,13 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 [node name="root" type="Node3D" parent="character-a"]
 
 [node name="leg-left" type="MeshInstance3D" parent="character-a/root"]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0.2, 1, 2.03489e-14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1, 2.03489e-14)
 material_override = SubResource("StandardMaterial3D_woat4")
 mesh = SubResource("ArrayMesh_bp8cj")
 skeleton = NodePath("")
 
 [node name="leg-right" type="MeshInstance3D" parent="character-a/root"]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -0.2, 1, 2.18378e-14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1, 2.18378e-14)
 material_override = SubResource("StandardMaterial3D_ym1wv")
 mesh = SubResource("ArrayMesh_rxhhx")
 skeleton = NodePath("")
@@ -1894,13 +1894,13 @@ mesh = SubResource("ArrayMesh_n6buk")
 skeleton = NodePath("")
 
 [node name="arm-left" type="MeshInstance3D" parent="character-a/root/torso"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.4, 1.1, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.1, -0.1)
 material_override = SubResource("StandardMaterial3D_btrum")
 mesh = SubResource("ArrayMesh_w4ncv")
 skeleton = NodePath("")
 
 [node name="arm-right" type="MeshInstance3D" parent="character-a/root/torso"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.4, 1.1, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.1, -0.1)
 material_override = SubResource("StandardMaterial3D_jyibq")
 mesh = SubResource("ArrayMesh_f7k5o")
 skeleton = NodePath("")

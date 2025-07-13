@@ -11,7 +11,10 @@ extends CharacterBody3D
 var destination_building: Node3D
 var current_building: Node3D
 var car_in_range: bool = false
-var current_characater: Node3D = null
+var current_characater: Node3D
+var animation_player: AnimationPlayer
+var material: StandardMaterial3D
+var last_color: Color
 
 static var character_paths: Array[String] = [
 	"res://entities/npcs/character_a/character_a.tscn",
@@ -47,6 +50,21 @@ func _ready():
 	var random_character = character_scene.instantiate()
 	add_child(random_character)
 	current_characater = random_character
+	animation_player = current_characater.get_node("AnimationPlayer")
+	if animation_player and animation_player.has_animation("idle"):
+		var animation = animation_player.get_animation("idle")
+		animation.loop_mode = Animation.LOOP_LINEAR
+		animation_player.play("idle")
+	
+	material = StandardMaterial3D.new()
+	material.emission_enabled = true
+	material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	material.albedo_color = Color.GREEN
+	last_color = Color.GREEN
+	
+	area_mesh.material_override = material
+	ring_mesh.material_override = material
+	dollar_mesh.material_override = material
 
 
 func _process(delta: float):
@@ -59,15 +77,14 @@ func _process(delta: float):
 	else:
 		color = Color.RED
 	
-	var new_material = StandardMaterial3D.new()
-	new_material.albedo_color = color
-	new_material.emission_enabled = true
-	new_material.emission = color * 0.3
-	new_material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	# Only update material if color changed
+	if color != last_color:
+		material.albedo_color = color
+		material.emission = color * 0.3
+		last_color = color
 	
-	area_mesh.material_override = new_material
-	ring_mesh.material_override = new_material
-	dollar_mesh.material_override = new_material
+	ring_mesh.rotation.y += delta
+	dollar_mesh.rotation.y += delta
 	
 	if car_in_range and current_characater:
 		var car = get_tree().get_first_node_in_group("player_car")
@@ -89,8 +106,14 @@ func _process(delta: float):
 					car.call_deferred("add_child", self)
 					call_deferred("_set_up_trip", car)
 				else:
-					current_characater.global_position += direction * 2 * delta
 					car.engine_force = 0.0
+					current_characater.look_at(car.global_position, Vector3.UP)
+					current_characater.rotation.y += PI  # Add 180 degrees to face the correct direction
+					current_characater.global_position += direction * 2 * delta
+					animation_player.clear_queue()
+					var animation = animation_player.get_animation("walk")
+					animation.loop_mode = Animation.LOOP_LINEAR
+					animation_player.play("walk")
 
 func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player_car"):

@@ -22,23 +22,33 @@ func spawn_passenger():
 	if not passenger_scene:
 		return
 	
-	var passengers = 0
+	var current_passengers = 0
 	for child in get_children():
 		if child.is_in_group("passengers"):
-			passengers += 1
-	if passengers >= 2:
+			current_passengers += 1
+	
+	if current_passengers >= spawnpoints.size():
 		return
+	
+	var available_spawn_points: Array[Marker3D] = []
+	for spawn_point in spawnpoints:
+		if not is_spawn_point_occupied(spawn_point):
+			available_spawn_points.append(spawn_point)
+	
+	if available_spawn_points.is_empty():
+		return
+
+	var chosen_spawn_point = available_spawn_points[randi() % available_spawn_points.size()]
 	
 	var passenger = passenger_scene.instantiate()
 	add_child(passenger)
-	call_deferred("setup_passenger", passenger)
+	call_deferred("setup_passenger", passenger, chosen_spawn_point)
 
 
-func setup_passenger(passenger):
-	var spawn_point = spawnpoints[spawnpoints_index % spawnpoints.size()]
-	spawnpoints_index += 1
-	passenger.global_position = spawn_point.global_position
-	passenger.global_rotation = spawn_point.global_rotation
+func setup_passenger(passenger, chosen_spawn_point):
+	passenger.global_position = chosen_spawn_point.global_position
+	passenger.global_rotation = chosen_spawn_point.global_rotation
+	passenger.rotation.y = deg_to_rad(180)
 	passenger.current_building = self
 
 
@@ -53,3 +63,12 @@ func _on_destination_area_entered(body):
 			current_passenger.queue_free()
 			passenger_delivered.emit()
 			destination_outline.visible = false
+
+
+func is_spawn_point_occupied(spawn_point: Marker3D) -> bool:
+	for child in get_children():
+		if child.is_in_group("passengers"):
+			var distance = child.global_position.distance_to(spawn_point.global_position)
+			if distance < 1.0:
+				return true
+	return false
