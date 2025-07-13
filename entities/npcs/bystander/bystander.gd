@@ -7,6 +7,7 @@ const PLAYER_CAR: int = 2
 
 var new_path: Path3D
 var is_following_path: bool = true
+var animation_player: AnimationPlayer = null
 
 @onready var rigid_body: RigidBody3D = $RigidBody3D
 @onready var path_ray_cast: RayCast3D = rigid_body.get_node("PathRayCast3D")
@@ -43,6 +44,12 @@ func _ready():
 	var random_bystander = bystander_scene.instantiate()
 	random_bystander.rotation.y = deg_to_rad(180)
 	rigid_body.add_child(random_bystander)
+	
+	animation_player = random_bystander.get_node("AnimationPlayer")
+	if animation_player and animation_player.has_animation("walk"):
+		var animation = animation_player.get_animation("walk")
+		animation.loop_mode = Animation.LOOP_LINEAR
+		animation_player.play("walk")
 
 
 func _process(delta):
@@ -80,6 +87,9 @@ func on_player_collision(body):
 		despawn_timer.start()
 		call_deferred("handle_collision_cleanup")
 		path_ray_cast.enabled = false
+		animation_player.clear_queue()
+		animation_player.play("die")
+		rigid_body.lock_rotation = true
 
 
 func handle_collision_cleanup():
