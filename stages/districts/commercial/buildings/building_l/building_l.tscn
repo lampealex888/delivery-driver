@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://be2kylafs7b4h"]
 
-[ext_resource type="Texture2D" uid="uid://c83o8iwlj5onf" path="res://assets/kenney_city-kit-commercial/Textures/colormap.png" id="1_cynjr"]
+[ext_resource type="Texture2D" uid="uid://c83o8iwlj5onf" path="res://stages/districts/commercial/colormap.png" id="1_cynjr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lub1"]
 resource_name = "colormap"

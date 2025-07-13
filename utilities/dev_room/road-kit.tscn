@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b0fgrwotp5mox"]
+[gd_scene load_steps=56 format=3 uid="uid://b0fgrwotp5mox"]
 
 [ext_resource type="PackedScene" uid="uid://c62crvhhb25w5" path="res://assets/kenney_road-kit/bridge-pillar-wide.glb" id="1_fvk62"]
 [ext_resource type="PackedScene" uid="uid://dk7qd1oxvrjck" path="res://assets/kenney_road-kit/bridge-pillar.glb" id="2_gfwft"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://l1l5og54vcx7" path="res://assets/kenney_road-kit/construction-light.glb" id="5_va8ji"]
 [ext_resource type="PackedScene" uid="uid://35g2i2fnebx0" path="res://assets/kenney_road-kit/light-curved-cross.glb" id="6_gid0h"]
 [ext_resource type="PackedScene" uid="uid://cehvj1pps2aaf" path="res://assets/kenney_road-kit/light-curved-double.glb" id="7_blb64"]
-[ext_resource type="PackedScene" uid="uid://idojqb4kl5b" path="res://assets/kenney_road-kit/light-curved.glb" id="8_itiul"]
 [ext_resource type="PackedScene" uid="uid://bbyxlgut8ellm" path="res://assets/kenney_road-kit/light-square-cross.glb" id="9_yl132"]
 [ext_resource type="PackedScene" uid="uid://b4t6dcso42th0" path="res://assets/kenney_road-kit/light-square-double.glb" id="10_t0m2i"]
 [ext_resource type="PackedScene" uid="uid://1dbni7dgspj" path="res://assets/kenney_road-kit/light-square.glb" id="11_ywjke"]
@@ -79,9 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18958, 0, -0.103133)
 
 [node name="light-curved-double2" parent="." instance=ExtResource("7_blb64")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18958, 0, -0.103133)
-
-[node name="light-curved2" parent="." instance=ExtResource("8_itiul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18958, 0, -0.103133)
 
 [node name="light-square-cross2" parent="." instance=ExtResource("9_yl132")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81042, 0, -0.103133)

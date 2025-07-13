@@ -24,7 +24,7 @@ func _process(delta):
 		return
 	
 	# Stop if traffic ahead, otherwise move at max speed
-	var speed
+	var speed := 0.0
 	if traffic_ray_cast.is_colliding():
 		var collider = traffic_ray_cast.get_collider()
 		if collider and collider.get_collision_layer_value(VEHICLES):

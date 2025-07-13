@@ -69,23 +69,28 @@ func _process(delta: float):
 	ring_mesh.material_override = new_material
 	dollar_mesh.material_override = new_material
 	
-	# Add this walking logic
 	if car_in_range and current_characater:
 		var car = get_tree().get_first_node_in_group("player_car")
-		if car and car.linear_velocity.length() < 0.5:
-			var direction = (car.global_position - current_characater.global_position).normalized()
-			var distance_to_car = current_characater.global_position.distance_to(car.global_position)
-			if distance_to_car < 1:
-				current_characater.visible = false
-				area_mesh.visible = false
-				ring_mesh.visible = false
-				dollar_mesh.visible = false
-				get_parent().call_deferred("remove_child", self)
-				car.call_deferred("add_child", self)
-				call_deferred("_set_up_trip", car)
-			else:
-				current_characater.global_position += direction * 2 * delta
-				car.engine_force = 0.0
+		if car:
+			# Check if there is already a passenger
+			var car_children = car.get_children()
+			for child in car_children:
+				if child.is_in_group("passengers"):
+					return
+			if car.linear_velocity.length() < 0.5:
+				var direction = (car.global_position - current_characater.global_position).normalized()
+				var distance_to_car = current_characater.global_position.distance_to(car.global_position)
+				if distance_to_car < 1:
+					current_characater.visible = false
+					area_mesh.visible = false
+					ring_mesh.visible = false
+					dollar_mesh.visible = false
+					get_parent().call_deferred("remove_child", self)
+					car.call_deferred("add_child", self)
+					call_deferred("_set_up_trip", car)
+				else:
+					current_characater.global_position += direction * 2 * delta
+					car.engine_force = 0.0
 
 func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player_car"):

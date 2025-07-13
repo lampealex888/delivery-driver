@@ -53,4 +53,4 @@ transform = Transform3D(8.01, 0, 0, 0, 8.01, 0, 0, 0, 8.01, 0.05, 3.1, 0)
 mesh = SubResource("TextMesh_k6jdc")
 
 [node name="PatienceTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 45.0
