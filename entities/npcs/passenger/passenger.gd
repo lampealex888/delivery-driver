@@ -114,9 +114,12 @@ func _process_walking_to_car(delta: float):
 
 func _process_walking_to_destination(delta: float):
 	var direction = (destination_building.global_position - current_characater.global_position).normalized()
-	current_characater.look_at(destination_building.global_position, Vector3.UP)
-	current_characater.rotation.y += PI
-	current_characater.global_position += direction * 2 * delta
+	if current_characater.global_position.distance_to(destination_building.global_position) > 0.1:
+		current_characater.look_at(destination_building.global_position, Vector3.UP)
+		current_characater.rotation.y += PI
+		current_characater.global_position += direction * 2 * delta
+	else:
+		queue_free()
 
 
 func _transition_to_waiting():
@@ -196,5 +199,3 @@ func _delivered_to_destination():
 	car_in_range = null
 	state = State.WALKING_TO_DESTINATION
 	_play_animation("walk")
-	patience_timer.wait_time = 5.0
-	patience_timer.start()

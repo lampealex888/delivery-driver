@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ccv5g0yuiu5ei"]
+[gd_scene load_steps=14 format=4 uid="uid://ccv5g0yuiu5ei"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_o20og"]
 [ext_resource type="PackedScene" uid="uid://bbi2huporwlxv" path="res://entities/vehicles/ai_car/ai_car.tscn" id="2_elfia"]
@@ -75,7 +75,10 @@ _data = {
 }
 point_count = 2
 
-[node name="RoadStraight" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_elfia"]
+size = Vector3(6.66, 0.1, 6.66)
+
+[node name="RoadStraight" type="StaticBody3D"]
 
 [node name="RoadStraightMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
@@ -144,3 +147,7 @@ shape = SubResource("BoxShape3D_a0ktb")
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_takau")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_elfia")

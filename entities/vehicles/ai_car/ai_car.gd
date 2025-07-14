@@ -12,7 +12,6 @@ var is_following_path: bool = true
 @onready var rigid_body = $RigidBody3D
 @onready var path_ray_cast = rigid_body.get_node("PathRayCast3D")
 @onready var traffic_ray_cast = rigid_body.get_node("TrafficRayCast3D")
-@onready var car_collision_area3d = rigid_body.get_node("CarCollisionArea3D")
 @onready var despawn_timer = rigid_body.get_node("DespawnTimer")
 
 static var vehicle_paths: Array[String] = [
@@ -38,7 +37,7 @@ static var vehicle_paths: Array[String] = [
 ]
 
 func _ready():
-	car_collision_area3d.body_entered.connect(on_player_collision)
+	rigid_body.body_entered.connect(on_player_collision)
 	despawn_timer.timeout.connect(queue_free)
 	
 	var random_vehicle_path = vehicle_paths[randi() % vehicle_paths.size()]
