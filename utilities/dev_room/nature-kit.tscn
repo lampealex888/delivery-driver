@@ -1,4 +1,4 @@
-[gd_scene load_steps=329 format=3 uid="uid://colh08c5ymx8f"]
+[gd_scene load_steps=328 format=3 uid="uid://colh08c5ymx8f"]
 
 [ext_resource type="PackedScene" uid="uid://yle8six7l5ud" path="res://assets/kenney_nature-kit/bed.glb" id="1_ex3sa"]
 [ext_resource type="PackedScene" uid="uid://cd682bheyxovw" path="res://assets/kenney_nature-kit/bed_floor.glb" id="2_m4bv8"]
@@ -299,8 +299,8 @@
 [ext_resource type="PackedScene" uid="uid://b57fvmu40mbxa" path="res://assets/kenney_nature-kit/tree_pineRoundB.glb" id="298_eqhpg"]
 [ext_resource type="PackedScene" uid="uid://ybnkrwla6pcf" path="res://assets/kenney_nature-kit/tree_pineRoundC.glb" id="299_cscl8"]
 [ext_resource type="PackedScene" uid="uid://c3ei4rxnye0be" path="res://assets/kenney_nature-kit/tree_pineRoundD.glb" id="300_rj0fw"]
-[ext_resource type="PackedScene" uid="uid://cutdamooqyual" path="res://assets/kenney_nature-kit/tree_pineRoundE.glb" id="301_vbu46"]
-[ext_resource type="PackedScene" uid="uid://d2rec2hx041no" path="res://assets/kenney_nature-kit/tree_pineRoundF.glb" id="302_wl5pg"]
+[ext_resource type="PackedScene" uid="uid://cutdamooqyual" path="res://stages/nature/props/tree_pine_round_e/tree_pineRoundE.glb" id="301_vbu46"]
+[ext_resource type="PackedScene" uid="uid://d2rec2hx041no" path="res://stages/nature/props/tree_pine_round_f/tree_pineRoundF.glb" id="302_wl5pg"]
 [ext_resource type="PackedScene" uid="uid://b0h1so7bpojq5" path="res://assets/kenney_nature-kit/tree_pineSmallA.glb" id="303_bsa2r"]
 [ext_resource type="PackedScene" uid="uid://dinky1fhn53y" path="res://assets/kenney_nature-kit/tree_pineSmallB.glb" id="304_d1gyf"]
 [ext_resource type="PackedScene" uid="uid://bjf7l6quik52f" path="res://assets/kenney_nature-kit/tree_pineSmallC.glb" id="305_o75ms"]
@@ -316,13 +316,12 @@
 [ext_resource type="PackedScene" uid="uid://rw11lgrasiyi" path="res://assets/kenney_nature-kit/tree_plateau.glb" id="315_8f5bx"]
 [ext_resource type="PackedScene" uid="uid://h4qdu5uldxb0" path="res://assets/kenney_nature-kit/tree_plateau_dark.glb" id="316_tb7ex"]
 [ext_resource type="PackedScene" uid="uid://onlq6uytvxbe" path="res://assets/kenney_nature-kit/tree_plateau_fall.glb" id="317_gxrd3"]
-[ext_resource type="PackedScene" uid="uid://cv1jaiu603dco" path="res://assets/kenney_nature-kit/tree_simple.glb" id="318_3iva1"]
+[ext_resource type="PackedScene" uid="uid://cv1jaiu603dco" path="res://stages/nature/props/tree_simple/tree_simple.glb" id="318_3iva1"]
 [ext_resource type="PackedScene" uid="uid://bejevslykoj3u" path="res://assets/kenney_nature-kit/tree_simple_dark.glb" id="319_aw5mt"]
 [ext_resource type="PackedScene" uid="uid://bixfcpsn63wms" path="res://assets/kenney_nature-kit/tree_simple_fall.glb" id="320_0dlff"]
-[ext_resource type="PackedScene" uid="uid://b7l7e6ryx8k58" path="res://assets/kenney_nature-kit/tree_small.glb" id="321_o1ip3"]
+[ext_resource type="PackedScene" uid="uid://b7l7e6ryx8k58" path="res://stages/nature/props/tree_small/tree_small.glb" id="321_o1ip3"]
 [ext_resource type="PackedScene" uid="uid://c0pgbe5odyk6f" path="res://assets/kenney_nature-kit/tree_small_dark.glb" id="322_4naeo"]
 [ext_resource type="PackedScene" uid="uid://bkqpfc6qo0175" path="res://assets/kenney_nature-kit/tree_small_fall.glb" id="323_ip435"]
-[ext_resource type="PackedScene" uid="uid://0u2x2n8550c2" path="res://assets/kenney_nature-kit/tree_tall.glb" id="324_3k1t2"]
 [ext_resource type="PackedScene" uid="uid://dup7cqs44rhw2" path="res://assets/kenney_nature-kit/tree_tall_dark.glb" id="325_n2c4h"]
 [ext_resource type="PackedScene" uid="uid://b3xeurawjihyd" path="res://assets/kenney_nature-kit/tree_tall_fall.glb" id="326_ayt3d"]
 [ext_resource type="PackedScene" uid="uid://blxk7l13u6ill" path="res://assets/kenney_nature-kit/tree_thin.glb" id="327_21khh"]
@@ -1295,9 +1294,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -9)
 
 [node name="tree_small_fall2" parent="." instance=ExtResource("323_ip435")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -9)
-
-[node name="tree_tall2" parent="." instance=ExtResource("324_3k1t2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -8)
 
 [node name="tree_tall_dark2" parent="." instance=ExtResource("325_n2c4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -8)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7l7e6ryx8k58"
-path="res://.godot/imported/tree_small.glb-23d133a79e5eda2adc3fe8249646403e.scn"
+uid="uid://cutdamooqyual"
+path="res://.godot/imported/tree_pineRoundE.glb-85e71c62a4c4a293dcb3609847052987.scn"
 
 [deps]
 
-source_file="res://assets/kenney_nature-kit/tree_small.glb"
-dest_files=["res://.godot/imported/tree_small.glb-23d133a79e5eda2adc3fe8249646403e.scn"]
+source_file="res://stages/nature/props/tree_pine_round_e/tree_pineRoundE.glb"
+dest_files=["res://.godot/imported/tree_pineRoundE.glb-85e71c62a4c4a293dcb3609847052987.scn"]
 
 [params]
 

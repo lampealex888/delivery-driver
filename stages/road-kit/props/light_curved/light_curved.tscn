@@ -7,7 +7,7 @@
 size = Vector3(0.2, 3.4, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1716o"]
-size = Vector3(1, 0.2, 0.9)
+size = Vector3(0.2, 0.2, 0.9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qny8l"]
 resource_name = "colormap"
@@ -84,7 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 1.7, -2.98023e-0
 shape = SubResource("BoxShape3D_oi3l1")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3, -0.55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 3.3, -0.55)
 shape = SubResource("BoxShape3D_1716o")
 
 [node name="light-curved" type="MeshInstance3D" parent="."]

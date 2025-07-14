@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://0u2x2n8550c2"
-path="res://.godot/imported/tree_tall.glb-d47d1bdc06343636bcc4e7c2a910d556.scn"
+path="res://.godot/imported/tree_tall.glb-69282818ce9ff8718c3c6065296b9532.scn"
 
 [deps]
 
-source_file="res://assets/kenney_nature-kit/tree_tall.glb"
-dest_files=["res://.godot/imported/tree_tall.glb-d47d1bdc06343636bcc4e7c2a910d556.scn"]
+source_file="res://stages/nature/props/tree_tall/tree_tall.glb"
+dest_files=["res://.godot/imported/tree_tall.glb-69282818ce9ff8718c3c6065296b9532.scn"]
 
 [params]
 

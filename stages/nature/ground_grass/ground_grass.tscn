@@ -37,17 +37,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nksfe")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1u3b4"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bddku"]
 data = PackedVector3Array(0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5)
 
 [node name="GroundGrass" type="Node3D"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
-[node name="GroundGrassMesh" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="GroundGrassMesh" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vsr8q")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GroundGrassMesh"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundGrassMesh/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_1u3b4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_bddku")

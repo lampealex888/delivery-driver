@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://u8n33ibougme"]
+[gd_scene load_steps=11 format=3 uid="uid://u8n33ibougme"]
 
 [ext_resource type="PackedScene" uid="uid://dvqq8d63d0tq5" path="res://stages/road-kit/roads/road_bend/road_bend.tscn" id="1_jstjd"]
 [ext_resource type="PackedScene" uid="uid://bl7mo0fx1lb1g" path="res://stages/road-kit/roads/road_bend_sidewalk/road_bend_sidewalk.tscn" id="2_wjwn6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c70hywf58e5n4" path="res://stages/road-kit/roads/road_intersection/road_intersection.tscn" id="7_10x8v"]
 [ext_resource type="PackedScene" uid="uid://ccv5g0yuiu5ei" path="res://stages/road-kit/roads/road_straight/road_straight.tscn" id="8_8cukg"]
 [ext_resource type="PackedScene" uid="uid://c4m484jvc0lac" path="res://stages/road-kit/roads/tile_low/tile_low.tscn" id="9_enwbl"]
+[ext_resource type="PackedScene" uid="uid://b8aampgh1a65e" path="res://stages/nature/ground_grass/ground_grass.tscn" id="10_wjwn6"]
 
 [node name="RoadKit" type="Node3D"]
 
@@ -37,3 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 0)
 
 [node name="TileLow" parent="." instance=ExtResource("9_enwbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)
+
+[node name="GroundGrass" parent="." instance=ExtResource("10_wjwn6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, 0)

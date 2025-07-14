@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cv1jaiu603dco"
-path="res://.godot/imported/tree_simple.glb-5f67e76ce0b2ed7df4293d55bf5deedb.scn"
+uid="uid://b7l7e6ryx8k58"
+path="res://.godot/imported/tree_small.glb-aeafa88192b75d11f577a4dfadf11c19.scn"
 
 [deps]
 
-source_file="res://assets/kenney_nature-kit/tree_simple.glb"
-dest_files=["res://.godot/imported/tree_simple.glb-5f67e76ce0b2ed7df4293d55bf5deedb.scn"]
+source_file="res://stages/nature/props/tree_small/tree_small.glb"
+dest_files=["res://.godot/imported/tree_small.glb-aeafa88192b75d11f577a4dfadf11c19.scn"]
 
 [params]
 
