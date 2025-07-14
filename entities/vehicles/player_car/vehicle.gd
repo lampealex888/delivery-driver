@@ -8,15 +8,17 @@ const BRAKE_STRENGTH := 2.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
-var disabled
+var disabled := false
+var game_manager: Node3D
 
 @onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
 func _ready():
-	disabled = true
 	await get_tree().process_frame
 	var game_manager = get_tree().get_first_node_in_group("game_manager")
-	game_manager.game_started.connect(enable_vehicle)
+	if game_manager:
+		game_manager.game_started.connect(enable_vehicle)
+		disabled = true
 
 
 func enable_vehicle():

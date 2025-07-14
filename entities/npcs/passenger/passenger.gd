@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 var destination_building: Node3D
 var current_building: Node3D
-var car_in_range: bool = false
+var car_in_range: Node3D
 var current_characater: Node3D
 var animation_player: AnimationPlayer
 var material: StandardMaterial3D
@@ -58,6 +58,9 @@ func _ready():
 	
 	material = StandardMaterial3D.new()
 	material.emission_enabled = true
+	material.emission = Color.GREEN
+	material.emission_energy_multiplier = 2.0
+	
 	material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	material.albedo_color = Color.GREEN
 	last_color = Color.GREEN
@@ -80,14 +83,14 @@ func _process(delta: float):
 	# Only update material if color changed
 	if color != last_color:
 		material.albedo_color = color
-		material.emission = color * 0.3
+		material.emission = color
 		last_color = color
 	
 	ring_mesh.rotation.y += delta
 	dollar_mesh.rotation.y += delta
 	
 	if car_in_range and current_characater:
-		var car = get_tree().get_first_node_in_group("player_car")
+		var car = car_in_range
 		if car:
 			# Check if there is already a passenger
 			var car_children = car.get_children()
@@ -117,7 +120,7 @@ func _process(delta: float):
 
 func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player_car"):
-		car_in_range = true
+		car_in_range = body
 		for child in body.get_children():
 			if child.is_in_group("passengers"):
 				return
@@ -125,7 +128,7 @@ func _on_pickup_area_body_entered(body):
 
 func _on_pickup_area_body_exited(body):
 	if body.is_in_group("player_car"):
-		car_in_range = false
+		car_in_range = null
 
 
 func _set_up_trip(body):

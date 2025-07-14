@@ -17,31 +17,25 @@ const DISTANCE_MEDIUM := 50.0
 @onready var arrow_shaft: MeshInstance3D = $ArrowShaft
 @onready var distance_label: Label = $SubViewport/Control/DistanceLabel
 
-var head_material: StandardMaterial3D
-var shaft_material: StandardMaterial3D
-var is_active := false  # NEW: Only update when active
+var material: StandardMaterial3D
+var is_active := false
 
 func _ready() -> void:
 	setup_materials()
-	visible = false  # Start hidden
+	visible = false
 
 func setup_materials() -> void:
-	head_material = StandardMaterial3D.new()
-	head_material.albedo_color = COLOR_FAR
-	head_material.emission_enabled = true
-	head_material.emission = COLOR_FAR * 0.3
-	head_material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	
-	shaft_material = StandardMaterial3D.new()
-	shaft_material.albedo_color = COLOR_FAR
-	shaft_material.emission_enabled = true
-	shaft_material.emission = COLOR_FAR * 0.3
-	shaft_material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	material = StandardMaterial3D.new()
+	material.albedo_color = COLOR_FAR
+	material.emission_enabled = true
+	material.emission = COLOR_FAR
+	material.emission_energy_multiplier = 2.0
+	material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	
 	if arrow_head:
-		arrow_head.material_override = head_material
+		arrow_head.material_override = material
 	if arrow_shaft:
-		arrow_shaft.material_override = shaft_material
+		arrow_shaft.material_override = material
 
 func _process(_delta: float) -> void:
 	if not is_active or not follow_target:
@@ -89,12 +83,9 @@ func update_arrow_color() -> void:
 		var t = clamp((distance - DISTANCE_MEDIUM) / 50.0, 0.0, 1.0)
 		color = COLOR_MEDIUM.lerp(COLOR_FAR, t)
 	
-	if head_material:
-		head_material.albedo_color = color
-		head_material.emission = color * 0.3
-	if shaft_material:
-		shaft_material.albedo_color = color
-		shaft_material.emission = color * 0.3
+	if material:
+		material.albedo_color = color
+		material.emission = color * 0.3
 
 func update_distance_display() -> void:
 	if not follow_target or not distance_label:

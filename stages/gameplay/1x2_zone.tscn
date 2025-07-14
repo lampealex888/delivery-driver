@@ -1,15 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb6ewhn2tdbhu"]
 
 [ext_resource type="Script" uid="uid://d2mn2rog7e6fg" path="res://stages/gameplay/zone.gd" id="1_txwa7"]
+[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://stages/gameplay/material_emissive_green.tres" id="2_w4lm5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vor0"]
 size = Vector3(13.33, 2, 6.66)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txwa7"]
-albedo_color = Color(0, 1, 0, 1)
-emission_enabled = true
-emission = Color(0, 1, 0, 1)
-emission_energy_multiplier = 2.0
 
 [node name="1x2Zone" type="Node3D" groups=["buildings"]]
 script = ExtResource("1_txwa7")
@@ -26,7 +21,7 @@ shape = SubResource("BoxShape3D_6vor0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
 visible = false
 size = Vector3(13.33, 0.01, 6.66)
-material = SubResource("StandardMaterial3D_txwa7")
+material = ExtResource("2_w4lm5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="DestinationArea3D/DestinationOutline"]
 operation = 2

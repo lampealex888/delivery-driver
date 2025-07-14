@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs8fihak5ehyo"]
+[gd_scene load_steps=4 format=3 uid="uid://bs8fihak5ehyo"]
 
 [ext_resource type="Script" uid="uid://d2mn2rog7e6fg" path="res://stages/gameplay/zone.gd" id="1_jnwle"]
 
@@ -10,9 +10,6 @@ albedo_color = Color(0, 1, 0, 1)
 emission_enabled = true
 emission = Color(0, 1, 0, 1)
 emission_energy_multiplier = 2.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_5mibe"]
-size = Vector3(13.33, 0.1, 13.33)
 
 [node name="2x2Zone" type="Node3D" groups=["buildings"]]
 script = ExtResource("1_jnwle")
@@ -43,7 +40,3 @@ material = SubResource("StandardMaterial3D_jnwle")
 [node name="CSGBox3D2" type="CSGBox3D" parent="DestinationArea3D/DestinationOutline"]
 operation = 2
 size = Vector3(12.88, 0.01, 12.88)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("BoxMesh_5mibe")
