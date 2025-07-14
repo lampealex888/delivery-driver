@@ -1,4 +1,6 @@
-extends CharacterBody3D	
+extends CharacterBody3D
+
+enum State { WAITING, WALKING_TO_CAR, IN_CAR, WALKING_TO_DESTINATION }
 
 @onready var destination_arrow: Node3D = $DestinationArrow
 @onready var pickup_area: Area3D = $PickupArea3D
@@ -8,11 +10,10 @@ extends CharacterBody3D
 @onready var dollar_mesh: MeshInstance3D = $DollarMesh
 @onready var patience_timer: Timer = $PatienceTimer
 
+var state: State = State.WAITING
 var destination_building: Node3D
 var current_building: Node3D
 var car_in_range: Node3D
-var is_in_car: bool
-var delivered: bool
 var current_characater: Node3D
 var animation_player: AnimationPlayer
 var material: StandardMaterial3D
@@ -43,26 +44,102 @@ static var character_paths: Array[String] = [
 func _ready():
 	pickup_area.body_entered.connect(_on_pickup_area_body_entered)
 	pickup_area.body_exited.connect(_on_pickup_area_body_exited)
-	
 	patience_timer.timeout.connect(queue_free)
 	patience_timer.start()
 	
+	_spawn_random_character()
+	_setup_materials()
+
+func _process(delta: float):
+	match state:
+		State.WAITING:
+			_process_waiting(delta)
+		State.WALKING_TO_CAR:
+			_process_walking_to_car(delta)
+		State.IN_CAR:
+			pass
+		State.WALKING_TO_DESTINATION:
+			_process_walking_to_destination(delta)
+
+func _process_waiting(delta: float):
+	var patience_ratio = patience_timer.time_left / patience_timer.wait_time
+	var color: Color
+	if patience_ratio > 0.66:
+		color = Color.GREEN
+	elif patience_ratio > 0.33:
+		color = Color.YELLOW
+	else:
+		color = Color.RED
+	if color != last_color:
+		material.albedo_color = color
+		material.emission = color
+		last_color = color
+	ring_mesh.rotation.y += delta
+	dollar_mesh.rotation.y += delta
+
+func _process_walking_to_car(delta: float):
+	if not car_in_range:
+		_transition_to_waiting()
+		return
+	
+	var car_children = car_in_range.get_children()
+	for child in car_children:
+		if child.is_in_group("passengers"):
+			_transition_to_waiting()
+			return
+	
+	if car_in_range.linear_velocity.length() >= 0.5:
+		_play_animation("idle")
+		return
+	
+	var direction = (car_in_range.global_position - current_characater.global_position).normalized()
+	var distance_to_car = current_characater.global_position.distance_to(car_in_range.global_position)
+	
+	if distance_to_car < 1:
+		state = State.IN_CAR
+		current_characater.visible = false
+		area_mesh.visible = false
+		ring_mesh.visible = false
+		dollar_mesh.visible = false
+		get_parent().call_deferred("remove_child", self)
+		car_in_range.call_deferred("add_child", self)
+		call_deferred("_set_up_trip", car_in_range)
+	else:
+		_play_animation("walk")
+		car_in_range.engine_force = 0.0
+		current_characater.look_at(car_in_range.global_position, Vector3.UP)
+		current_characater.rotation.y += PI
+		current_characater.global_position += direction * 2 * delta
+
+
+func _process_walking_to_destination(delta: float):
+	var direction = (destination_building.global_position - current_characater.global_position).normalized()
+	current_characater.look_at(destination_building.global_position, Vector3.UP)
+	current_characater.rotation.y += PI
+	current_characater.global_position += direction * 2 * delta
+
+
+func _transition_to_waiting():
+	state = State.WAITING
+	patience_timer.paused = false
+	_play_animation("idle")
+
+
+func _spawn_random_character():
 	var random_char_path = character_paths[randi() % character_paths.size()]
 	var character_scene = load(random_char_path)
 	var random_character = character_scene.instantiate()
 	add_child(random_character)
 	current_characater = random_character
 	animation_player = current_characater.get_node("AnimationPlayer")
-	if animation_player and animation_player.has_animation("idle"):
-		var animation = animation_player.get_animation("idle")
-		animation.loop_mode = Animation.LOOP_LINEAR
-		animation_player.play("idle")
-	
+	_play_animation("idle")
+
+
+func _setup_materials():
 	material = StandardMaterial3D.new()
 	material.emission_enabled = true
 	material.emission = Color.GREEN
 	material.emission_energy_multiplier = 2.0
-	
 	material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	material.albedo_color = Color.GREEN
 	last_color = Color.GREEN
@@ -72,75 +149,28 @@ func _ready():
 	dollar_mesh.material_override = material
 
 
-func _process(delta: float):
-	if delivered:
-		var direction = (destination_building.global_position - current_characater.global_position).normalized()
-		current_characater.look_at(destination_building.global_position, Vector3.UP)
-		current_characater.rotation.y += PI
-		current_characater.global_position += direction * 2 * delta
-		return
-	var patience_ratio = patience_timer.time_left / patience_timer.wait_time
-	var color: Color
-	if patience_ratio > 0.66:
-		color = Color.GREEN
-	elif patience_ratio > 0.33:
-		color = Color.YELLOW
-	else:
-		color = Color.RED
-	
-	# Only update material if color changed
-	if color != last_color:
-		material.albedo_color = color
-		material.emission = color
-		last_color = color
-	
-	ring_mesh.rotation.y += delta
-	dollar_mesh.rotation.y += delta
-	
-	if car_in_range and current_characater:
-		var car = car_in_range
-		if car:
-			# Check if there is already a passenger
-			var car_children = car.get_children()
-			for child in car_children:
-				if child.is_in_group("passengers"):
-					return
-			if car.linear_velocity.length() < 0.5:
-				var direction = (car.global_position - current_characater.global_position).normalized()
-				var distance_to_car = current_characater.global_position.distance_to(car.global_position)
-				if distance_to_car < 1:
-					is_in_car = true
-					current_characater.visible = false
-					area_mesh.visible = false
-					ring_mesh.visible = false
-					dollar_mesh.visible = false
-					get_parent().call_deferred("remove_child", self)
-					car.call_deferred("add_child", self)
-					call_deferred("_set_up_trip", car)
-				else:
-					car.engine_force = 0.0
-					current_characater.look_at(car.global_position, Vector3.UP)
-					current_characater.rotation.y += PI  # Add 180 degrees to face the correct direction
-					current_characater.global_position += direction * 2 * delta
-					animation_player.clear_queue()
-					var animation = animation_player.get_animation("walk")
-					animation.loop_mode = Animation.LOOP_LINEAR
-					animation_player.play("walk")
+func _play_animation(anim_name: String):
+	if animation_player and animation_player.has_animation(anim_name):
+		var animation = animation_player.get_animation(anim_name)
+		animation.loop_mode = Animation.LOOP_LINEAR
+		animation_player.play(anim_name)
+
 
 func _on_pickup_area_body_entered(body):
-	if body.is_in_group("player_car"):
+	if body.is_in_group("player_car") and state == State.WAITING:
 		car_in_range = body
-		patience_timer.paused = true
 		for child in body.get_children():
 			if child.is_in_group("passengers"):
 				return
+		state = State.WALKING_TO_CAR
+		patience_timer.paused = true
 
 
 func _on_pickup_area_body_exited(body):
-	if body.is_in_group("player_car"):
+	if body.is_in_group("player_car") and body == car_in_range:
 		car_in_range = null
-		if not is_in_car:
-			patience_timer.paused = false
+		if state == State.WALKING_TO_CAR:
+			_transition_to_waiting()
 
 
 func _set_up_trip(body):
@@ -164,12 +194,7 @@ func _delivered_to_destination():
 	if destination_arrow:
 		destination_arrow.visible = false
 	car_in_range = null
-	delivered = true
-	
-	if animation_player and animation_player.has_animation("walk"):
-		var animation = animation_player.get_animation("walk")
-		animation.loop_mode = Animation.LOOP_LINEAR
-		animation_player.play("walk")
-	
-	patience_timer.wait_time = 5.0  # 10 seconds before despawning
+	state = State.WALKING_TO_DESTINATION
+	_play_animation("walk")
+	patience_timer.wait_time = 5.0
 	patience_timer.start()
