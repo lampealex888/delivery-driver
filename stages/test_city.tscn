@@ -49,7 +49,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.4, 
 [node name="BuildingN" parent="Buildings/BuildingN" instance=ExtResource("3_vqdq5")]
 
 [node name="2x2Zone" parent="Buildings/BuildingN" instance=ExtResource("6_yls2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, 0)
 building_name = "Hospital"
 
 [node name="BuildingK" type="Node3D" parent="Buildings"]

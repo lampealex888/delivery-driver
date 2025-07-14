@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://entities/vehicles/player_car/particle_smoke.png" id="2_1gkvk"]
 [ext_resource type="Texture2D" uid="uid://ce1xw1asb4saq" path="res://entities/vehicles/shared/colormap.png" id="2_p68hu"]
 [ext_resource type="Script" uid="uid://dsxeyshdgs80" path="res://entities/vehicles/player_car/follow_camera.gd" id="4_6igu8"]
-[ext_resource type="AudioStream" uid="uid://bh2mf0gyov8nx" path="res://entities/vehicles/player_car/sounds/engineCircular_002.ogg" id="4_m0hqm"]
+[ext_resource type="AudioStream" uid="uid://dr44vp0t1furi" path="res://entities/vehicles/player_car/sounds/spaceEngineSmall_000.ogg" id="4_m0hqm"]
 [ext_resource type="AudioStream" uid="uid://bh1i1qeo4wb5q" path="res://entities/vehicles/player_car/sounds/impactPlate_light_000.ogg" id="5_m0hqm"]
 [ext_resource type="AudioStream" uid="uid://c3covfvwi5xl7" path="res://entities/vehicles/player_car/sounds/impactPlate_light_001.ogg" id="6_h1off"]
 [ext_resource type="AudioStream" uid="uid://i4r7vafp05t8" path="res://entities/vehicles/player_car/sounds/impactPlate_light_002.ogg" id="7_eitol"]
@@ -321,7 +321,7 @@ height = 1.25
 
 [node name="EngineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_m0hqm")
-volume_db = -21.95
+pitch_scale = 0.05
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 

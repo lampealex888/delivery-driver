@@ -60,9 +60,11 @@ func _on_destination_area_entered(body):
 				current_passenger = child
 		if current_passenger and current_passenger.destination_building == self:
 			body.remove_child(current_passenger)
-			current_passenger.queue_free()
-			passenger_delivered.emit()
+			add_child(current_passenger)
+			current_passenger.global_position = body.global_position
+			current_passenger.global_rotation = body.global_rotation
 			destination_outline.visible = false
+			passenger_delivered.emit()
 
 
 func is_spawn_point_occupied(spawn_point: Marker3D) -> bool:

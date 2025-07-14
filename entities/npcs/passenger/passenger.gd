@@ -11,6 +11,8 @@ extends CharacterBody3D
 var destination_building: Node3D
 var current_building: Node3D
 var car_in_range: Node3D
+var is_in_car: bool
+var delivered: bool
 var current_characater: Node3D
 var animation_player: AnimationPlayer
 var material: StandardMaterial3D
@@ -71,6 +73,12 @@ func _ready():
 
 
 func _process(delta: float):
+	if delivered:
+		var direction = (destination_building.global_position - current_characater.global_position).normalized()
+		current_characater.look_at(destination_building.global_position, Vector3.UP)
+		current_characater.rotation.y += PI
+		current_characater.global_position += direction * 2 * delta
+		return
 	var patience_ratio = patience_timer.time_left / patience_timer.wait_time
 	var color: Color
 	if patience_ratio > 0.66:
@@ -101,6 +109,7 @@ func _process(delta: float):
 				var direction = (car.global_position - current_characater.global_position).normalized()
 				var distance_to_car = current_characater.global_position.distance_to(car.global_position)
 				if distance_to_car < 1:
+					is_in_car = true
 					current_characater.visible = false
 					area_mesh.visible = false
 					ring_mesh.visible = false
@@ -121,6 +130,7 @@ func _process(delta: float):
 func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player_car"):
 		car_in_range = body
+		patience_timer.paused = true
 		for child in body.get_children():
 			if child.is_in_group("passengers"):
 				return
@@ -129,6 +139,8 @@ func _on_pickup_area_body_entered(body):
 func _on_pickup_area_body_exited(body):
 	if body.is_in_group("player_car"):
 		car_in_range = null
+		if not is_in_car:
+			patience_timer.paused = false
 
 
 func _set_up_trip(body):
@@ -141,3 +153,23 @@ func _set_up_trip(body):
 		destination_arrow.activate(destination_building.global_position, self)
 		destination_arrow.visible = true
 	destination_building.get_node("DestinationArea3D/DestinationOutline").visible = true
+	destination_building.passenger_delivered.connect(_delivered_to_destination)
+
+
+func _delivered_to_destination():
+	current_characater.visible = true
+	area_mesh.visible = false
+	ring_mesh.visible = false
+	dollar_mesh.visible = false
+	if destination_arrow:
+		destination_arrow.visible = false
+	car_in_range = null
+	delivered = true
+	
+	if animation_player and animation_player.has_animation("walk"):
+		var animation = animation_player.get_animation("walk")
+		animation.loop_mode = Animation.LOOP_LINEAR
+		animation_player.play("walk")
+	
+	patience_timer.wait_time = 5.0  # 10 seconds before despawning
+	patience_timer.start()
