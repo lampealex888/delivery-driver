@@ -127,7 +127,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -49, 0, 32)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 12, 0, 32)
 
 [node name="BuildingD" parent="." instance=ExtResource("29_jebcy")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -42, 0, 32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 32)
 
 [node name="BuildingE" parent="." instance=ExtResource("30_vxgta")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 58, 0, 32)

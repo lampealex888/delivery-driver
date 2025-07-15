@@ -25,7 +25,6 @@ func _ready():
 		game_manager.game_started.connect(enable_vehicle)
 		disabled = true
 	brake_light_material = brake_light_right.get_active_material(0)
-	brake_light_material.emissions_enabled = true
 	brake_light_material.emission = Color(0.941, 0.012, 0.196)
 	brake_light_material.emission_energy_multiplier = 2.85
 

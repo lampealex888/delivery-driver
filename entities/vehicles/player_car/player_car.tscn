@@ -349,7 +349,6 @@ attenuation_filter_cutoff_hz = 20500.0
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, -0.022867, -1.10448)
-visible = false
 amount = 125
 lifetime = 1.25
 mesh = SubResource("QuadMesh_30wks")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxhnnlypr35r1"]
+[gd_scene load_steps=15 format=3 uid="uid://dxhnnlypr35r1"]
 
 [ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://stages/districts/commercial/buildings/building_k/building_k.tscn" id="3_2eyu7"]
 [ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://stages/districts/commercial/buildings/building_n/building_n.tscn" id="3_vqdq5"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/districts/commercial/buildings/building_h/building_h.tscn" id="8_d3i7y"]
 [ext_resource type="PackedScene" uid="uid://cu3e7y753xu8k" path="res://utilities/game/game_manager.tscn" id="8_wnyj6"]
 [ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/districts/commercial/buildings/building_g/building_g.tscn" id="9_68n4w"]
+[ext_resource type="MeshLibrary" uid="uid://ofnrhfmttyhb" path="res://stages/tileset/ground/ground.tres" id="10_68n4w"]
+[ext_resource type="Script" uid="uid://cmme8veleh46d" path="res://stages/tileset/ground/ground_grip_map.gd" id="11_y4ytd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1anp3"]
 size = Vector3(200, 1, 200)
@@ -69,3 +71,14 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 9.2, 0, -3.8)
 
 [node name="BuildingG" parent="Buildings" instance=ExtResource("9_68n4w")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.2, 0, -3.2)
+
+[node name="RoadGridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13, 0)
+mesh_library = ExtResource("10_68n4w")
+cell_size = Vector3(6.66, 6.66, 6.66)
+cell_center_y = false
+cell_scale = 6.66
+data = {
+"cells": PackedInt32Array(65535, 65535, 1048582, 65535, 0, 1441798, 0, 0, 1441800, 0, 65535, 655367)
+}
+script = ExtResource("11_y4ytd")

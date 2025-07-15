@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://blosi58syldu0"]
+
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/districts/commercial/buildings/building_g/building_g.tscn" id="1_r2uvo"]
+[ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/districts/commercial/buildings/building_h/building_h.tscn" id="2_sqlni"]
+[ext_resource type="PackedScene" uid="uid://c6lpl55rklfwc" path="res://stages/road-kit/props/light_curved/light_curved.tscn" id="3_0dof3"]
+[ext_resource type="PackedScene" uid="uid://cxla8srgmjae5" path="res://stages/districts/commercial/buildings/building_e/building_e.tscn" id="4_cm1lq"]
+
+[node name="Prefab2x2B" type="Node3D"]
+
+[node name="BuildingG2" parent="." instance=ExtResource("1_r2uvo")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 3.3, 0, -3.3)
+
+[node name="BuildingH3" parent="." instance=ExtResource("2_sqlni")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 3.3, 0, 3.7)
+
+[node name="LightCurved9" parent="." instance=ExtResource("3_0dof3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.212, 0, -6.33)
+
+[node name="LightCurved10" parent="." instance=ExtResource("3_0dof3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.212, 0, 6.37)
+
+[node name="LightCurved11" parent="." instance=ExtResource("3_0dof3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.288, 0, 6.37)
+
+[node name="LightCurved12" parent="." instance=ExtResource("3_0dof3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.288, 0, -6.33)
+
+[node name="BuildingE" parent="." instance=ExtResource("4_cm1lq")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -3.7, 0, -0.3)

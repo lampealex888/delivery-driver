@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8cmowl1w6em"]
+
+[ext_resource type="MeshLibrary" uid="uid://ofnrhfmttyhb" path="res://stages/tileset/ground/ground.tres" id="1_j5f37"]
+[ext_resource type="Script" uid="uid://cmme8veleh46d" path="res://stages/tileset/ground/ground_grip_map.gd" id="2_gaa00"]
+
+[node name="Prefab2x2D" type="Node3D"]
+
+[node name="RoadGridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13, 0)
+mesh_library = ExtResource("1_j5f37")
+cell_size = Vector3(6.66, 6.66, 6.66)
+cell_center_y = false
+cell_scale = 6.66
+data = {
+"cells": PackedInt32Array(65535, 65535, 1048582, 65535, 0, 655366, 0, 0, 1441798, 0, 65535, 6)
+}
+script = ExtResource("2_gaa00")
