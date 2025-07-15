@@ -35,14 +35,15 @@ ground_bottom_color = Color(0.639216, 0.823529, 0.478431, 1)
 ground_horizon_color = Color(0.764706, 0.85098, 0.74902, 1)
 ground_energy_multiplier = 0.05
 
-[sub_resource type="Sky" id="Sky_4udl8"]
+[sub_resource type="Sky" id="Sky_dc1wy"]
 sky_material = SubResource("ProceduralSkyMaterial_04bqp")
 
 [sub_resource type="Environment" id="Environment_jrmcm"]
 background_mode = 2
-sky = SubResource("Sky_4udl8")
+sky = SubResource("Sky_dc1wy")
 glow_enabled = true
 glow_blend_mode = 1
+glow_hdr_threshold = 0.1
 
 [node name="City" type="Node3D"]
 
@@ -53,7 +54,7 @@ cell_size = Vector3(6.66, 6.66, 6.66)
 cell_center_y = false
 cell_scale = 6.66
 data = {
-"cells": PackedInt32Array(65533, 3, 655361, 65535, 65533, 7, 65533, 2, 1048583, 65533, 1, 1048583, 65534, 1, 8, 65534, 2, 1441800, 0, 3, 7, 65535, 65535, 1441800, 65534, 3, 7, 65535, 3, 655366, 65535, 2, 1048583, 65535, 1, 1048582, 0, 1, 655365, 0, 0, 655361, 1, 0, 7, 3, 3, 1441793, 3, 2, 1048583, 3, 1, 1048583, 3, 0, 1441798, 2, 3, 7, 1, 1, 1441800, 1, 3, 7, 1, 2, 1441800, 2, 2, 1441800, 2, 0, 7, 0, 2, 8, 65534, 0, 655366, 0, 65534, 1048582, 0, 65535, 1048583, 1, 65534, 7, 1, 65535, 1048584, 2, 65534, 655367, 2, 65535, 1048584, 3, 65534, 1, 3, 65535, 1441799, 65534, 65534, 1048583, 65534, 65535, 1048583, 65535, 0, 1, 65534, 65533, 6, 0, 65533, 1, 2, 1, 1441800, 65533, 65535, 1048585, 65533, 65534, 1441801, 65533, 65533, 7, 65532, 65533, 7, 65532, 65534, 1441801, 65532, 65535, 1441801, 65531, 65535, 1048583, 65531, 65534, 1048583, 65531, 65533, 1048577, 65533, 0, 6, 65532, 0, 7, 65531, 0, 655361, 65535, 65534, 1441800)
+"cells": PackedInt32Array(65533, 3, 655361, 65533, 2, 1048583, 65533, 1, 1048583, 65534, 1, 8, 65534, 2, 1441800, 0, 3, 7, 65534, 3, 7, 65535, 3, 655366, 65535, 2, 1048583, 65535, 1, 1048582, 0, 1, 655365, 1, 0, 1441800, 3, 3, 1441793, 3, 2, 1048583, 3, 1, 1048583, 3, 0, 1048583, 2, 3, 7, 1, 1, 1441800, 1, 3, 7, 1, 2, 1441800, 2, 2, 1441800, 2, 0, 1441800, 0, 2, 8, 1, 65534, 7, 1, 65535, 1048584, 2, 65534, 655367, 2, 65535, 1048584, 3, 65534, 1, 3, 65535, 1441799, 2, 1, 1441800, 65530, 65533, 1048577, 65530, 65534, 1048583, 65530, 65535, 1048583, 65530, 0, 655361, 65531, 65533, 7, 65531, 65534, 196617, 65531, 65535, 196617, 65531, 0, 7, 65532, 65533, 7, 65532, 65534, 196617, 65532, 65535, 196617, 65532, 0, 7, 65533, 65533, 6, 65533, 65534, 1048583, 65533, 65535, 1048583, 65534, 65533, 7, 65534, 65534, 1441800, 65534, 65535, 1441800, 65534, 0, 7, 65535, 65533, 1, 65535, 65534, 1048582, 65535, 65535, 1048583, 65535, 0, 1441798, 0, 0, 1441800, 0, 65535, 1048584, 0, 65534, 7, 65533, 0, 1048580)
 }
 script = ExtResource("3_r86rm")
 
@@ -77,6 +78,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0,
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jrmcm")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 2)
+omni_range = 40.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 13, -8)
+omni_range = 40.0
+
 [node name="Buildings" type="Node3D" parent="."]
 
 [node name="BuildingN" type="Node3D" parent="Buildings"]
@@ -94,6 +103,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.8, 
 [node name="1x2Zone" parent="Buildings/BuildingK" instance=ExtResource("7_r86rm")]
 
 [node name="BuildingK" parent="Buildings/BuildingK" instance=ExtResource("7_jrmcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0, 6)
 
 [node name="BuildingC" parent="Buildings" instance=ExtResource("9_r86rm")]
 transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 3, 0, 16.6)
@@ -104,81 +114,75 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 9.2, 0, -3.8)
 [node name="BuildingG" parent="Buildings" instance=ExtResource("11_4udl8")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.2, 0, -3.2)
 
-[node name="LightingProps" type="Node3D" parent="."]
+[node name="BuildingE" parent="Buildings" instance=ExtResource("13_du7lh")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -26, 0, -3)
 
-[node name="LightCurved" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.212, 0, 13.57)
+[node name="BuildingH2" parent="Buildings" instance=ExtResource("10_04bqp")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, -24.3, 0, -8.2)
 
-[node name="LightCurved9" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.988, 0, 6.97)
-
-[node name="LightCurved10" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.988, 0, 19.67)
-
-[node name="LightCurved11" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.988, 0, 19.67)
-
-[node name="LightCurved12" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.988, 0, 6.97)
-
-[node name="LightCurved5" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 6.912, 0, -6.43)
-
-[node name="LightCurved7" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.288, 0, -0.33)
-
-[node name="LightCurved8" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.388, 0, -13.03)
-
-[node name="LightCurved13" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22.388, 0, -0.33)
-
-[node name="LightCurved6" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.712, 0, -6.33)
-
-[node name="LightCurved3" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.912, 0, 19.67)
-
-[node name="LightCurved4" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.712, 0, 19.67)
-
-[node name="LightCurved2" parent="LightingProps" instance=ExtResource("12_4udl8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7124, -0.1468, 6.87015)
-
-[node name="BuildingG" parent="LightingProps" instance=ExtResource("11_4udl8")]
+[node name="BuildingG2" parent="Buildings" instance=ExtResource("11_4udl8")]
 transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, -10, 0, 10)
 
-[node name="BuildingH" parent="LightingProps" instance=ExtResource("10_04bqp")]
+[node name="BuildingH3" parent="Buildings" instance=ExtResource("10_04bqp")]
 transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, -10, 0, 16)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 2)
-omni_range = 40.0
+[node name="RoadProps" type="Node3D" parent="."]
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 13, -8)
-omni_range = 40.0
+[node name="LightCurved" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.212, 0, 13.57)
 
-[node name="BuildingE" parent="." instance=ExtResource("13_du7lh")]
-transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -18, 0, -3)
+[node name="LightCurved9" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.988, 0, 6.97)
 
-[node name="BuildingH" parent="." instance=ExtResource("10_04bqp")]
-transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, -16.3, 0, -8.2)
+[node name="LightCurved10" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.988, 0, 19.67)
 
-[node name="TreeSmall" parent="." instance=ExtResource("14_qlwvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -4)
+[node name="LightCurved11" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.988, 0, 19.67)
 
-[node name="TreeSmall2" parent="." instance=ExtResource("14_qlwvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
+[node name="LightCurved12" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.988, 0, 6.97)
 
-[node name="TreeTall" parent="." instance=ExtResource("15_3upj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -1)
+[node name="LightCurved5" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 6.912, 0, -6.43)
 
-[node name="TreeTall2" parent="." instance=ExtResource("15_3upj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -11)
+[node name="LightCurved7" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.288, 0, -0.33)
 
-[node name="TreePineRoundF" parent="." instance=ExtResource("16_3upj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -3)
+[node name="LightCurved8" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.388, 0, -13.03)
 
-[node name="TreeSimple" parent="." instance=ExtResource("17_dc1wy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -12)
+[node name="LightCurved13" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -30.388, 0, -0.33)
+
+[node name="LightCurved6" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.712, 0, -6.33)
+
+[node name="LightCurved3" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.912, 0, 19.67)
+
+[node name="LightCurved4" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.712, 0, 19.67)
+
+[node name="LightCurved2" parent="RoadProps" instance=ExtResource("12_4udl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7124, -0.1468, 6.87015)
+
+[node name="NatureProps" type="Node3D" parent="."]
+
+[node name="TreeSmall" parent="NatureProps" instance=ExtResource("14_qlwvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -4)
+
+[node name="TreeSmall2" parent="NatureProps" instance=ExtResource("14_qlwvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -12)
+
+[node name="TreeTall" parent="NatureProps" instance=ExtResource("15_3upj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -1)
+
+[node name="TreeTall2" parent="NatureProps" instance=ExtResource("15_3upj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -11)
+
+[node name="TreePineRoundF" parent="NatureProps" instance=ExtResource("16_3upj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, -3)
+
+[node name="TreeSimple" parent="NatureProps" instance=ExtResource("17_dc1wy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -12)

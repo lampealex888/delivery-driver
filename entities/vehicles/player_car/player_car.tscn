@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://c1uai3rvx8hul"]
+[gd_scene load_steps=33 format=4 uid="uid://c1uai3rvx8hul"]
 
 [ext_resource type="Script" uid="uid://b28iw7h1wn875" path="res://entities/vehicles/player_car/vehicle.gd" id="1_r806m"]
 [ext_resource type="Texture2D" uid="uid://djffulguekbbb" path="res://entities/vehicles/player_car/particle_smoke.png" id="2_1gkvk"]
@@ -228,6 +228,22 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_p5xtl"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="BoxMesh" id="BoxMesh_m0hqm"]
+lightmap_size_hint = Vector2i(5, 8)
+size = Vector3(0.275, 0.099, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1off"]
+albedo_color = Color(0.988235, 0.933333, 0.654902, 1)
+emission_enabled = true
+emission = Color(0.988235, 0.933333, 0.654902, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0hqm"]
+albedo_color = Color(0.941176, 0.0117647, 0.196078, 1)
+emission_enabled = true
+emission = Color(0.941176, 0.0117647, 0.196078, 1)
+emission_energy_multiplier = 2.85
+
 [node name="PlayerCar" type="VehicleBody3D" groups=["player_car"]]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_l7i2k")
@@ -333,6 +349,7 @@ attenuation_filter_cutoff_hz = 20500.0
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, -0.022867, -1.10448)
+visible = false
 amount = 125
 lifetime = 1.25
 mesh = SubResource("QuadMesh_30wks")
@@ -359,6 +376,39 @@ current = true
 
 [node name="InteriorCameraPosition" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.9, 0.9)
+visible = false
 
 [node name="TopDownCameraPosition" type="Marker3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0.00169557, 15.7771, 0.0955178)
+
+[node name="HeadLightLeftMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412, 0.55, 1.28084)
+mesh = SubResource("BoxMesh_m0hqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1off")
+
+[node name="BrakeLightLeftMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412, 0.45, -1.33)
+mesh = SubResource("BoxMesh_m0hqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_m0hqm")
+
+[node name="BrakeLightRightMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412, 0.45, -1.33)
+mesh = SubResource("BoxMesh_m0hqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_m0hqm")
+
+[node name="HeadLightRightMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.411977, 0.55, 1.28084)
+mesh = SubResource("BoxMesh_m0hqm")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1off")
+
+[node name="LeftSpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.412, 0.55, 1.281)
+light_color = Color(0.988235, 0.933333, 0.654902, 1)
+light_energy = 2.85
+spot_range = 15.0
+
+[node name="RightSpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.412, 0.55, 1.281)
+light_color = Color(0.988235, 0.933333, 0.654902, 1)
+light_energy = 2.85
+spot_range = 15.0
