@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://e7ayu3cxdej5"]
+
+[ext_resource type="PackedScene" uid="uid://f3itq3wwjse1" path="res://stages/suburban/buildings/building_k/building_k.tscn" id="1_v6sw3"]
+[ext_resource type="PackedScene" uid="uid://cjr5fmc74pi3s" path="res://stages/suburban/buildings/building_j/building_j.tscn" id="2_qo1xi"]
+[ext_resource type="PackedScene" uid="uid://cacbbvgsuyxxq" path="res://stages/suburban/buildings/building_i/building_i.tscn" id="3_4v07h"]
+[ext_resource type="PackedScene" uid="uid://w7r2oby1nf6y" path="res://stages/nature/props/tree_pine_round_f/tree_pine_round_f.tscn" id="4_5huwy"]
+[ext_resource type="PackedScene" uid="uid://bouf5tkums211" path="res://stages/nature/props/tree_pine_round_e/tree_pine_round_e.tscn" id="5_5k82p"]
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/commercial/buildings/building_g/building_g.tscn" id="6_bvwi3"]
+
+[node name="residential_02" type="Node3D"]
+
+[node name="BuildingK" parent="." instance=ExtResource("1_v6sw3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.2, 0, 3.6)
+
+[node name="BuildingF" parent="." instance=ExtResource("2_qo1xi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -4)
+
+[node name="BuildingI" parent="." instance=ExtResource("3_4v07h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0, -3.2)
+
+[node name="TreePineRoundF" parent="." instance=ExtResource("4_5huwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -1)
+
+[node name="TreePineRoundE" parent="." instance=ExtResource("5_5k82p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 0, -2)
+
+[node name="TreePineRoundE2" parent="." instance=ExtResource("5_5k82p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -5)
+
+[node name="TreePineRoundF2" parent="." instance=ExtResource("4_5huwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 0, 5)
+
+[node name="TreePineRoundF3" parent="." instance=ExtResource("4_5huwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 0, 2)
+
+[node name="TreePineRoundF4" parent="." instance=ExtResource("4_5huwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3)
+
+[node name="BuildingG" parent="." instance=ExtResource("6_bvwi3")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -6.5, 0, 3.7)

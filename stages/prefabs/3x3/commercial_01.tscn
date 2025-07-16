@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://br1kkn1b5ertm"]
+
+[ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/commercial/buildings/building_h/building_h.tscn" id="1_q5man"]
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/commercial/buildings/building_g/building_g.tscn" id="2_7pk36"]
+[ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://stages/commercial/buildings/building_f/building_f.tscn" id="3_3yy5g"]
+[ext_resource type="PackedScene" uid="uid://c6lpl55rklfwc" path="res://stages/road-kit/props/light_curved/light_curved.tscn" id="4_rgcuq"]
+[ext_resource type="PackedScene" uid="uid://dqv3864mnvrkc" path="res://stages/commercial/buildings/building_i/building_i.tscn" id="5_masvj"]
+[ext_resource type="PackedScene" uid="uid://5ladp8hkwvih" path="res://stages/commercial/buildings/building_j/building_j.tscn" id="6_j5pwv"]
+
+[node name="Prefab3x3A" type="Node3D"]
+
+[node name="BuildingH" parent="." instance=ExtResource("1_q5man")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -7, 0, 6.6)
+
+[node name="BuildingG" parent="." instance=ExtResource("2_7pk36")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 7, 0, 6.6)
+
+[node name="BuildingF" parent="." instance=ExtResource("3_3yy5g")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 7, 0, -6.2)
+
+[node name="LightCurved5" parent="." instance=ExtResource("4_rgcuq")]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -9.588, 0, 9.57)
+
+[node name="LightCurved14" parent="." instance=ExtResource("4_rgcuq")]
+transform = Transform3D(1, 0, -3.49692e-07, 0, 1, 0, 3.49692e-07, 0, 1, -9.788, 0, -9.73)
+
+[node name="LightCurved15" parent="." instance=ExtResource("4_rgcuq")]
+transform = Transform3D(1, 0, -3.49692e-07, 0, 1, 0, 3.49692e-07, 0, 1, 9.712, 0, -9.73)
+
+[node name="LightCurved6" parent="." instance=ExtResource("4_rgcuq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.712, 0, 9.67)
+
+[node name="BuildingI" parent="." instance=ExtResource("5_masvj")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, 0, 0, 5.6)
+
+[node name="BuildingJ" parent="." instance=ExtResource("6_j5pwv")]
+transform = Transform3D(-5, 0, 4.37114e-07, 0, 5, 0, -4.37114e-07, 0, -5, -4, 0, -5.4)

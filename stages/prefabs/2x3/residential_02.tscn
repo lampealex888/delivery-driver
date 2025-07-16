@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu1sxuhc8qela"]
+
+[ext_resource type="PackedScene" uid="uid://ccw0b0w7pds1c" path="res://stages/suburban/buildings/building_l/building_l.tscn" id="1_oceqh"]
+[ext_resource type="PackedScene" uid="uid://er0qy3loxv3t" path="res://stages/suburban/buildings/building_o/building_o.tscn" id="2_np7dr"]
+[ext_resource type="PackedScene" uid="uid://vwg6su8lmrny" path="res://stages/suburban/buildings/building_q/building_q.tscn" id="3_t130a"]
+[ext_resource type="PackedScene" uid="uid://dqv3864mnvrkc" path="res://stages/commercial/buildings/building_i/building_i.tscn" id="4_lwade"]
+[ext_resource type="PackedScene" uid="uid://c8t6h5rlvb5o" path="res://stages/nature/props/statue_head/statue_head.tscn" id="5_6gofr"]
+
+[node name="Residential02" type="Node3D"]
+
+[node name="BuildingL" parent="." instance=ExtResource("1_oceqh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -8.66565, 0, 2.8542)
+
+[node name="BuildingO" parent="." instance=ExtResource("2_np7dr")]
+transform = Transform3D(5, 0, -5.68434e-14, 0, 5, 0, 5.68434e-14, 0, 5, -1.56565, 0, 2.75419)
+
+[node name="BuildingQ" parent="." instance=ExtResource("3_t130a")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.53435, 0, 2.9542)
+
+[node name="BuildingI" parent="." instance=ExtResource("4_lwade")]
+transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, 5.93435, 0, -4.0458)
+
+[node name="StatueHead" parent="." instance=ExtResource("5_6gofr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.26565, 0, -4.5458)

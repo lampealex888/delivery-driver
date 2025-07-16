@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ptom4mrrv4w"]
+
+[ext_resource type="PackedScene" uid="uid://3x7g67cg8fl8" path="res://stages/industrial/buildings/building_b/building_b.tscn" id="1_p34fp"]
+[ext_resource type="PackedScene" uid="uid://ct8gy377jabvi" path="res://stages/industrial/buildings/building_j/building_j.tscn" id="2_27dvn"]
+[ext_resource type="PackedScene" uid="uid://p7ttsn01exup" path="res://stages/industrial/buildings/building_k/building_k.tscn" id="3_hho4f"]
+
+[node name="Indsutrial02" type="Node3D"]
+
+[node name="BuildingB" parent="." instance=ExtResource("1_p34fp")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3.92671, 0, 0.593325)
+
+[node name="BuildingJ" parent="." instance=ExtResource("2_27dvn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.1733, 0, 4.19332)
+
+[node name="BuildingK" parent="." instance=ExtResource("3_hho4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77329, 0, -4.80668)

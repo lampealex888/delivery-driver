@@ -1,0 +1,48 @@
+[gd_scene load_steps=12 format=3 uid="uid://do54e03xu3b5j"]
+
+[ext_resource type="PackedScene" uid="uid://j7uuewib1c1n" path="res://stages/suburban/buildings/building_a/building_a.tscn" id="1_bvsdb"]
+[ext_resource type="PackedScene" uid="uid://bp3piyop18nvx" path="res://stages/suburban/buildings/building_c/building_c.tscn" id="2_yt3p8"]
+[ext_resource type="PackedScene" uid="uid://brcfavflht65c" path="res://stages/suburban/buildings/building_e/building_e.tscn" id="3_gfm7l"]
+[ext_resource type="PackedScene" uid="uid://cccgy25amuw2g" path="res://stages/suburban/buildings/building_g/building_g.tscn" id="4_3j7ww"]
+[ext_resource type="PackedScene" uid="uid://b0hvvlqoc3uq7" path="res://stages/commercial/buildings/building_a/building_a.tscn" id="5_coxhw"]
+[ext_resource type="PackedScene" uid="uid://0lxoi5sajtnk" path="res://stages/commercial/buildings/building_b/building_b.tscn" id="6_0ctk0"]
+[ext_resource type="PackedScene" uid="uid://b3nsi4nnwlyp8" path="res://stages/suburban/buildings/building_r/building_r.tscn" id="7_pwb4s"]
+[ext_resource type="PackedScene" uid="uid://cjr5fmc74pi3s" path="res://stages/suburban/buildings/building_j/building_j.tscn" id="8_bdmh2"]
+[ext_resource type="PackedScene" uid="uid://dwcacnimj1d1p" path="res://stages/nature/props/tree_simple/tree_simple.tscn" id="9_fuwmt"]
+[ext_resource type="PackedScene" uid="uid://dhlnfiutj5bju" path="res://stages/nature/props/tree_small/tree_small.tscn" id="10_sdf25"]
+[ext_resource type="PackedScene" uid="uid://d2i2b53cbgcmy" path="res://stages/nature/props/tree_tall/tree_tall.tscn" id="11_rbuyd"]
+
+[node name="Residential1" type="Node3D"]
+
+[node name="BuildingA" parent="." instance=ExtResource("1_bvsdb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 0, -7.3)
+
+[node name="BuildingC" parent="." instance=ExtResource("2_yt3p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0, -7.3)
+
+[node name="BuildingE" parent="." instance=ExtResource("3_gfm7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
+
+[node name="BuildingG" parent="." instance=ExtResource("4_3j7ww")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.3, 0, 7)
+
+[node name="BuildingA2" parent="." instance=ExtResource("5_coxhw")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -7.6)
+
+[node name="BuildingB" parent="." instance=ExtResource("6_0ctk0")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 7.5, 0, -0.2)
+
+[node name="BuildingR" parent="." instance=ExtResource("7_pwb4s")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 0, 6.4)
+
+[node name="BuildingF" parent="." instance=ExtResource("8_bdmh2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.5, 0, 6.6)
+
+[node name="TreeSimple" parent="." instance=ExtResource("9_fuwmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1.6)
+
+[node name="TreeSmall" parent="." instance=ExtResource("10_sdf25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2.4)
+
+[node name="TreeTall" parent="." instance=ExtResource("11_rbuyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2.6)

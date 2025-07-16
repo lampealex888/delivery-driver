@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnujcdey2pdos"]
+
+[ext_resource type="PackedScene" uid="uid://dyu3rxv73fcjg" path="res://stages/commercial/buildings/building_d/building_d.tscn" id="1_5yf3f"]
+[ext_resource type="PackedScene" uid="uid://cxla8srgmjae5" path="res://stages/commercial/buildings/building_e/building_e.tscn" id="2_3wrt6"]
+[ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://stages/commercial/buildings/building_f/building_f.tscn" id="3_jvrlk"]
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/commercial/buildings/building_g/building_g.tscn" id="4_dh8pv"]
+[ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/commercial/buildings/building_h/building_h.tscn" id="5_xx4te"]
+[ext_resource type="PackedScene" uid="uid://b0hvvlqoc3uq7" path="res://stages/commercial/buildings/building_a/building_a.tscn" id="6_fbwty"]
+[ext_resource type="PackedScene" uid="uid://0lxoi5sajtnk" path="res://stages/commercial/buildings/building_b/building_b.tscn" id="7_8ltp4"]
+
+[node name="Commercial02" type="Node3D"]
+
+[node name="BuildingD" parent="." instance=ExtResource("1_5yf3f")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.38651, 0, 6.56915)
+
+[node name="BuildingE" parent="." instance=ExtResource("2_3wrt6")]
+transform = Transform3D(5, 0, 5.68434e-14, 0, 5, 0, -5.68434e-14, 0, 5, -3.88651, 0, -8.43085)
+
+[node name="BuildingF" parent="." instance=ExtResource("3_jvrlk")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 3.0135, 0, 6.26916)
+
+[node name="BuildingG" parent="." instance=ExtResource("4_dh8pv")]
+transform = Transform3D(6.55671e-07, 0, -5, 0, 5, 0, 5, 0, 6.55671e-07, 2.81349, 0, 1.16915)
+
+[node name="BuildingH" parent="." instance=ExtResource("5_xx4te")]
+transform = Transform3D(5, 0, -8.74228e-07, 0, 5, 0, 8.74228e-07, 0, 5, 2.9135, 0, -8.43085)
+
+[node name="BuildingA" parent="." instance=ExtResource("6_fbwty")]
+transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, -5.9865, 0, 6.56915)
+
+[node name="BuildingB" parent="." instance=ExtResource("7_8ltp4")]
+transform = Transform3D(-2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 2.5135, 0, -3.73085)
