@@ -1,4 +1,4 @@
-[gd_scene load_steps=317 format=3 uid="uid://colh08c5ymx8f"]
+[gd_scene load_steps=303 format=3 uid="uid://colh08c5ymx8f"]
 
 [ext_resource type="PackedScene" uid="uid://yle8six7l5ud" path="res://assets/kenney_nature-kit/bed.glb" id="1_ex3sa"]
 [ext_resource type="PackedScene" uid="uid://cd682bheyxovw" path="res://assets/kenney_nature-kit/bed_floor.glb" id="2_m4bv8"]
@@ -128,24 +128,10 @@
 [ext_resource type="PackedScene" uid="uid://c8y5l53wjd303" path="res://assets/kenney_nature-kit/grass_large.glb" id="126_and1u"]
 [ext_resource type="PackedScene" uid="uid://dqaora65vtvx4" path="res://assets/kenney_nature-kit/grass_leafs.glb" id="127_fkvc5"]
 [ext_resource type="PackedScene" uid="uid://dskmojkam3omo" path="res://assets/kenney_nature-kit/grass_leafsLarge.glb" id="128_umql0"]
-[ext_resource type="PackedScene" uid="uid://c0ymfkjntfcbs" path="res://assets/kenney_nature-kit/ground_pathBend.glb" id="130_jrkr2"]
-[ext_resource type="PackedScene" uid="uid://b7m1lm7oq1hbh" path="res://assets/kenney_nature-kit/ground_pathBendBank.glb" id="131_vjtac"]
-[ext_resource type="PackedScene" uid="uid://bgrr0is5lk7rm" path="res://assets/kenney_nature-kit/ground_pathCorner.glb" id="132_glqex"]
-[ext_resource type="PackedScene" uid="uid://dqkxd5s50qy2n" path="res://assets/kenney_nature-kit/ground_pathCornerSmall.glb" id="133_0ta0w"]
-[ext_resource type="PackedScene" uid="uid://bx2edowg322wl" path="res://assets/kenney_nature-kit/ground_pathCross.glb" id="134_evciu"]
 [ext_resource type="PackedScene" uid="uid://xu7s8f2dvhk3" path="res://assets/kenney_nature-kit/ground_pathEnd.glb" id="135_na7fs"]
 [ext_resource type="PackedScene" uid="uid://xocv2pqfmadi" path="res://assets/kenney_nature-kit/ground_pathEndClosed.glb" id="136_1kold"]
-[ext_resource type="PackedScene" uid="uid://dia04nk33ekrm" path="res://assets/kenney_nature-kit/ground_pathOpen.glb" id="137_wbx0i"]
-[ext_resource type="PackedScene" uid="uid://b0nlymv24s4dg" path="res://assets/kenney_nature-kit/ground_pathRocks.glb" id="138_clyoe"]
-[ext_resource type="PackedScene" uid="uid://b6env6btuk7g5" path="res://assets/kenney_nature-kit/ground_pathSide.glb" id="139_j1ctn"]
-[ext_resource type="PackedScene" uid="uid://b0lph65w43trc" path="res://assets/kenney_nature-kit/ground_pathSideOpen.glb" id="140_n3knb"]
-[ext_resource type="PackedScene" uid="uid://dj47o1l30ydie" path="res://assets/kenney_nature-kit/ground_pathSplit.glb" id="141_uhxwg"]
 [ext_resource type="PackedScene" uid="uid://8jkcles00mw4" path="res://assets/kenney_nature-kit/ground_pathStraight.glb" id="142_k0776"]
 [ext_resource type="PackedScene" uid="uid://dp87ite4uhr3t" path="res://assets/kenney_nature-kit/ground_pathTile.glb" id="143_eebcf"]
-[ext_resource type="PackedScene" uid="uid://dvmpnlbx7y7uc" path="res://assets/kenney_nature-kit/ground_riverCross.glb" id="148_8l7ue"]
-[ext_resource type="PackedScene" uid="uid://rf1fpynovbke" path="res://assets/kenney_nature-kit/ground_riverEnd.glb" id="149_jc2xy"]
-[ext_resource type="PackedScene" uid="uid://tj4cpog2ud0q" path="res://assets/kenney_nature-kit/ground_riverEndClosed.glb" id="150_5gos5"]
-[ext_resource type="PackedScene" uid="uid://ctlql1btcjtfk" path="res://assets/kenney_nature-kit/ground_riverSplit.glb" id="155_ohvqp"]
 [ext_resource type="PackedScene" uid="uid://dh621f3xvvd24" path="res://assets/kenney_nature-kit/hanging_moss.glb" id="158_5rrwd"]
 [ext_resource type="PackedScene" uid="uid://8wu3pxyg6kvq" path="res://assets/kenney_nature-kit/lily_large.glb" id="159_s8ux5"]
 [ext_resource type="PackedScene" uid="uid://crh4iaywgm810" path="res://assets/kenney_nature-kit/lily_small.glb" id="160_ls8tg"]
@@ -409,34 +395,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 9)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
 
 [node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("31_c46wi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
 
 [node name="cliff_blockHalf_stone2" parent="." instance=ExtResource("32_t8g18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="cliff_blockQuarter_rock2" parent="." instance=ExtResource("33_n75kw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
 
 [node name="cliff_blockQuarter_stone2" parent="." instance=ExtResource("34_m8k3h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
 
 [node name="cliff_blockSlopeHalfWalls_rock2" parent="." instance=ExtResource("35_vi0ye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 
 [node name="cliff_blockSlopeHalfWalls_stone2" parent="." instance=ExtResource("36_311at")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
 [node name="cliff_blockSlopeWalls_rock2" parent="." instance=ExtResource("37_mnbdr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="cliff_blockSlopeWalls_stone2" parent="." instance=ExtResource("38_nfkj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
 
 [node name="cliff_blockSlope_rock2" parent="." instance=ExtResource("39_idt3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="cliff_blockSlope_stone2" parent="." instance=ExtResource("40_uxg31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1)
 
 [node name="cliff_block_rock2" parent="." instance=ExtResource("41_edgls")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
@@ -445,10 +431,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
 
 [node name="cliff_cave_rock2" parent="." instance=ExtResource("43_4duep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6)
 
 [node name="cliff_cave_stone2" parent="." instance=ExtResource("44_p4hkd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5)
 
 [node name="cliff_cornerInnerLarge_rock2" parent="." instance=ExtResource("45_cau7u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
@@ -457,28 +443,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
 
 [node name="cliff_cornerInnerTop_rock2" parent="." instance=ExtResource("47_0ribs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
 
 [node name="cliff_cornerInnerTop_stone2" parent="." instance=ExtResource("48_7xcee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
 
 [node name="cliff_cornerInner_rock2" parent="." instance=ExtResource("49_b8qve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6)
 
 [node name="cliff_cornerInner_stone2" parent="." instance=ExtResource("50_jpwlb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
 
 [node name="cliff_cornerLarge_rock2" parent="." instance=ExtResource("51_5m32s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
 
 [node name="cliff_cornerLarge_stone2" parent="." instance=ExtResource("52_qshig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5)
 
 [node name="cliff_cornerTop_rock2" parent="." instance=ExtResource("53_04aph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
 
 [node name="cliff_cornerTop_stone2" parent="." instance=ExtResource("54_wl0cg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7)
 
 [node name="cliff_corner_rock2" parent="." instance=ExtResource("55_bhgb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
@@ -490,55 +476,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 11)
 
 [node name="cliff_diagonal_stone2" parent="." instance=ExtResource("58_dxn63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
 
 [node name="cliff_halfCornerInner_rock2" parent="." instance=ExtResource("59_8ssud")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
 
 [node name="cliff_halfCornerInner_stone2" parent="." instance=ExtResource("60_txwuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 6)
 
 [node name="cliff_halfCorner_rock2" parent="." instance=ExtResource("61_0s2a3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
 
 [node name="cliff_halfCorner_stone2" parent="." instance=ExtResource("62_fnxpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
 
 [node name="cliff_half_rock2" parent="." instance=ExtResource("63_boekg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
 
 [node name="cliff_half_stone2" parent="." instance=ExtResource("64_ab1ad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
 
 [node name="cliff_large_rock2" parent="." instance=ExtResource("65_b0jas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
 [node name="cliff_large_stone2" parent="." instance=ExtResource("66_3ue5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 8)
 
 [node name="cliff_rock2" parent="." instance=ExtResource("67_qul1e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6)
 
 [node name="cliff_stepsCornerInner_rock2" parent="." instance=ExtResource("68_vrw7c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
 
 [node name="cliff_stepsCornerInner_stone2" parent="." instance=ExtResource("69_ogqw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
 
 [node name="cliff_stepsCorner_rock2" parent="." instance=ExtResource("70_6la1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
 
 [node name="cliff_stepsCorner_stone2" parent="." instance=ExtResource("71_ie5o4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
 
 [node name="cliff_steps_rock2" parent="." instance=ExtResource("72_wo0tk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
 
 [node name="cliff_steps_stone2" parent="." instance=ExtResource("73_ynyva")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
 
 [node name="cliff_stone2" parent="." instance=ExtResource("74_84ihr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 4)
 
 [node name="cliff_topDiagonal_rock2" parent="." instance=ExtResource("75_n5fy6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
@@ -547,22 +533,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
 
 [node name="cliff_top_rock2" parent="." instance=ExtResource("77_hmowx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
 
 [node name="cliff_top_stone2" parent="." instance=ExtResource("78_wwrrk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
 
 [node name="cliff_waterfallTop_rock2" parent="." instance=ExtResource("79_lsp2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7)
 
 [node name="cliff_waterfallTop_stone2" parent="." instance=ExtResource("80_iuo7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
 
 [node name="cliff_waterfall_rock2" parent="." instance=ExtResource("81_agcvq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 2)
 
 [node name="cliff_waterfall_stone2" parent="." instance=ExtResource("82_hlg27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
 
 [node name="crops_bambooStageA2" parent="." instance=ExtResource("83_bks54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
@@ -702,41 +688,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 [node name="grass_leafsLarge2" parent="." instance=ExtResource("128_umql0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="ground_pathBend2" parent="." instance=ExtResource("130_jrkr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
-
-[node name="ground_pathBendBank2" parent="." instance=ExtResource("131_vjtac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -12)
-
-[node name="ground_pathCorner2" parent="." instance=ExtResource("132_glqex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
-
-[node name="ground_pathCornerSmall2" parent="." instance=ExtResource("133_0ta0w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12)
-
-[node name="ground_pathCross2" parent="." instance=ExtResource("134_evciu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -12)
-
 [node name="ground_pathEnd2" parent="." instance=ExtResource("135_na7fs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12)
 
 [node name="ground_pathEndClosed2" parent="." instance=ExtResource("136_1kold")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -12)
-
-[node name="ground_pathOpen2" parent="." instance=ExtResource("137_wbx0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -12)
-
-[node name="ground_pathRocks2" parent="." instance=ExtResource("138_clyoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -12)
-
-[node name="ground_pathSide2" parent="." instance=ExtResource("139_j1ctn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12)
-
-[node name="ground_pathSideOpen2" parent="." instance=ExtResource("140_n3knb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -12)
-
-[node name="ground_pathSplit2" parent="." instance=ExtResource("141_uhxwg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
 
 [node name="ground_pathStraight2" parent="." instance=ExtResource("142_k0776")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
@@ -744,23 +700,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
 [node name="ground_pathTile2" parent="." instance=ExtResource("143_eebcf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -12)
 
-[node name="ground_riverCross2" parent="." instance=ExtResource("148_8l7ue")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -12)
-
-[node name="ground_riverEnd2" parent="." instance=ExtResource("149_jc2xy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
-
-[node name="ground_riverEndClosed2" parent="." instance=ExtResource("150_5gos5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -12)
-
-[node name="ground_riverSplit2" parent="." instance=ExtResource("155_ohvqp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -12)
-
 [node name="hanging_moss2" parent="." instance=ExtResource("158_5rrwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 
 [node name="lily_large2" parent="." instance=ExtResource("159_s8ux5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
 
 [node name="lily_small2" parent="." instance=ExtResource("160_ls8tg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)

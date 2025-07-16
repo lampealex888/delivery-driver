@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bekg7hyi32j23"]
 
-[ext_resource type="Script" uid="uid://cea1osyabq4gx" path="res://entities/npcs/bystander/bystander.gd" id="1_idv85"]
+[ext_resource type="Script" uid="uid://cea1osyabq4gx" path="res://entities/npcs/ai_bystander/ai_bystander.gd" id="1_idv85"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_of5s1"]
 size = Vector3(0.6, 1.1, 0.4)
