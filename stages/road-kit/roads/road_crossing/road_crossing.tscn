@@ -1,9 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://jdyis0wydily"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_cr1b2"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dsf55"]
-size = Vector3(6.66, 0.1, 6.66)
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_h37e7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ucps"]
 resource_name = "colormap"
@@ -46,8 +44,7 @@ shadow_mesh = SubResource("ArrayMesh_lixxo")
 [node name="RoadCrossing" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_dsf55")
+shape = ExtResource("1_h37e7")
 
 [node name="RoadCrossingMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)

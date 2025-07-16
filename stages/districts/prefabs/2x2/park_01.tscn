@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bohuyx8plvg7n"]
+
+[ext_resource type="PackedScene" uid="uid://dwcacnimj1d1p" path="res://stages/nature/props/tree_simple/tree_simple.tscn" id="1_3tcte"]
+
+[node name="park_01" type="Node3D"]
+
+[node name="TreeSimple" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="TreeSimple2" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="TreeSimple3" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="TreeSimple4" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="TreeSimple5" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="TreeSimple6" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="TreeSimple7" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="TreeSimple8" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="TreeSimple9" parent="." instance=ExtResource("1_3tcte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)

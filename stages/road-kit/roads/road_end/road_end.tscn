@@ -1,9 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://bw63p37xdon5i"]
 
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_bn3a8"]
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_ew05h"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bn3a8"]
-size = Vector3(6.66, 0.1, 6.66)
+[ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="3_fggal"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vblfc"]
 resource_name = "colormap"
@@ -43,8 +42,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ynkg8")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y2dak"]
-
 [sub_resource type="Curve3D" id="Curve3D_bn3a8"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3.33, 0, 0, 0, 0, -1, 0, 0, 1, -4.44, 0, 1.11, 0, 0, 0, 0, 0, 0, -3.33, 0, 2.22, 0, 0, 0, 0, 0, 0, 0, 0, 2.22),
@@ -55,8 +52,7 @@ point_count = 5
 [node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_bn3a8")
+shape = ExtResource("1_bn3a8")
 
 [node name="RoadEndMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
@@ -70,7 +66,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_y2dak")
+shape = ExtResource("3_fggal")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)

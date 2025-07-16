@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://c70hywf58e5n4"]
+[gd_scene load_steps=14 format=4 uid="uid://c70hywf58e5n4"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_74cjk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qqd5u"]
-size = Vector3(6.66, 0.1, 6.66)
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_wirlv"]
+[ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="3_qqd5u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k5sc"]
 resource_name = "colormap"
@@ -42,8 +41,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o5q4q")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xou62"]
 
 [sub_resource type="Curve3D" id="Curve3D_qqd5u"]
 _data = {
@@ -87,8 +84,6 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wirlv"]
-
 [sub_resource type="Curve3D" id="Curve3D_2p7t2"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6.66, 0, 0),
@@ -99,8 +94,7 @@ point_count = 2
 [node name="RoadIntersection" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_qqd5u")
+shape = ExtResource("1_wirlv")
 
 [node name="RoadIntersectionMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
@@ -114,7 +108,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_xou62")
+shape = ExtResource("3_qqd5u")
 
 [node name="Path3D2" type="Path3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -131,7 +125,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterSouth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_xou62")
+shape = ExtResource("3_qqd5u")
 
 [node name="Path3D3" type="Path3D" parent="PathTransmitterSouth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -148,7 +142,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_xou62")
+shape = ExtResource("3_qqd5u")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -165,7 +159,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_wirlv")
+shape = ExtResource("3_qqd5u")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)

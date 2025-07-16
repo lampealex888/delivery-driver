@@ -1,4 +1,4 @@
-[gd_scene load_steps=328 format=3 uid="uid://colh08c5ymx8f"]
+[gd_scene load_steps=326 format=3 uid="uid://colh08c5ymx8f"]
 
 [ext_resource type="PackedScene" uid="uid://yle8six7l5ud" path="res://assets/kenney_nature-kit/bed.glb" id="1_ex3sa"]
 [ext_resource type="PackedScene" uid="uid://cd682bheyxovw" path="res://assets/kenney_nature-kit/bed_floor.glb" id="2_m4bv8"]
@@ -149,7 +149,6 @@
 [ext_resource type="PackedScene" uid="uid://dvmpnlbx7y7uc" path="res://assets/kenney_nature-kit/ground_riverCross.glb" id="148_8l7ue"]
 [ext_resource type="PackedScene" uid="uid://rf1fpynovbke" path="res://assets/kenney_nature-kit/ground_riverEnd.glb" id="149_jc2xy"]
 [ext_resource type="PackedScene" uid="uid://tj4cpog2ud0q" path="res://assets/kenney_nature-kit/ground_riverEndClosed.glb" id="150_5gos5"]
-[ext_resource type="PackedScene" uid="uid://cxpn0pw43y05r" path="res://assets/kenney_nature-kit/ground_riverOpen.glb" id="151_ng7ac"]
 [ext_resource type="PackedScene" uid="uid://vnto7qxb7c2x" path="res://assets/kenney_nature-kit/ground_riverRocks.glb" id="152_75dve"]
 [ext_resource type="PackedScene" uid="uid://bseg4sbq8ulj6" path="res://assets/kenney_nature-kit/ground_riverSide.glb" id="153_q3xoa"]
 [ext_resource type="PackedScene" uid="uid://cxgn2acmvxgwi" path="res://assets/kenney_nature-kit/ground_riverSideOpen.glb" id="154_bbpik"]
@@ -223,7 +222,6 @@
 [ext_resource type="PackedScene" uid="uid://dgvlar12k6t6h" path="res://assets/kenney_nature-kit/statue_block.glb" id="222_wnp7d"]
 [ext_resource type="PackedScene" uid="uid://bnihvw8ewe6xp" path="res://assets/kenney_nature-kit/statue_column.glb" id="223_ce84b"]
 [ext_resource type="PackedScene" uid="uid://cd8ciydbclnk8" path="res://assets/kenney_nature-kit/statue_columnDamaged.glb" id="224_y3tsy"]
-[ext_resource type="PackedScene" uid="uid://cytonp6v8j31a" path="res://assets/kenney_nature-kit/statue_head.glb" id="225_rt1mb"]
 [ext_resource type="PackedScene" uid="uid://bp2t5lxrf4ikr" path="res://assets/kenney_nature-kit/statue_obelisk.glb" id="226_skqk1"]
 [ext_resource type="PackedScene" uid="uid://baogy1uwykx6a" path="res://assets/kenney_nature-kit/statue_ring.glb" id="227_2ktro"]
 [ext_resource type="PackedScene" uid="uid://b4r412liwxuek" path="res://assets/kenney_nature-kit/stone_largeA.glb" id="228_qdsn8"]
@@ -776,9 +774,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
 [node name="ground_riverEndClosed2" parent="." instance=ExtResource("150_5gos5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -12)
 
-[node name="ground_riverOpen2" parent="." instance=ExtResource("151_ng7ac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -12)
-
 [node name="ground_riverRocks2" parent="." instance=ExtResource("152_75dve")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
 
@@ -990,22 +985,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="statue_block2" parent="." instance=ExtResource("222_wnp7d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="statue_column2" parent="." instance=ExtResource("223_ce84b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="statue_columnDamaged2" parent="." instance=ExtResource("224_y3tsy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-
-[node name="statue_head2" parent="." instance=ExtResource("225_rt1mb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="statue_obelisk2" parent="." instance=ExtResource("226_skqk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="statue_ring2" parent="." instance=ExtResource("227_2ktro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
 [node name="stone_largeA2" parent="." instance=ExtResource("228_qdsn8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)

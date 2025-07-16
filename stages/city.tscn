@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="5_04bqp"]
 [ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://stages/gameplay/2x2_zone.tscn" id="6_8iujo"]
 [ext_resource type="PackedScene" uid="uid://cu3e7y753xu8k" path="res://utilities/game/game_manager.tscn" id="7_dbh7l"]
-[ext_resource type="PackedScene" uid="uid://coxdijkwgpaxm" path="res://stages/districts/prefabs/2x2/prefab_c.tscn" id="11_04bqp"]
-[ext_resource type="PackedScene" uid="uid://28hhsprb2nu8" path="res://stages/districts/prefabs/2x2/prefab_a.tscn" id="13_jrmcm"]
-[ext_resource type="PackedScene" uid="uid://blosi58syldu0" path="res://stages/districts/prefabs/2x2/prefab_b.tscn" id="14_du7lh"]
-[ext_resource type="PackedScene" uid="uid://us6shphua1pe" path="res://stages/districts/prefabs/3x3/prefab_b.tscn" id="17_0ltnq"]
-[ext_resource type="PackedScene" uid="uid://br1kkn1b5ertm" path="res://stages/districts/prefabs/3x3/prefab_a.tscn" id="18_0ltnq"]
+[ext_resource type="PackedScene" uid="uid://coxdijkwgpaxm" path="res://stages/districts/prefabs/2x2/commercial_03.tscn" id="11_04bqp"]
+[ext_resource type="PackedScene" uid="uid://28hhsprb2nu8" path="res://stages/districts/prefabs/2x2/commercial_01.tscn" id="13_jrmcm"]
+[ext_resource type="PackedScene" uid="uid://blosi58syldu0" path="res://stages/districts/prefabs/2x2/commercial_02.tscn" id="14_du7lh"]
+[ext_resource type="PackedScene" uid="uid://us6shphua1pe" path="res://stages/districts/prefabs/3x3/commercial_02.tscn" id="17_0ltnq"]
+[ext_resource type="PackedScene" uid="uid://br1kkn1b5ertm" path="res://stages/districts/prefabs/3x3/commercial_01.tscn" id="18_0ltnq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1anp3"]
 size = Vector3(200, 1, 200)

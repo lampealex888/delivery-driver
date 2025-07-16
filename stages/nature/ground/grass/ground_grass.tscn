@@ -1,5 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8aampgh1a65e"]
 
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_3c4c8"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d403j"]
 resource_name = "grass"
 albedo_color = Color(0.388235, 0.823529, 0.564706, 1)
@@ -37,9 +39,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nksfe")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bddku"]
-size = Vector3(6.66, 0.1, 6.66)
-
 [node name="GroundGrass" type="StaticBody3D"]
 
 [node name="GroundGrassMesh" type="MeshInstance3D" parent="."]
@@ -48,5 +47,4 @@ mesh = SubResource("ArrayMesh_vsr8q")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_bddku")
+shape = ExtResource("1_3c4c8")

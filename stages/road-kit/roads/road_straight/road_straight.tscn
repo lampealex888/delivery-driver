@@ -1,6 +1,8 @@
 [gd_scene load_steps=11 format=4 uid="uid://ccv5g0yuiu5ei"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_o20og"]
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="2_1f1m4"]
+[ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="2_a0ktb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33vx0"]
 resource_name = "colormap"
@@ -40,8 +42,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wflvb")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a0ktb"]
-
 [sub_resource type="Curve3D" id="Curve3D_ab100"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6.66, 0, 0),
@@ -70,9 +70,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_elfia"]
-size = Vector3(6.66, 0.1, 6.66)
-
 [node name="RoadStraight" type="StaticBody3D"]
 
 [node name="RoadStraightMesh" type="MeshInstance3D" parent="."]
@@ -87,7 +84,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_a0ktb")
+shape = ExtResource("2_a0ktb")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -100,7 +97,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_a0ktb")
+shape = ExtResource("2_a0ktb")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -113,7 +110,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_a0ktb")
+shape = ExtResource("2_a0ktb")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
@@ -126,12 +123,11 @@ collision_mask = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SidewalkTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_a0ktb")
+shape = ExtResource("2_a0ktb")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_takau")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_elfia")
+shape = ExtResource("2_1f1m4")

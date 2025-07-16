@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j07cn2j2qjhs"
-path="res://.godot/imported/ground_grass.glb-861fd15dd3dfe3c3efae6531abd56328.scn"
+uid="uid://o37ryrnpcw5k"
+path="res://.godot/imported/chimney-medium.glb-c4e9c0667310ddebb2179e19ddc4b4e2.scn"
 
 [deps]
 
-source_file="res://stages/nature/ground_grass/ground_grass.glb"
-dest_files=["res://.godot/imported/ground_grass.glb-861fd15dd3dfe3c3efae6531abd56328.scn"]
+source_file="res://assets/kenney_city-kit-industrial/chimney-medium.glb"
+dest_files=["res://.godot/imported/chimney-medium.glb-c4e9c0667310ddebb2179e19ddc4b4e2.scn"]
 
 [params]
 
