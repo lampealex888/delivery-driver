@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=4 uid="uid://dki6lrcqbsdkm"]
+
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_w3px1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwuqm"]
+resource_name = "grass"
+albedo_color = Color(0.45234, 0.929502, 0.865877, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80xc8"]
+resource_name = "dirtDark"
+albedo_color = Color(0.859591, 0.671036, 0.556948, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a28i6"]
+resource_name = "dirt"
+albedo_color = Color(0.948242, 0.744326, 0.619001, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tra7b"]
+resource_name = "water"
+albedo_color = Color(0.848978, 0.980793, 1, 1)
+metallic = 1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hjcsd"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, 0.379, 0.121, 1e-05, 0.121),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAP//AAAAAAAA//8AAP//AAA=")
+}, {
+"aabb": AABB(-0.5, -0.05, 0.217, 0.283, 0.05, 0.283),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwACAAQABAAFAAMABgAFAAQABAAHAAYACAAGAAcABwAJAAgA"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAD//xU4AAAAAAAAAAAAABJxAAAAAAAAEnH//xU4AAAo6wAA6DoAAEC7///gWwAA6cf//+yOAAD//wAA7I4AAOnH/////wAA//8AAP//AAA=")
+}, {
+"aabb": AABB(-0.5, 0, 0.279, 0.221, 1e-05, 0.221),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAgAFAAQAAgAGAAUABgAHAAUA"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAANVzAAAAAAAAAAAAAMuQAAAAAAAAKYwAANVzAAApjAAA//8AAP//AAD//wAAyO8AANUtAAD//wAAM28AAA==")
+}, {
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 1e-05, 1),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEABAABAAUABAAFAAYABAAGAAcABAAHAAgABAAIAAkACgAEAAkACQALAAoA"),
+"name": "water",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAP//AACMtwAA//8AAP//AABySAAA//8AAIy3AAD//wAAAAAAAHJIAAD//wAAckgAAP/fAACMQgAAOMgAAP8fAACMtwAAAAAAAIy3AAAAAAAAAAAAAAAAAABySAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hpy22"]
+resource_name = "ground_riverCornerSmall_Mesh ground_riverCornerSmall"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, 0.379, 0.121, 1e-05, 0.121),
+"attribute_data": PackedByteArray("AAD//wAAhOL5HoTi+R7//w=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_cwuqm"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAAAAD/v///AAAAAP+///8AAP///7////9/////f////3////9/")
+}, {
+"aabb": AABB(-0.5, -0.05, 0.217, 0.283, 0.05, 0.283),
+"attribute_data": PackedByteArray("//9SKf//UU3/31FN/99SKQAAUin/H1Ip/x9RTQAAUU0DNPYN5kL2DbBIUjExMFIxa7cAAFG+4CH0l+AhHKAAAA=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": SubResource("StandardMaterial3D_80xc8"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 22.2995, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAD//xU4//8AAAAAAAD//xJxAAAAAP//EnH//xU4///px/////+fx+nH///sjp/H//8AAOyOn8f//wAA//+fx+nH///sjsfPQLv//+Bbx88o6wAA6DrHz///AADsjsfPEnH//xU4TO8ScQAAAABM7yjrAADoOkzvQLv//+BbTO//f5bW/3+W1v9/ltb/f5bWkr5JH5K+SR+Svkkfkr5JH0u6lhlLupYZS7qWGUu6lhldrXEIXa1xCF2tcQhdrXEI")
+}, {
+"aabb": AABB(-0.5, 0, 0.279, 0.221, 1e-05, 0.221),
+"attribute_data": PackedByteArray("AACE4gAAJ8r/HyfK+R6E4vke//+TOP///jTL05M4i+E="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAgAFAAQAAgAGAAUABgAHAAUA"),
+"material": SubResource("StandardMaterial3D_a28i6"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAANVz/78AAAAAAAD/v8uQAAAAAP+/KYwAANVz/78pjAAA////v///AAD///+/yO8AANUt/7///wAAM2//v////3////9/////f/7//3////9/////f////3/+//9/")
+}, {
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("/////4y3/////1JR//8Nu///YAxySP//ckiL4YxC6sr/Hw27AAANuwAAYAwAAFJR"),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEABAABAAUABAAFAAYABAAGAAcABAAHAAgABAAIAAkACgAEAAkACQALAAoA"),
+"material": SubResource("StandardMaterial3D_tra7b"),
+"name": "water",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAP///7+MtwAA////v///AABySP+///8AAIy3/7///wAAAAD/v3JIAAD///+/ckgAAP/f/7+MQgAAOMj/v/8fAACMt/+/AAAAAIy3/78AAAAAAAD/vwAAAABySP+/////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hjcsd")
+
+[node name="RiverCorner" type="StaticBody3D"]
+
+[node name="ground_riverCornerSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, -0.05, 0)
+mesh = SubResource("ArrayMesh_hpy22")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("1_w3px1")

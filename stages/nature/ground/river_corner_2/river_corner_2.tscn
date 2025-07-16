@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=4 uid="uid://d1m5ots034wmg"]
+
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_7uay6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw7up"]
+resource_name = "dirtDark"
+albedo_color = Color(0.859591, 0.671036, 0.556948, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rybv1"]
+resource_name = "dirt"
+albedo_color = Color(0.948242, 0.744326, 0.619001, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hp24"]
+resource_name = "grass"
+albedo_color = Color(0.45234, 0.929502, 0.865877, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w58i1"]
+resource_name = "water"
+albedo_color = Color(0.848978, 0.980793, 1, 1)
+metallic = 1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jsk86"]
+_surfaces = [{
+"aabb": AABB(-0.279, -0.05, -0.279, 0.779, 0.05, 0.779),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAwAEAAEAAgAFAAAABQACAAYABgAHAAUABwAGAAgACAAJAAcACQAIAAoACgALAAkACwAKAAwADAANAAsA"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("ZxwAAAPDAAC5CP//vb0AAEwi////fwAAXxQAAP//AAAAAP////8AAPEzAAAvigAA+kr///pKAABiWQAAYlkAAP9///9MIgAAL4oAAPEzAAC9vf//uQgAAAPDAABnHAAA/////wAAAAD//wAAXxQAAA==")
+}, {
+"aabb": AABB(-0.379, 0, -0.379, 0.879, 1e-05, 0.879),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwAEAAAAAwAFAAQABQAGAAQABQAHAAYABQAIAAcACAAJAAcACAAKAAkACgALAAkACgAMAAsADAANAAsA"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("Hx0AAP//AAAAAAAA//8AALkIAAC9vQAATCIAAP9/AADaJAAARsUAAPpKAAD6SgAAhDsAAI+OAACSXwAAkl8AAP9/AABMIgAAj44AAIQ7AAC9vQAAuQgAAEbFAADaJAAA//8AAAAAAAD//wAAHx0AAA==")
+}, {
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAQAEAAMAAgAFAAAABQAGAAAABgAHAAAABgAIAAcACAAJAAcA"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAHyPAAAfPQAAwcUAAKQmAAD//wAA+R4AAOFgAADhYAAAHz0AAHyPAAAAAAAA//8AAKQmAADBxQAA+R4AAP//AAA=")
+}, {
+"aabb": AABB(-0.217, -0.05, -0.217, 0.717, 1e-05, 0.717),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwAEAAAABAAFAAAABQAGAAAABgAHAAAABgAIAAcACAAJAAcA"),
+"name": "water",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("9JoAAP//AAAAAAAA//8AALkIAAC9vQAATCIAAP9/AAD6SgAA+koAAP9/AABMIgAAvb0AALkIAAD//wAA//8AAP//AAAAAAAA//8AAPSaAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i37h2"]
+resource_name = "ground_riverCorner_Mesh ground_riverCorner"
+_surfaces = [{
+"aabb": AABB(-0.279, -0.05, -0.279, 0.779, 0.05, 0.779),
+"attribute_data": PackedByteArray("ZihXi3MmJEJeVyRCa1VXi5OqV4ugqCRCi9kkQpjXV4uvf5StvX1hZKeuYWS1rJSt8gEySQAAAADqMAAA9y4ySQfRMkkUzwAA//8AAAz+MklJU5StV1FhZEGCYWRPgJSt"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_rw7up"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(41.9007, 10.9101, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("ZxwAAAPDyLq5CP//vb3Iukwi////f8i68TMAAC+KyLovigAA8TNWp/9///9MIlanvb3//7kIVqcDwwAAZxxWp2JZAABiWWis+kr///pKaKz/f///TCJorC+KAADxM2isXxQAAP//LsMAAP////8uw7kI//+9vS7DZxwAAAPDLsMDwwAAZxyKpL29//+5CIqk/////wAAiqT//wAAXxSKpPEzAAAvihKzTCL///9/ErP6Sv//+koSs2JZAABiWRKze8WnKXvFpyl7xacpe8WnKeTeJk/k3iZP5N4mT+TeJk+A01c+gNNXPoDTVz6A01c+kcBmIpHAZiKRwGYikcBmIlbxXmpW8V5qVvFealbxXmqKy5cyisuXMorLlzKKy5cy")
+}, {
+"aabb": AABB(-0.379, 0, -0.379, 0.879, 1e-05, 0.879),
+"attribute_data": PackedByteArray("kzj///ke//+kJpLIHz3slF4/4M7hYJNoSlMboftyzXl8j4tGSZykW8HFJjFhzK5I///aKf//N0I="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwAEAAAAAwAFAAQABQAGAAQABQAHAAYABQAIAAcACAAJAAcACAAKAAkACgALAAkACgAMAAsADAANAAsA"),
+"material": SubResource("StandardMaterial3D_rybv1"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("Hx0AAP///78AAAAA////v7kIAAC9vf+/TCIAAP9//7/aJAAARsX/v/pKAAD6Sv+/hDsAAI+O/7+SXwAAkl//v/9/AABMIv+/j44AAIQ7/7+9vQAAuQj/v0bFAADaJP+///8AAAAA/7///wAAHx3/v////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
+}, {
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("AABgDP//YAx8j4tGwcUmMf//2inhYJNoHz3slAAA//+kJpLI+R7//w=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAQAEAAMAAgAFAAAABQAGAAAABgAHAAAABgAIAAcACAAJAAcA"),
+"material": SubResource("StandardMaterial3D_3hp24"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAAAAAAA/7///wAAAAD/v3yPAAAfPf+/wcUAAKQm/7///wAA+R7/v+FgAADhYP+/Hz0AAHyP/78AAAAA////v6QmAADBxf+/+R4AAP///7////9/////f////3/+//9/////f////3////9/////f////3////9/")
+}, {
+"aabb": AABB(-0.217, -0.05, -0.217, 0.717, 1e-05, 0.717),
+"attribute_data": PackedByteArray("jLf//3JI//+zTsnSCWGoqDV+e4Q4pLhofdBFV////////1JR//8Nuw=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwAEAAAABAAFAAAABQAGAAAABgAHAAAABgAIAAcACAAJAAcA"),
+"material": SubResource("StandardMaterial3D_w58i1"),
+"name": "water",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("9JoAAP///78AAAAA////v7kIAAC9vf+/TCIAAP9//7/6SgAA+kr/v/9/AABMIv+/vb0AALkI/7///wAA////v///AAAAAP+///8AAPSa/7////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jsk86")
+
+[node name="RiverCorner2" type="StaticBody3D"]
+
+[node name="ground_riverCorner" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, -0.333, 0)
+mesh = SubResource("ArrayMesh_i37h2")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("1_7uay6")

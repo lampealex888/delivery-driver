@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=4 uid="uid://xs6xb8y0vpsr"]
+
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_vq64l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqq15"]
+resource_name = "dirt"
+albedo_color = Color(0.948242, 0.744326, 0.619001, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdpps"]
+resource_name = "dirtDark"
+albedo_color = Color(0.859591, 0.671036, 0.556948, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epy3h"]
+resource_name = "grass"
+albedo_color = Color(0.45234, 0.929502, 0.865877, 1)
+metallic = 1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_khj5e"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 0.05, 1),
+"format": 34896613377,
+"index_count": 114,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAgAFAAQAAgAGAAUAAgAHAAYACAAJAAoACgALAAgACwAMAAgACwANAAwADQAOAAwADQAPAA4AEAARABIAEgATABAAEwAUABAAFAAVABAAFQAWABAAFgAXABAAGAAZABoAGgAbABgAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AIAAhACIAIgAjACAAIwAkACAAIgAlACMAIwAmACQAJwAlACIAJgAoACQAJgApACgAKQAqACgAKwAnACIAKwAiACwALQArACwALQAsAC4ALgAvAC0A"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAD//wXhAAAAAP//a8cAAP8f//9rxwAAfA///wXhAAD5Hv//gvAAAPke/////wAAkzj/////AACTOP///98AAAXh/////wAAa8f/////AABrx////98AAP/f//9rxwAABeH//4LwAAD/////a8cAAILw//8F4QAA/////wXhAAD/H///kzgAAAAA//+TOAAAAAD///keAAB8D///+R4AAPke//98DwAA+R7//wAAAACTOP//AAAAAJM4////HwAAa8f///8fAABrx///AAAAAAXh//8AAAAA/9///5M4AAAF4f//fA8AAP////+TOAAAgvD///keAAD/////+R4AAIy3AAD//wAAckgAAP//AABySAAA/98AAIy3AAD/HwAAjLcAAP/fAACMtwAAAAAAAP/fAABySAAAckgAAAAAAAD/3wAAjLcAAP//AABySAAA//8AAIy3AABySAAA/x8AAP8fAACMtwAA/x8AAHJIAAAAAAAAjLcAAAAAAABySAAA")
+}, {
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 0.05, 1),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAwACAAQABAAFAAMABgAFAAQABAAHAAYACAAJAAoACgALAAgACgAJAAwADAANAAoADQAMAA4ADgAPAA0AEAARABIAEgATABAAFAAQABMAEwAVABQAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAbABoAGgAdABwAHAAdAB4AHgAfABwA"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AAD//2vHAAAAAAAAjLcAAP8fAACMtwAA/x///2vHAABySAAA/98AAJM4////3wAAkzj/////AABySAAA//8AAP////9rxwAA/9///2vHAAD/3wAAjLcAAP//AACMtwAAa8f////fAACMtwAA/98AAGvH/////wAAjLcAAP//AACMtwAA/x8AAIy3AAAAAAAAa8f//wAAAABrx////x8AAP/fAABySAAA/9///5M4AAD/////kzgAAP//AABySAAAAAAAAHJIAAAAAP//kzgAAP8f//+TOAAA/x8AAHJIAABySAAA/x8AAJM4////HwAAkzj//wAAAABySAAAAAAAAA==")
+}, {
+"aabb": AABB(-0.5, -5.63993e-18, -0.5, 1, 1e-05, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMABQAGAAcABwAIAAUACAAJAAUACgALAAwADAANAAoADQAOAAoADwAQABEAEQASAA8AEQATABIA"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("BeEAAHwPAAAF4QAAAAAAAP//AAAAAAAAgvAAAPkeAAD//wAA+R4AAHwPAAD5HgAAAAAAAPkeAAAAAAAAAAAAAPkeAAAAAAAA+R4AAHwPAAD//wAA//8AAAXhAAD//wAABeEAAILwAACC8AAABeEAAP//AAAF4QAAAAAAAP//AAAAAAAABeEAAHwPAAAF4QAA+R4AAP//AAD5HgAAgvAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wx3ls"]
+resource_name = "ground_pathCross_Mesh ground_pathCross"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 0.05, 1),
+"attribute_data": PackedByteArray("AACE4gAAJ8r/HyfKfA+E4vkeQfH5Hv//kzj//5M4i+EF4f//a8f//2vHi+H/3yfKBeFB8f//J8qC8ITi//+E4v8fN0IAADdCAADaKXwP2in5Hh0b+R5gDJM4YAyTONQqa8fUKmvHYAwF4WAM/983QgXhHRv//zdCgvDaKf//2imMt///ckj//3JIi+GMt9QqjLeL4Yy3YAz/31JRckhgDP/fDbv//1JR//8Nu3JI1Cr/Hw27/x9SUQAADbsAAFJR"),
+"format": 34896613399,
+"index_count": 114,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAgAFAAQAAgAGAAUAAgAHAAYACAAJAAoACgALAAgACwAMAAgACwANAAwADQAOAAwADQAPAA4AEAARABIAEgATABAAEwAUABAAFAAVABAAFQAWABAAFgAXABAAGAAZABoAGgAbABgAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AIAAhACIAIgAjACAAIwAkACAAIgAlACMAIwAmACQAJwAlACIAJgAoACQAJgApACgAKQAqACgAKwAnACIAKwAiACwALQArACwALQAsAC4ALgAvAC0A"),
+"material": SubResource("StandardMaterial3D_aqq15"),
+"name": "dirt",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAD//wXh/78AAP//a8f/v/8f//9rx/+/fA///wXh/7/5Hv//gvD/v/ke//////+/kzj//////7+TOP///9//vwXh//////+/a8f//////79rx////9//v//f//9rx/+/BeH//4Lw/7//////a8f/v4Lw//8F4f+//////wXh/7//H///kzj/vwAA//+TOP+/AAD///ke/798D///+R7/v/ke//98D/+/+R7//wAA/7+TOP//AAD/v5M4////H/+/a8f///8f/79rx///AAD/vwXh//8AAP+//9///5M4/78F4f//fA//v/////+TOP+/gvD///ke/7//////+R7/v4y3AAD///+/ckgAAP///79ySAAA/9//v4y3AAD/H/+/jLcAAP/f/7+MtwAAAAD/v//fAABySP+/ckgAAAAA/7//3wAAjLf/v///AABySP+///8AAIy3/79ySAAA/x//v/8fAACMt/+//x8AAHJI/78AAAAAjLf/vwAAAABySP+/////f////3////9//v//f////3////9/////f/7//3////9/////f////3////9/////f/7//3/+//9/////f////3////9/////f/7//3/+//9/////f////3/+//9/////f////3////9/////f////3////9//v//f////3////9/////f////3/+//9/////f/7//3////9/////f////3////9/////f////3////9/////f////3////9/")
+}, {
+"aabb": AABB(-0.5, -0.05, -0.5, 1, 0.05, 1),
+"attribute_data": PackedByteArray("//8qKP//pUz/36VM/98qKAAAKij/Hyoo/x+lTAAApUwAACoo/x8qKP8fpUwAAKVM//8qKP//pUz/36VM/98qKP8fpUwAAKVMAAAqKP8fKij/36VM/98qKP//Kij//6VMAAClTAAAKij/Hyoo/x+lTP/fpUz/3yoo//8qKP//pUyZnHQeZWN0Hp5uAABgkQAAYJEAAJmcdB5lY3Qenm4AAJmcdB5lY3Qenm4AAGCRAABgkQAAmZx0HmVjdB6ebgAA"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA"),
+"material": SubResource("StandardMaterial3D_fdpps"),
+"name": "dirtDark",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 22.0064, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAD//2vH//8AAAAAjLf///8fAACMt////x///2vH//+TOP////+fx5M4////35/HckgAAP/fn8dySAAA//+fx/////9rx////9///2vH////3wAAjLf/////AACMt///a8f/////n8eMtwAA//+fx4y3AAD/35/Ha8f////fn8eMtwAA/x+fx4y3AAAAAJ/Ha8f//wAAn8drx////x+fx//fAABySFik/9///5M4WKT/////kzhYpP//AABySFikAAAAAHJIWKQAAP//kzhYpP8f//+TOFik/x8AAHJIWKRySAAA/x+fx5M4////H5/Hkzj//wAAn8dySAAAAACfx3JIAAD/H+Kq/x8AAHJI4qr/H///kzjiqpM4////H+Kqa8f////fJeKMtwAA/98l4v/fAACMtyXi/9///2vHJeL/3wAAckjiqoy3AAD/H+Kqa8f///8f4qr/3///kzjiqv8f//9rxyXi/x8AAIy3JeJySAAA/98l4pM4////3yXi/3+W1v9/ltb/f5bW/3+W1pK+SR+Svkkfkr5JH5K+SR//f5bW/3+W1v9/ltb/f5bWSJ9swUifbMFIn2zBSJ9swUifbMFIn2zBSJ9swUifbMH///9/////f////3////9/////f////3////9/////f5K+SR+Svkkfkr5JH5K+SR/5x+Uy+cflMvnH5TL5x+UyBY2J0wWNidMFjYnTBY2J0+SyBLjksgS45LIEuOSyBLh1rAUNdawFDXWsBQ11rAUN")
+}, {
+"aabb": AABB(-0.5, -5.63993e-18, -0.5, 1, 1e-05, 1),
+"attribute_data": PackedByteArray("BeEdGwXhYAz//2AMgvDaKf//2il8D9opAADaKQAAYAz5HmAM+R4dG/////8F4f//BeFB8YLwhOL//4TiAAD//wAAhOJ8D4Ti+R7///keQfE="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMABQAGAAcABwAIAAUACAAJAAUACgALAAwADAANAAoADQAOAAoADwAQABEAEQASAA8AEQATABIA"),
+"material": SubResource("StandardMaterial3D_epy3h"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(39.3701, 41.3701, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("BeEAAHwP/78F4QAAAAD/v///AAAAAP+/gvAAAPke/7///wAA+R7/v3wPAAD5Hv+/AAAAAPke/78AAAAAAAD/v/keAAAAAP+/+R4AAHwP/7///wAA////vwXhAAD///+/BeEAAILw/7+C8AAABeH/v///AAAF4f+/AAAAAP///78AAAAABeH/v3wPAAAF4f+/+R4AAP///7/5HgAAgvD/v////3////9/////f////3////9/////f////3////9//v//f/7//3////9/////f////3////9/////f////3////9/////f////3/+//9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_khj5e")
+
+[node name="PathCross" type="StaticBody3D"]
+
+[node name="ground_pathCross" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
+mesh = SubResource("ArrayMesh_wx3ls")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = ExtResource("1_vq64l")

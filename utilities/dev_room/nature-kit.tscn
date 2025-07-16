@@ -1,4 +1,4 @@
-[gd_scene load_steps=326 format=3 uid="uid://colh08c5ymx8f"]
+[gd_scene load_steps=317 format=3 uid="uid://colh08c5ymx8f"]
 
 [ext_resource type="PackedScene" uid="uid://yle8six7l5ud" path="res://assets/kenney_nature-kit/bed.glb" id="1_ex3sa"]
 [ext_resource type="PackedScene" uid="uid://cd682bheyxovw" path="res://assets/kenney_nature-kit/bed_floor.glb" id="2_m4bv8"]
@@ -142,19 +142,10 @@
 [ext_resource type="PackedScene" uid="uid://dj47o1l30ydie" path="res://assets/kenney_nature-kit/ground_pathSplit.glb" id="141_uhxwg"]
 [ext_resource type="PackedScene" uid="uid://8jkcles00mw4" path="res://assets/kenney_nature-kit/ground_pathStraight.glb" id="142_k0776"]
 [ext_resource type="PackedScene" uid="uid://dp87ite4uhr3t" path="res://assets/kenney_nature-kit/ground_pathTile.glb" id="143_eebcf"]
-[ext_resource type="PackedScene" uid="uid://blh3bfgxycmf8" path="res://assets/kenney_nature-kit/ground_riverBend.glb" id="144_vnweg"]
-[ext_resource type="PackedScene" uid="uid://cnxdt2d18bqbm" path="res://assets/kenney_nature-kit/ground_riverBendBank.glb" id="145_l5cbd"]
-[ext_resource type="PackedScene" uid="uid://c02k6sxhrb5k0" path="res://assets/kenney_nature-kit/ground_riverCorner.glb" id="146_g3i8a"]
-[ext_resource type="PackedScene" uid="uid://ckko8oau3mcrd" path="res://assets/kenney_nature-kit/ground_riverCornerSmall.glb" id="147_ijqfw"]
 [ext_resource type="PackedScene" uid="uid://dvmpnlbx7y7uc" path="res://assets/kenney_nature-kit/ground_riverCross.glb" id="148_8l7ue"]
 [ext_resource type="PackedScene" uid="uid://rf1fpynovbke" path="res://assets/kenney_nature-kit/ground_riverEnd.glb" id="149_jc2xy"]
 [ext_resource type="PackedScene" uid="uid://tj4cpog2ud0q" path="res://assets/kenney_nature-kit/ground_riverEndClosed.glb" id="150_5gos5"]
-[ext_resource type="PackedScene" uid="uid://vnto7qxb7c2x" path="res://assets/kenney_nature-kit/ground_riverRocks.glb" id="152_75dve"]
-[ext_resource type="PackedScene" uid="uid://bseg4sbq8ulj6" path="res://assets/kenney_nature-kit/ground_riverSide.glb" id="153_q3xoa"]
-[ext_resource type="PackedScene" uid="uid://cxgn2acmvxgwi" path="res://assets/kenney_nature-kit/ground_riverSideOpen.glb" id="154_bbpik"]
 [ext_resource type="PackedScene" uid="uid://ctlql1btcjtfk" path="res://assets/kenney_nature-kit/ground_riverSplit.glb" id="155_ohvqp"]
-[ext_resource type="PackedScene" uid="uid://dqfxihhai0d0g" path="res://assets/kenney_nature-kit/ground_riverStraight.glb" id="156_564w3"]
-[ext_resource type="PackedScene" uid="uid://b4tk46454i7o7" path="res://assets/kenney_nature-kit/ground_riverTile.glb" id="157_snrn8"]
 [ext_resource type="PackedScene" uid="uid://dh621f3xvvd24" path="res://assets/kenney_nature-kit/hanging_moss.glb" id="158_5rrwd"]
 [ext_resource type="PackedScene" uid="uid://8wu3pxyg6kvq" path="res://assets/kenney_nature-kit/lily_large.glb" id="159_s8ux5"]
 [ext_resource type="PackedScene" uid="uid://crh4iaywgm810" path="res://assets/kenney_nature-kit/lily_small.glb" id="160_ls8tg"]
@@ -753,18 +744,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
 [node name="ground_pathTile2" parent="." instance=ExtResource("143_eebcf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -12)
 
-[node name="ground_riverBend2" parent="." instance=ExtResource("144_vnweg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -12)
-
-[node name="ground_riverBendBank2" parent="." instance=ExtResource("145_l5cbd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -12)
-
-[node name="ground_riverCorner2" parent="." instance=ExtResource("146_g3i8a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12)
-
-[node name="ground_riverCornerSmall2" parent="." instance=ExtResource("147_ijqfw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -12)
-
 [node name="ground_riverCross2" parent="." instance=ExtResource("148_8l7ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -12)
 
@@ -774,23 +753,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12)
 [node name="ground_riverEndClosed2" parent="." instance=ExtResource("150_5gos5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -12)
 
-[node name="ground_riverRocks2" parent="." instance=ExtResource("152_75dve")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
-
-[node name="ground_riverSide2" parent="." instance=ExtResource("153_q3xoa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -12)
-
-[node name="ground_riverSideOpen2" parent="." instance=ExtResource("154_bbpik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12)
-
 [node name="ground_riverSplit2" parent="." instance=ExtResource("155_ohvqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -12)
-
-[node name="ground_riverStraight2" parent="." instance=ExtResource("156_564w3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
-
-[node name="ground_riverTile2" parent="." instance=ExtResource("157_snrn8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12)
 
 [node name="hanging_moss2" parent="." instance=ExtResource("158_5rrwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
