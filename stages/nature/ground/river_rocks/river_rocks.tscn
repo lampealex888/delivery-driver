@@ -147,12 +147,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fryoj")
 
-[node name="RiverRocks" type="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = ExtResource("1_h4ad4")
-
-[node name="ground_riverRocks" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, -0.05, 0)
+[node name="ground_riverRocks" type="MeshInstance3D"]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vphmu")
 skeleton = NodePath("")
+
+[node name="RiverRocks" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverRocks"]
+shape = ExtResource("1_h4ad4")

@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://ccv5g0yuiu5ei"]
+[gd_scene load_steps=11 format=4 uid="uid://ccv5g0yuiu5ei"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_o20og"]
 [ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="2_1f1m4"]
 [ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="2_a0ktb"]
-[ext_resource type="PackedScene" uid="uid://bekg7hyi32j23" path="res://entities/npcs/ai_bystander/ai_bystander.tscn" id="3_elfia"]
-[ext_resource type="PackedScene" uid="uid://bbi2huporwlxv" path="res://entities/vehicles/ai_car/ai_car.tscn" id="3_takau"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33vx0"]
 resource_name = "colormap"
@@ -80,6 +78,7 @@ mesh = SubResource("ArrayMesh_va6uc")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 shape = ExtResource("2_1f1m4")
 
 [node name="PathTransmitterEast" type="Area3D" parent="."]
@@ -94,9 +93,6 @@ shape = ExtResource("2_a0ktb")
 [node name="Path3D" type="Path3D" parent="PathTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 curve = SubResource("Curve3D_a0ktb")
-
-[node name="AICar" parent="PathTransmitterEast/Path3D" instance=ExtResource("3_takau")]
-transform = Transform3D(-4.37112e-08, 0, -0.999992, 0, 0.999993, 0, 0.999995, 0, -4.3711e-08, 3.99614, 0, 0)
 
 [node name="PathTransmitterWest" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33, 0, -1.11)
@@ -123,9 +119,6 @@ shape = ExtResource("2_a0ktb")
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_elfia")
-
-[node name="Bystander" parent="SidewalkTransmitterEast/Path3D" instance=ExtResource("3_elfia")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.33, 0, 0)
 
 [node name="SidewalkTransmitterWest" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33, 0, -3)

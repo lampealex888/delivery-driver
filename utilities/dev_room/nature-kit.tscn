@@ -1,4 +1,4 @@
-[gd_scene load_steps=303 format=3 uid="uid://colh08c5ymx8f"]
+[gd_scene load_steps=299 format=3 uid="uid://colh08c5ymx8f"]
 
 [ext_resource type="PackedScene" uid="uid://yle8six7l5ud" path="res://assets/kenney_nature-kit/bed.glb" id="1_ex3sa"]
 [ext_resource type="PackedScene" uid="uid://cd682bheyxovw" path="res://assets/kenney_nature-kit/bed_floor.glb" id="2_m4bv8"]
@@ -128,10 +128,6 @@
 [ext_resource type="PackedScene" uid="uid://c8y5l53wjd303" path="res://assets/kenney_nature-kit/grass_large.glb" id="126_and1u"]
 [ext_resource type="PackedScene" uid="uid://dqaora65vtvx4" path="res://assets/kenney_nature-kit/grass_leafs.glb" id="127_fkvc5"]
 [ext_resource type="PackedScene" uid="uid://dskmojkam3omo" path="res://assets/kenney_nature-kit/grass_leafsLarge.glb" id="128_umql0"]
-[ext_resource type="PackedScene" uid="uid://xu7s8f2dvhk3" path="res://assets/kenney_nature-kit/ground_pathEnd.glb" id="135_na7fs"]
-[ext_resource type="PackedScene" uid="uid://xocv2pqfmadi" path="res://assets/kenney_nature-kit/ground_pathEndClosed.glb" id="136_1kold"]
-[ext_resource type="PackedScene" uid="uid://8jkcles00mw4" path="res://assets/kenney_nature-kit/ground_pathStraight.glb" id="142_k0776"]
-[ext_resource type="PackedScene" uid="uid://dp87ite4uhr3t" path="res://assets/kenney_nature-kit/ground_pathTile.glb" id="143_eebcf"]
 [ext_resource type="PackedScene" uid="uid://dh621f3xvvd24" path="res://assets/kenney_nature-kit/hanging_moss.glb" id="158_5rrwd"]
 [ext_resource type="PackedScene" uid="uid://8wu3pxyg6kvq" path="res://assets/kenney_nature-kit/lily_large.glb" id="159_s8ux5"]
 [ext_resource type="PackedScene" uid="uid://crh4iaywgm810" path="res://assets/kenney_nature-kit/lily_small.glb" id="160_ls8tg"]
@@ -687,18 +683,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="grass_leafsLarge2" parent="." instance=ExtResource("128_umql0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-
-[node name="ground_pathEnd2" parent="." instance=ExtResource("135_na7fs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12)
-
-[node name="ground_pathEndClosed2" parent="." instance=ExtResource("136_1kold")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -12)
-
-[node name="ground_pathStraight2" parent="." instance=ExtResource("142_k0776")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -12)
-
-[node name="ground_pathTile2" parent="." instance=ExtResource("143_eebcf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -12)
 
 [node name="hanging_moss2" parent="." instance=ExtResource("158_5rrwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)

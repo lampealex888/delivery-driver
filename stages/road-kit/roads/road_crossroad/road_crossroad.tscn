@@ -144,6 +144,7 @@ east_transmitter = NodePath("PathTransmitterEast")
 north_transmitter = NodePath("PathTransmitterNorth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 shape = ExtResource("1_34jct")
 
 [node name="RoadCrossroadMesh" type="MeshInstance3D" parent="."]

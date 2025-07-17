@@ -120,12 +120,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rrswk")
 
-[node name="RiverTile" type="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = ExtResource("1_dgf5u")
-
-[node name="ground_riverTile" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, -0.05, 0)
+[node name="ground_riverTile" type="MeshInstance3D"]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_426wy")
 skeleton = NodePath("")
+
+[node name="RiverTile" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverTile"]
+shape = ExtResource("1_dgf5u")

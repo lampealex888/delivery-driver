@@ -93,12 +93,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rm10m")
 
-[node name="PathSideOpen" type="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = ExtResource("1_1m04b")
-
-[node name="ground_pathSideOpen" type="MeshInstance3D" parent="."]
+[node name="ground_pathSideOpen" type="MeshInstance3D"]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_4rdfc")
 skeleton = NodePath("")
+
+[node name="PathSideOpen" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathSideOpen"]
+shape = ExtResource("1_1m04b")

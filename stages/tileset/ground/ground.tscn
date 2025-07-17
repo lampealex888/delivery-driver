@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://u8n33ibougme"]
+[gd_scene load_steps=39 format=3 uid="uid://u8n33ibougme"]
 
 [ext_resource type="PackedScene" uid="uid://dvqq8d63d0tq5" path="res://stages/road-kit/roads/road_bend/road_bend.tscn" id="1_jstjd"]
 [ext_resource type="PackedScene" uid="uid://bl7mo0fx1lb1g" path="res://stages/road-kit/roads/road_bend_sidewalk/road_bend_sidewalk.tscn" id="2_wjwn6"]
@@ -10,6 +10,34 @@
 [ext_resource type="PackedScene" uid="uid://ccv5g0yuiu5ei" path="res://stages/road-kit/roads/road_straight/road_straight.tscn" id="8_8cukg"]
 [ext_resource type="PackedScene" uid="uid://c4m484jvc0lac" path="res://stages/road-kit/roads/tile_low/tile_low.tscn" id="9_enwbl"]
 [ext_resource type="PackedScene" uid="uid://b8aampgh1a65e" path="res://stages/nature/ground/grass/ground_grass.tscn" id="10_wjwn6"]
+[ext_resource type="PackedScene" uid="uid://cq0uuw74p41rm" path="res://stages/nature/ground/path_bend/path_bend.tscn" id="11_8tauq"]
+[ext_resource type="PackedScene" uid="uid://cb3lpm1riltj7" path="res://stages/nature/ground/path_bend_bank/path_bend_bank.tscn" id="12_566qv"]
+[ext_resource type="PackedScene" uid="uid://cby7vuq17abwv" path="res://stages/nature/ground/path_corner/path_corner.tscn" id="13_c6fxt"]
+[ext_resource type="PackedScene" uid="uid://d0q28wdduiswy" path="res://stages/nature/ground/path_corner2/path_corner.tscn" id="14_focq8"]
+[ext_resource type="PackedScene" uid="uid://xs6xb8y0vpsr" path="res://stages/nature/ground/path_cross/path_cross.tscn" id="15_rb8a8"]
+[ext_resource type="PackedScene" uid="uid://dln08l0vnfwh7" path="res://stages/nature/ground/path_end_close/path_end_close.tscn" id="16_xp8sj"]
+[ext_resource type="PackedScene" uid="uid://bry4xp6uxv87d" path="res://stages/nature/ground/path_open/path_open.tscn" id="17_3m1nx"]
+[ext_resource type="PackedScene" uid="uid://lu4j30cw80f0" path="res://stages/nature/ground/path_rocks/path_rocks.tscn" id="18_l0yf5"]
+[ext_resource type="PackedScene" uid="uid://bo08alqb5y1fn" path="res://stages/nature/ground/path_side/path_side.tscn" id="19_jqq5h"]
+[ext_resource type="PackedScene" uid="uid://clw515odrbyjp" path="res://stages/nature/ground/path_side_open/path_side_open.tscn" id="20_gvfaf"]
+[ext_resource type="PackedScene" uid="uid://frtq6pf0yhil" path="res://stages/nature/ground/path_split/path_split.tscn" id="21_xr42y"]
+[ext_resource type="PackedScene" uid="uid://chr0famvmkt1e" path="res://stages/nature/ground/path_straight/path_straight.tscn" id="22_0dcpy"]
+[ext_resource type="PackedScene" uid="uid://be23eaoiqww2g" path="res://stages/nature/ground/path_tile/path_tile.tscn" id="23_k2gbp"]
+[ext_resource type="PackedScene" uid="uid://cb456yi0ij8nj" path="res://stages/nature/ground/river_bend/river_bend.tscn" id="24_11hdc"]
+[ext_resource type="PackedScene" uid="uid://dk4c7vregtfqc" path="res://stages/nature/ground/river_bend_2/river_bend_2.tscn" id="25_o738r"]
+[ext_resource type="PackedScene" uid="uid://dki6lrcqbsdkm" path="res://stages/nature/ground/river_corner/river_corner.tscn" id="26_hm2f5"]
+[ext_resource type="PackedScene" uid="uid://d1m5ots034wmg" path="res://stages/nature/ground/river_corner_2/river_corner_2.tscn" id="27_ywjj8"]
+[ext_resource type="PackedScene" uid="uid://c4gsm7sfc22f8" path="res://stages/nature/ground/path_end/path_end.tscn" id="28_yj1b6"]
+[ext_resource type="PackedScene" uid="uid://do40iubqo3kgo" path="res://stages/nature/ground/river_end/river_end.tscn" id="29_ehomq"]
+[ext_resource type="PackedScene" uid="uid://wpdf8sdyy8us" path="res://stages/nature/ground/river_end_close/river_end_close.tscn" id="30_nnfyb"]
+[ext_resource type="PackedScene" uid="uid://b2w83gjnky3qj" path="res://stages/nature/ground/river_open/river_open.tscn" id="31_7hfm2"]
+[ext_resource type="PackedScene" uid="uid://do6ie5aq5won5" path="res://stages/nature/ground/river_rocks/river_rocks.tscn" id="32_p0yr0"]
+[ext_resource type="PackedScene" uid="uid://dedvkr2rs4gru" path="res://stages/nature/ground/river_side/river_side.tscn" id="33_y07je"]
+[ext_resource type="PackedScene" uid="uid://cu2wl25rqmcwl" path="res://stages/nature/ground/river_side_open/river_side_open.tscn" id="34_g3l6e"]
+[ext_resource type="PackedScene" uid="uid://bc0oyqn7u8j5g" path="res://stages/nature/ground/river_split/river_split.tscn" id="35_ixpu1"]
+[ext_resource type="PackedScene" uid="uid://fodin7jn70y0" path="res://stages/nature/ground/river_straight/river_straight.tscn" id="36_5jubt"]
+[ext_resource type="PackedScene" uid="uid://cst85ru253uem" path="res://stages/nature/ground/river_tile/river_tile.tscn" id="37_7c4gs"]
+[ext_resource type="PackedScene" uid="uid://c3vyf41yce3p0" path="res://stages/nature/ground/river_cross/river_cross.tscn" id="38_566qv"]
 
 [node name="RoadKit" type="Node3D"]
 
@@ -37,7 +65,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 0)
 
 [node name="TileLow" parent="." instance=ExtResource("9_enwbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 56, 0, 0)
+
+[node name="PathBend" parent="." instance=ExtResource("11_8tauq")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 70, 0, 0)
+
+[node name="PathBendBank" parent="." instance=ExtResource("12_566qv")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 77, 0, 0)
+
+[node name="PathCorner" parent="." instance=ExtResource("13_c6fxt")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 84, 0, 0)
+
+[node name="PathCorner2" parent="." instance=ExtResource("14_focq8")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 91, 0, 0)
+
+[node name="PathCross" parent="." instance=ExtResource("15_rb8a8")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 98, 0, 0)
+
+[node name="PathEndClose" parent="." instance=ExtResource("16_xp8sj")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 112, 0, 0)
+
+[node name="PathOpen" parent="." instance=ExtResource("17_3m1nx")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 119, 0, 0)
+
+[node name="PathRocks" parent="." instance=ExtResource("18_l0yf5")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 126, 0, 0)
+
+[node name="PathSide" parent="." instance=ExtResource("19_jqq5h")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 133, 0, 0)
+
+[node name="PathSideOpen" parent="." instance=ExtResource("20_gvfaf")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 140, 0, 0)
+
+[node name="PathSplit" parent="." instance=ExtResource("21_xr42y")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 147, 0, 0)
+
+[node name="PathStraight" parent="." instance=ExtResource("22_0dcpy")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 154, 0, 0)
+
+[node name="PathTile" parent="." instance=ExtResource("23_k2gbp")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 161, 0, 0)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("24_11hdc")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 168, 0, 0)
+
+[node name="RiverBend2" parent="." instance=ExtResource("25_o738r")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 175, 0, 0)
+
+[node name="RiverCorner" parent="." instance=ExtResource("26_hm2f5")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 182, 0, 0)
+
+[node name="RiverCorner2" parent="." instance=ExtResource("27_ywjj8")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 189, 0, 0)
+
+[node name="PathEnd" parent="." instance=ExtResource("28_yj1b6")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 105, 0, 0)
+
+[node name="RiverEnd" parent="." instance=ExtResource("29_ehomq")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 203, 0, 0)
+
+[node name="RiverEndClose" parent="." instance=ExtResource("30_nnfyb")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 210, 0, 0)
+
+[node name="RiverOpen" parent="." instance=ExtResource("31_7hfm2")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 217, 0, 0)
+
+[node name="RiverRocks" parent="." instance=ExtResource("32_p0yr0")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 224, 0, 0)
+
+[node name="RiverSide" parent="." instance=ExtResource("33_y07je")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 231, 0, 0)
+
+[node name="RiverSideOpen" parent="." instance=ExtResource("34_g3l6e")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 238, 0, 0)
+
+[node name="RiverSplit" parent="." instance=ExtResource("35_ixpu1")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 245, 0, 0)
+
+[node name="RiverStraight" parent="." instance=ExtResource("36_5jubt")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 252, 0, 0)
+
+[node name="RiverTile" parent="." instance=ExtResource("37_7c4gs")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 259, 0, 0)
+
+[node name="RiverCross" parent="." instance=ExtResource("38_566qv")]
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 196, 0, 0)
 
 [node name="GroundGrass" parent="." instance=ExtResource("10_wjwn6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, 0)
+transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 63, 0, 0)

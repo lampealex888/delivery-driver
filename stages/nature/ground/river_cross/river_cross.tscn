@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://c3vyf41yce3p0"]
 
-[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_8k6mc"]
+[ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_arp4r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cv1v"]
 resource_name = "grass"
@@ -120,12 +120,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rbqwh")
 
-[node name="RiverCross2" type="StaticBody3D"]
-
-[node name="ground_riverCross" type="MeshInstance3D" parent="."]
+[node name="ground_riverCross" type="MeshInstance3D"]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_h22k0")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = ExtResource("1_8k6mc")
+[node name="RiverCross" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverCross"]
+shape = ExtResource("1_arp4r")
