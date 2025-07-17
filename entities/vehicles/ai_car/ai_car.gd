@@ -88,10 +88,9 @@ func _on_rigid_body_body_entered(body):
 		is_following_path = false
 		ray_cast.enabled = false
 		traffic_detector.monitoring = false
-		print("despawn_timer_started")
 		despawn_timer.start()
 		call_deferred("handle_collision_cleanup")
-		rigid_body.set_collision_layer_value(AI_VEHICLES, true)
+		rigid_body.set_collision_layer_value(PLAYER_CAR, true)
 
 
 func handle_collision_cleanup():

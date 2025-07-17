@@ -101,6 +101,8 @@ curve = SubResource("Curve3D_hgs0k")
 
 [node name="SidewalkTransmitterSouth" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.33)
+collision_layer = 64
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterSouth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

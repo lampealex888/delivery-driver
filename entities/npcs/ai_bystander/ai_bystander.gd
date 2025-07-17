@@ -2,6 +2,8 @@ extends PathFollow3D
 
 const SIDEWALK_TRANSMITTER: int = 7
 const PLAYER_CAR: int = 2
+const AI_CAR: int = 5
+const AI_BYSTANDER: int = 6
 
 @export var max_speed: float = 1.0
 
@@ -84,6 +86,7 @@ func _on_rigid_body_body_entered(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
 		despawn_timer.start()
+		rigid_body.set_collision_layer_value(PLAYER_CAR, true)
 		call_deferred("handle_collision_cleanup")
 		ray_cast.enabled = false
 		animation_player.clear_queue()
