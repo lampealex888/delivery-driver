@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw6wbn7dx1ceu"]
+[gd_scene load_steps=7 format=3 uid="uid://dw6wbn7dx1ceu"]
 
 [ext_resource type="Script" uid="uid://bw471dlt0wud6" path="res://entities/ui/destination_arrow/destination_arrow.gd" id="1_wweke"]
+[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://entities/shared/material_emissive_green.tres" id="2_5ayho"]
+[ext_resource type="Material" uid="uid://bnjd607l1q1re" path="res://entities/shared/material_emissive_yellow.tres" id="3_iumwp"]
+[ext_resource type="Material" uid="uid://c2pcf1s4h0wpp" path="res://entities/shared/material_emissive_red.tres" id="4_0o6vh"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_wm8gn"]
 size = Vector3(0.5, 0.5, 0.1)
@@ -12,6 +15,9 @@ height = 0.5
 
 [node name="DestinationArrow" type="Node3D"]
 script = ExtResource("1_wweke")
+green_material = ExtResource("2_5ayho")
+yellow_material = ExtResource("3_iumwp")
+red_material = ExtResource("4_0o6vh")
 
 [node name="ArrowHead" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 2.18557e-08, 0, -0.2)

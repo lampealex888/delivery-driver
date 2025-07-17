@@ -2,6 +2,10 @@ extends CharacterBody3D
 
 enum State { WAITING, WALKING_TO_CAR, IN_CAR, WALKING_TO_DESTINATION }
 
+@export var green_material: Material
+@export var yellow_material: Material
+@export var red_material: Material
+
 @onready var destination_arrow: Node3D = $DestinationArrow
 @onready var pickup_area: Area3D = $PickupArea3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
@@ -16,7 +20,6 @@ var current_building: Node3D
 var car_in_range: Node3D
 var current_characater: Node3D
 var animation_player: AnimationPlayer
-var material: StandardMaterial3D
 var last_color: Color
 
 static var character_paths: Array[String] = [
@@ -64,15 +67,18 @@ func _process(delta: float):
 func _process_waiting(delta: float):
 	var patience_ratio = patience_timer.time_left / patience_timer.wait_time
 	var color: Color
+	var new_material: Material
 	if patience_ratio > 0.66:
 		color = Color.GREEN
+		new_material = green_material
 	elif patience_ratio > 0.33:
 		color = Color.YELLOW
+		new_material = yellow_material
 	else:
 		color = Color.RED
+		new_material = red_material
 	if color != last_color:
-		material.albedo_color = color
-		material.emission = color
+		_apply_material(new_material)
 		last_color = color
 	ring_mesh.rotation.y += delta
 	dollar_mesh.rotation.y += delta
@@ -139,17 +145,8 @@ func _spawn_random_character():
 
 
 func _setup_materials():
-	material = StandardMaterial3D.new()
-	material.emission_enabled = true
-	material.emission = Color.GREEN
-	material.emission_energy_multiplier = 2.0
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	material.albedo_color = Color.GREEN
 	last_color = Color.GREEN
-	
-	area_mesh.material_override = material
-	ring_mesh.material_override = material
-	dollar_mesh.material_override = material
+	_apply_material(green_material)
 
 
 func _play_animation(anim_name: String):
@@ -199,3 +196,9 @@ func _delivered_to_destination():
 	car_in_range = null
 	state = State.WALKING_TO_DESTINATION
 	_play_animation("walk")
+
+
+func _apply_material(mat: Material):
+	area_mesh.material_override = mat
+	ring_mesh.material_override = mat
+	dollar_mesh.material_override = mat

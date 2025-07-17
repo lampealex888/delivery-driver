@@ -40,7 +40,7 @@ static var vehicle_paths: Array[String] = [
 
 func _ready():
 	rigid_body.body_entered.connect(on_collision)
-	despawn_timer.timeout.connect(queue_free)
+	despawn_timer.timeout.connect(_on_despawn_timer_timeout)
 	traffic_detector.body_entered.connect(_on_traffic_detector_body_entered)
 	traffic_detector.body_exited.connect(_on_traffic_detector_body_exited)
 		
@@ -86,10 +86,11 @@ func switch_to_new_path():
 func on_collision(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
-		despawn_timer.start()
-		call_deferred("handle_collision_cleanup")
 		ray_cast.enabled = false
 		traffic_detector.monitoring = false
+		print("despawn_timer_started")
+		despawn_timer.start()
+		call_deferred("handle_collision_cleanup")
 		rigid_body.set_collision_layer_value(AI_VEHICLES, true)
 
 
@@ -98,6 +99,7 @@ func handle_collision_cleanup():
 	var rot = rigid_body.global_rotation
 	remove_child(rigid_body)
 	get_tree().current_scene.add_child(rigid_body)
+	rigid_body.contact_monitor = false
 	rigid_body.global_position = pos
 	rigid_body.global_rotation = rot
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -114,5 +116,11 @@ func _on_traffic_detector_body_entered(body):
 	return
 
 
-func _on_traffic_detector_body_exited(body):
+func _on_traffic_detector_body_exited(_body):
 	traffic_ahead = false
+
+
+func _on_despawn_timer_timeout():
+	if rigid_body and is_instance_valid(rigid_body):
+		rigid_body.queue_free()
+	queue_free()

@@ -33,7 +33,6 @@ collide_with_areas = true
 
 [node name="DespawnTimer" type="Timer" parent="RigidBody3D"]
 wait_time = 5.0
-one_shot = true
 
 [node name="TrafficDetector" type="Area3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.90002)
