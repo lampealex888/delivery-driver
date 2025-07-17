@@ -39,7 +39,7 @@ static var vehicle_paths: Array[String] = [
 ]
 
 func _ready():
-	rigid_body.body_entered.connect(on_collision)
+	rigid_body.body_entered.connect(_on_rigid_body_body_entered)
 	despawn_timer.timeout.connect(_on_despawn_timer_timeout)
 	traffic_detector.body_entered.connect(_on_traffic_detector_body_entered)
 	traffic_detector.body_exited.connect(_on_traffic_detector_body_exited)
@@ -83,7 +83,7 @@ func switch_to_new_path():
 		despawn_timer.start()
 
 
-func on_collision(body):
+func _on_rigid_body_body_entered(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
 		ray_cast.enabled = false

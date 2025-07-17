@@ -10,8 +10,7 @@ var is_following_path: bool = true
 var animation_player: AnimationPlayer = null
 
 @onready var rigid_body: RigidBody3D = $RigidBody3D
-@onready var path_ray_cast: RayCast3D = rigid_body.get_node("PathRayCast3D")
-@onready var car_collision_area3d = rigid_body.get_node("CarCollisionArea3D")
+@onready var ray_cast: RayCast3D = rigid_body.get_node("PathRayCast3D")
 @onready var despawn_timer = rigid_body.get_node("DespawnTimer")
 
 static var bystander_paths: Array[String] = [
@@ -36,8 +35,8 @@ static var bystander_paths: Array[String] = [
 ]
 
 func _ready():
-	car_collision_area3d.body_entered.connect(on_player_collision)
-	despawn_timer.timeout.connect(despawn)
+	rigid_body.body_entered.connect(_on_rigid_body_body_entered)
+	despawn_timer.timeout.connect(_on_despawn_timer_timeout)
 	
 	var random_bystander_path = bystander_paths[randi() % bystander_paths.size()]
 	var bystander_scene = load(random_bystander_path)
@@ -57,8 +56,8 @@ func _process(delta):
 		return
 	
 	# Check for path transmitter
-	if path_ray_cast.is_colliding():
-		var transmitter = path_ray_cast.get_collider()
+	if ray_cast.is_colliding():
+		var transmitter = ray_cast.get_collider()
 		if transmitter and transmitter.get_collision_layer_value(SIDEWALK_TRANSMITTER):
 			var paths = transmitter.get_children().filter(func(child): return child is Path3D)
 			if paths.size() > 0:
@@ -81,12 +80,12 @@ func _switch_to_new_path():
 		queue_free()  # Remove if no new path found
 
 
-func on_player_collision(body):
+func _on_rigid_body_body_entered(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
 		despawn_timer.start()
 		call_deferred("handle_collision_cleanup")
-		path_ray_cast.enabled = false
+		ray_cast.enabled = false
 		animation_player.clear_queue()
 		animation_player.play("die")
 		rigid_body.lock_rotation = true
@@ -102,7 +101,7 @@ func handle_collision_cleanup():
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 
-func despawn():
+func _on_despawn_timer_timeout():
 	if rigid_body and is_instance_valid(rigid_body):
 		rigid_body.queue_free()
 	queue_free()
