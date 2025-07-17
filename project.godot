@@ -77,10 +77,11 @@ boost={
 3d_physics/layer_2="Player Car"
 3d_physics/layer_3="Passengers"
 3d_physics/layer_4="Path Transmitter"
-3d_physics/layer_5="Vehicles"
-3d_physics/layer_6="Bystanders"
+3d_physics/layer_5="AI Cars"
+3d_physics/layer_6="AI Bystanders"
 3d_physics/layer_7="Sidewalk Transmitter"
 3d_physics/layer_8="Destinations"
+3d_physics/layer_9="Stop Transmitter"
 
 [rendering]
 

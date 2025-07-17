@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://c70hywf58e5n4"]
+[gd_scene load_steps=15 format=4 uid="uid://c70hywf58e5n4"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_74cjk"]
+[ext_resource type="Script" uid="uid://o1piodxyb250" path="res://stages/road-kit/traffic_controller.gd" id="1_j554j"]
 [ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_wirlv"]
 [ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="3_qqd5u"]
 
@@ -91,7 +92,11 @@ _data = {
 }
 point_count = 2
 
-[node name="RoadIntersection" type="StaticBody3D"]
+[node name="RoadIntersection" type="StaticBody3D" node_paths=PackedStringArray("west_transmitter", "south_transmitter", "east_transmitter")]
+script = ExtResource("1_j554j")
+west_transmitter = NodePath("PathTransmitterWest")
+south_transmitter = NodePath("PathTransmitterSouth")
+east_transmitter = NodePath("PathTransmitterEast")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = ExtResource("1_wirlv")
@@ -164,3 +169,10 @@ shape = ExtResource("3_qqd5u")
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_2p7t2")
+
+[node name="TrafficTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="SwitchTimer" type="Timer" parent="."]
+one_shot = true

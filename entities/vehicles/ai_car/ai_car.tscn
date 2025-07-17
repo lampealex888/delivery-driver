@@ -10,6 +10,7 @@ transform = Transform3D(0.999995, 0, 0, 0, 0.999993, 0, 0, 0, 0.999992, 0, 0, 0)
 progress = 3.996
 loop = false
 script = ExtResource("1_tv3ls")
+max_speed = 4.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 16
@@ -26,10 +27,9 @@ shape = SubResource("BoxShape3D_ul2as")
 
 [node name="RayCast3D" type="RayCast3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 2.38419e-07, 1.00001, 1.5)
-target_position = Vector3(0, 0, -5)
-collision_mask = 8
+target_position = Vector3(0, 0, -4)
+collision_mask = 264
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="DespawnTimer" type="Timer" parent="RigidBody3D"]
 wait_time = 5.0
