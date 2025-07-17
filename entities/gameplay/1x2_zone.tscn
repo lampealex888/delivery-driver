@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb6ewhn2tdbhu"]
 
-[ext_resource type="Script" uid="uid://d2mn2rog7e6fg" path="res://stages/gameplay/zone.gd" id="1_txwa7"]
-[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://stages/gameplay/material_emissive_green.tres" id="2_w4lm5"]
+[ext_resource type="Script" uid="uid://d2mn2rog7e6fg" path="res://entities/gameplay/zone.gd" id="1_txwa7"]
+[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://entities/shared/material_emissive_green.tres" id="2_w4lm5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vor0"]
 size = Vector3(13.33, 2, 6.66)

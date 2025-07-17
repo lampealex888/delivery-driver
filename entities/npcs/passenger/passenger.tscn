@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3ryahe2eu2yd" path="res://entities/npcs/passenger/passenger.gd" id="1_jtq1q"]
 [ext_resource type="PackedScene" uid="uid://dw6wbn7dx1ceu" path="res://entities/ui/destination_arrow/destination_arrow.tscn" id="2_t40mi"]
-[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://stages/gameplay/material_emissive_green.tres" id="3_t40mi"]
+[ext_resource type="Material" uid="uid://dgt2gep6am8f4" path="res://entities/shared/material_emissive_green.tres" id="3_t40mi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35de1"]
 size = Vector3(0.6, 1, 0.4)

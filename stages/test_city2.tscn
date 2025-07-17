@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cu3e7y753xu8k" path="res://utilities/game/game_manager.tscn" id="4_bikw8"]
 [ext_resource type="PackedScene" uid="uid://b5ptom4mrrv4w" path="res://stages/prefabs/2x2/industrial_02.tscn" id="4_hacxx"]
 [ext_resource type="PackedScene" uid="uid://v6qo36tuy7we" path="res://stages/prefabs/3x3/commercial_03.tscn" id="5_3pufg"]
-[ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://stages/gameplay/2x2_zone.tscn" id="5_b0nl6"]
+[ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://entities/gameplay/2x2_zone.tscn" id="5_b0nl6"]
 [ext_resource type="PackedScene" uid="uid://d4c4ovf2rl8fw" path="res://stages/prefabs/2x2/commercial_04.tscn" id="6_bh6mq"]
 [ext_resource type="PackedScene" uid="uid://do54e03xu3b5j" path="res://stages/prefabs/3x3/residential_01.tscn" id="6_qumse"]
 [ext_resource type="PackedScene" uid="uid://crmmn3ixw2cto" path="res://stages/prefabs/2x2/residential_01.tscn" id="7_b0nl6"]
