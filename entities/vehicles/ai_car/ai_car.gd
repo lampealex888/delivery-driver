@@ -7,12 +7,14 @@ const PLAYER_CAR = 2
 
 @export var max_speed: float = 2.0
 
-var new_path
+var new_path: Path3D
 var is_following_path: bool = true
+var traffic_ahead: bool
 
 @onready var rigid_body = $RigidBody3D
 @onready var ray_cast = rigid_body.get_node("RayCast3D")
 @onready var despawn_timer = rigid_body.get_node("DespawnTimer")
+@onready var traffic_detector = rigid_body.get_node("TrafficDetector")
 
 static var vehicle_paths: Array[String] = [
 	"res://entities/vehicles/ambulance/ambulance.tscn",
@@ -37,9 +39,11 @@ static var vehicle_paths: Array[String] = [
 ]
 
 func _ready():
-	rigid_body.body_entered.connect(on_player_collision)
+	rigid_body.body_entered.connect(on_collision)
 	despawn_timer.timeout.connect(queue_free)
-	
+	traffic_detector.body_entered.connect(_on_traffic_detector_body_entered)
+	traffic_detector.body_exited.connect(_on_traffic_detector_body_exited)
+		
 	var random_vehicle_path = vehicle_paths[randi() % vehicle_paths.size()]
 	var vehicle_scene = load(random_vehicle_path)
 	var random_vehicle = vehicle_scene.instantiate()
@@ -50,15 +54,11 @@ func _ready():
 func _process(delta):
 	if not is_following_path:
 		return
-	
-	# Stop if traffic ahead, otherwise move at max speed
 	var speed := 0.0
-	if check_for_ai_cars_ahead():
+	if traffic_ahead:
 		speed = 0.0
 	else:
 		speed = max_speed
-
-	# Check for path transmitter
 	if ray_cast.is_colliding():
 		var transmitter = ray_cast.get_collider()
 		if transmitter:
@@ -68,24 +68,9 @@ func _process(delta):
 				var paths = transmitter.get_children().filter(func(child): return child is Path3D)
 				if paths.size() > 0:
 					new_path = paths[randi_range(0, paths.size() - 1)]
-	
 	progress += speed * delta
-	
 	if progress_ratio >= 1.0:
 		switch_to_new_path()
-
-
-func check_for_ai_cars_ahead() -> bool:
-	# Check if there are AI cars in the specific transmitter ahead
-	if ray_cast.is_colliding():
-		var collider = ray_cast.get_collider()
-		if collider and collider.get_collision_layer_value(PATH_TRANSMITTER):
-			var paths = collider.get_children().filter(func(child): return child is Path3D)
-			for path in paths:
-				for child in path.get_children():
-					if child.is_in_group("ai_car") and child != self:
-						return true
-	return false
 
 
 func switch_to_new_path():
@@ -97,12 +82,16 @@ func switch_to_new_path():
 		is_following_path = false
 		despawn_timer.start()
 
-func on_player_collision(body):
+
+func on_collision(body):
 	if body.is_in_group("player_car") and is_following_path:
 		is_following_path = false
 		despawn_timer.start()
 		call_deferred("handle_collision_cleanup")
 		ray_cast.enabled = false
+		traffic_detector.monitoring = false
+		rigid_body.set_collision_layer_value(AI_VEHICLES, true)
+
 
 func handle_collision_cleanup():
 	var pos = rigid_body.global_position
@@ -112,3 +101,18 @@ func handle_collision_cleanup():
 	rigid_body.global_position = pos
 	rigid_body.global_rotation = rot
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+func _on_traffic_detector_body_entered(body):
+	var self_forward = -rigid_body.global_transform.basis.z.normalized()
+	var other_forward = -body.global_transform.basis.z.normalized()
+	var dot = self_forward.dot(other_forward)
+	
+	if dot > 0.1:
+		traffic_ahead = true
+		return	
+	traffic_ahead = false
+	return
+
+
+func _on_traffic_detector_body_exited(body):
+	traffic_ahead = false

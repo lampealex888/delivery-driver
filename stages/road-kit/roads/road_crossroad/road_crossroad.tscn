@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bbm1u6b7ageo2"]
+[gd_scene load_steps=22 format=4 uid="uid://bbm1u6b7ageo2"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_1rqkg"]
 [ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_34jct"]
@@ -106,6 +106,36 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1t8c"]
+
+[sub_resource type="Curve3D" id="Curve3D_i2moh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.66, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_oxm0j"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6.66),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_6cxek"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6.66, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_vcqmw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.66),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="RoadCrossroad" type="StaticBody3D" node_paths=PackedStringArray("west_transmitter", "south_transmitter", "east_transmitter", "north_transmitter")]
 script = ExtResource("1_u1t8c")
 west_transmitter = NodePath("PathTransmitterWest")
@@ -211,3 +241,55 @@ one_shot = true
 
 [node name="SwitchTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SidewalkTransmitterEast" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33, 0, 3)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_u1t8c")
+
+[node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+curve = SubResource("Curve3D_i2moh")
+
+[node name="SidewalkTransmitterNorth" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.33)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterNorth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_u1t8c")
+
+[node name="Path3D" type="Path3D" parent="SidewalkTransmitterNorth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+curve = SubResource("Curve3D_oxm0j")
+
+[node name="SidewalkTransmitterWest" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33, 0, -3)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_u1t8c")
+
+[node name="Path3D" type="Path3D" parent="SidewalkTransmitterWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+curve = SubResource("Curve3D_6cxek")
+
+[node name="SidewalkTransmitterSouth" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.33)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_u1t8c")
+
+[node name="Path3D" type="Path3D" parent="SidewalkTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+curve = SubResource("Curve3D_vcqmw")

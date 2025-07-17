@@ -3,7 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://ofnrhfmttyhb" path="res://stages/tileset/ground/ground.tres" id="1_jrmcm"]
 [ext_resource type="Script" uid="uid://cmme8veleh46d" path="res://stages/tileset/ground/ground_grip_map.gd" id="3_r86rm"]
 [ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="5_04bqp"]
-[ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://stages/gameplay/2x2_zone.tscn" id="6_8iujo"]
+[ext_resource type="PackedScene" uid="uid://bs8fihak5ehyo" path="res://entities/gameplay/2x2_zone.tscn" id="6_8iujo"]
 [ext_resource type="PackedScene" uid="uid://cu3e7y753xu8k" path="res://utilities/game/game_manager.tscn" id="7_dbh7l"]
 [ext_resource type="PackedScene" uid="uid://coxdijkwgpaxm" path="res://stages/prefabs/2x2/commercial_03.tscn" id="11_04bqp"]
 [ext_resource type="PackedScene" uid="uid://28hhsprb2nu8" path="res://stages/prefabs/2x2/commercial_01.tscn" id="13_jrmcm"]
