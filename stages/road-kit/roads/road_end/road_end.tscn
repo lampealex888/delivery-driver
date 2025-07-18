@@ -44,14 +44,14 @@ shadow_mesh = SubResource("ArrayMesh_ynkg8")
 
 [sub_resource type="Curve3D" id="Curve3D_bn3a8"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3.33, 0, 0, 0, 0, -1, 0, 0, 1, -4.44, 0, 1.11, 0, 0, 0, 0, 0, 0, -3.33, 0, 2.22, 0, 0, 0, 0, 0, 0, 0, 0, 2.22),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.5, 0, 0, 0, 0, -0.2, 0, 0, 0.2, -0.75, 0, 0.167, 0, 0, 0, 0, 0, 0, -0.5, 0, 0.333, 0, 0, 0, 0, 0, 0, 0, 0, 0.333),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_arrly"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6.33, 0, 0, 0, 0, 0, 0, 0, 0, -6.33, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 6),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.95, 0, 0, 0, 0, 0, 0, 0, 0, -0.95, 0, 0.9, 0, 0, 0, 0, 0, 0, 0, 0, 0.9),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_fggal")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
 curve = SubResource("Curve3D_bn3a8")
 
 [node name="SidewalkTransmitterEast" type="Area3D" parent="."]
@@ -89,5 +89,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_fggal")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.025, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
 curve = SubResource("Curve3D_arrly")

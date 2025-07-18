@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://bl7mo0fx1lb1g"]
+[gd_scene load_steps=10 format=4 uid="uid://bl7mo0fx1lb1g"]
 
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_jccwg"]
 [ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_nnagb"]
 [ext_resource type="Shape3D" uid="uid://ditg0705wt4sk" path="res://stages/shared/path_transmitter_collision_shape.tres" id="3_pvh0i"]
-[ext_resource type="PackedScene" uid="uid://bbi2huporwlxv" path="res://entities/vehicles/ai_car/ai_car.tscn" id="4_f67h4"]
-[ext_resource type="PackedScene" uid="uid://bekg7hyi32j23" path="res://entities/npcs/ai_bystander/ai_bystander.tscn" id="5_ad5p8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dxkw"]
 resource_name = "colormap"
@@ -88,9 +86,6 @@ shape = ExtResource("3_pvh0i")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_nnagb")
 
-[node name="AICar" parent="RoadBendSidewalk/PathTransmitterSouth/Path3D" instance=ExtResource("4_f67h4")]
-transform = Transform3D(0.564523, 0, 0.825409, 0, 0.999993, 0, -0.825412, 0, 0.564521, -1.15954, 0, -3.66934)
-
 [node name="PathTransmitterWest" type="Area3D" parent="RoadBendSidewalk"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.5, 0, 0.167)
 collision_layer = 8
@@ -116,6 +111,3 @@ shape = ExtResource("3_pvh0i")
 [node name="Path3D" type="Path3D" parent="RoadBendSidewalk/SidewalkTransmitterSouth"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.025, 0)
 curve = SubResource("Curve3D_pvh0i")
-
-[node name="Bystander" parent="RoadBendSidewalk/SidewalkTransmitterSouth/Path3D" instance=ExtResource("5_ad5p8")]
-transform = Transform3D(0.99308, 0, 0.117441, 0, 1, 0, -0.117441, 0, 0.99308, -0.0922948, 0, -3.32556)
