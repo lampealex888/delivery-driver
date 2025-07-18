@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dvcnornaweku0"]
+[gd_scene load_steps=20 format=4 uid="uid://dvcnornaweku0"]
 
 [ext_resource type="Shape3D" uid="uid://bfm6cy4kca0ue" path="res://stages/shared/tile_collision_shape.tres" id="1_qrey1"]
 [ext_resource type="Texture2D" uid="uid://w3c7x42rskgi" path="res://stages/road-kit/colormap.png" id="1_y8lll"]
@@ -105,8 +105,6 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qrey1"]
-
 [sub_resource type="Curve3D" id="Curve3D_yhdsk"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6.66, 0, 0),
@@ -135,149 +133,148 @@ _data = {
 }
 point_count = 2
 
-[node name="RoadCrossroadPath" type="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
-shape = ExtResource("1_qrey1")
-
-[node name="RoadCrossroadPathMesh" type="MeshInstance3D" parent="."]
+[node name="RoadCrossroadPathMesh" type="MeshInstance3D"]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_3ra4q")
 skeleton = NodePath("")
 
+[node name="RoadCrossroadPath" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadCrossroadPath"]
+shape = ExtResource("1_qrey1")
+
 [node name="PathTransmitterEast" type="Area3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -3.33, 0, 1.11)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.5, 0, 0.167)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_qvusv")
 
 [node name="Path3D2" type="Path3D" parent="PathTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_qrey1")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_qvusv")
 
 [node name="Path3D3" type="Path3D" parent="PathTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_1jt6g")
 
 [node name="PathTransmitterNorth" type="Area3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.11, 0, 3.33)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.167, 0, 0.5)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_qvusv")
 
 [node name="Path3D2" type="Path3D" parent="PathTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_qrey1")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_m5bs3")
 
 [node name="Path3D3" type="Path3D" parent="PathTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_uimue")
 
 [node name="PathTransmitterWest" type="Area3D" parent="."]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 3.33, 0, -1.11)
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.5, 0, -0.167)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_qvusv")
 
 [node name="Path3D2" type="Path3D" parent="PathTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_qrey1")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_udvrl")
 
 [node name="Path3D3" type="Path3D" parent="PathTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_crjce")
 
 [node name="PathTransmitterSouth" type="Area3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.11, 0, -3.33)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.167, 0, -0.5)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
 shape = ExtResource("3_qvusv")
 
 [node name="Path3D2" type="Path3D" parent="PathTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_qrey1")
 
 [node name="Path3D" type="Path3D" parent="PathTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_c0pqb")
 
 [node name="Path3D3" type="Path3D" parent="PathTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_e4qi6")
 
 [node name="SidewalkTransmitterEast" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.45)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_qrey1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
+shape = ExtResource("3_qvusv")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_yhdsk")
 
 [node name="SidewalkTransmitterNorth" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, 0.5)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_qrey1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
+shape = ExtResource("3_qvusv")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterNorth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_8ws40")
 
 [node name="SidewalkTransmitterWest" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.45)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_qrey1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
+shape = ExtResource("3_qvusv")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_xeopb")
 
 [node name="SidewalkTransmitterSouth" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, -0.5)
 collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_qrey1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167, 0)
+shape = ExtResource("3_qvusv")
 
 [node name="Path3D" type="Path3D" parent="SidewalkTransmitterSouth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
 curve = SubResource("Curve3D_2qxi6")

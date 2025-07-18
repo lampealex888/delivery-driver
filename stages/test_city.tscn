@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxhnnlypr35r1"]
+[gd_scene load_steps=12 format=3 uid="uid://dxhnnlypr35r1"]
 
 [ext_resource type="PackedScene" uid="uid://c1uai3rvx8hul" path="res://entities/vehicles/player_car/player_car.tscn" id="5_2eyu7"]
+[ext_resource type="MeshLibrary" uid="uid://3ug6pc8k04hd" path="res://stages/tileset/buildings/buildings.tres" id="5_l0p5u"]
 [ext_resource type="PackedScene" uid="uid://cu3e7y753xu8k" path="res://utilities/game/game_manager.tscn" id="8_wnyj6"]
 [ext_resource type="MeshLibrary" uid="uid://ofnrhfmttyhb" path="res://stages/tileset/ground/ground.tres" id="10_68n4w"]
 [ext_resource type="Script" uid="uid://cmme8veleh46d" path="res://stages/tileset/ground/ground_grip_map.gd" id="11_y4ytd"]
@@ -67,3 +68,14 @@ shape = SubResource("BoxShape3D_p47dj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_psea3")
+
+[node name="BuildingsGridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("5_l0p5u")
+cell_size = Vector3(6.66, 6.66, 6.66)
+cell_center_y = false
+cell_scale = 5.0
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(65526, 9, 655397, 65525, 9, 655397, 65525, 8, 655397, 65525, 7, 655397, 65525, 6, 655397, 65525, 5, 655397, 65525, 4, 655397, 65525, 3, 655397, 65525, 2, 655397, 65525, 1, 655397, 65526, 1, 655397, 65526, 0, 655397, 65527, 0, 655397, 65528, 0, 655397, 65529, 0, 655397, 65530, 0, 655397, 65531, 0, 655397, 65532, 0, 655397, 65533, 0, 655397, 65534, 0, 655397, 65535, 0, 655397, 65534, 1, 655397, 65534, 2, 655397, 65534, 3, 655397, 65534, 4, 655397, 65534, 5, 655397, 65534, 6, 655397, 65534, 7, 655397, 65534, 8, 655397, 65533, 8, 655397, 65533, 9, 655397, 65532, 9, 655397, 65531, 9, 655397, 65530, 9, 655397, 65529, 9, 655397, 65528, 9, 655397, 65527, 9, 655397, 65526, 8, 655397, 65526, 5, 655397, 65526, 4, 655397, 65526, 3, 655397, 65526, 2, 655397, 65527, 1, 655397, 65528, 1, 655397, 65529, 1, 655397, 65530, 1, 655397, 65531, 1, 655397, 65532, 1, 655397, 65533, 1, 655397, 65533, 2, 655397, 65533, 3, 655397, 65533, 4, 655397, 65533, 5, 655397, 65533, 6, 655397, 65533, 7, 655397, 65532, 8, 655397, 65531, 8, 655397, 65530, 8, 655397, 65529, 8, 655397, 65528, 8, 655397, 65527, 8, 655397, 65527, 5, 655397, 65527, 4, 655397, 65527, 3, 655397, 65527, 2, 655397, 65528, 2, 655397, 65529, 2, 655397, 65530, 2, 655397, 65531, 2, 655397, 65532, 2, 655397, 65532, 3, 655397, 65532, 4, 655397, 65532, 5, 655397, 65532, 6, 655397, 65532, 7, 655397, 65531, 7, 655397, 65530, 7, 655397, 65529, 7, 655397, 65528, 5, 655397, 65528, 4, 655397, 65528, 3, 655397, 65529, 3, 655397, 65530, 3, 655397, 65531, 3, 655397, 65531, 4, 655397, 65531, 5, 655397, 65531, 6, 655397, 65530, 6, 655397, 65529, 6, 655397, 65529, 5, 655397, 65529, 4, 655397, 65530, 4, 655397, 65530, 5, 655397)
+}
+script = ExtResource("11_y4ytd")

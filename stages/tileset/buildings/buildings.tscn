@@ -1,0 +1,239 @@
+[gd_scene load_steps=60 format=3 uid="uid://5flkuo2s8h40"]
+
+[ext_resource type="PackedScene" uid="uid://b0hvvlqoc3uq7" path="res://stages/commercial/buildings/building_a/building_a.tscn" id="1_pl47e"]
+[ext_resource type="PackedScene" uid="uid://0lxoi5sajtnk" path="res://stages/commercial/buildings/building_b/building_b.tscn" id="2_rxpir"]
+[ext_resource type="PackedScene" uid="uid://f2iqriiym1oh" path="res://stages/commercial/buildings/building_c/building_c.tscn" id="3_crs5n"]
+[ext_resource type="PackedScene" uid="uid://dyu3rxv73fcjg" path="res://stages/commercial/buildings/building_d/building_d.tscn" id="4_5wc1n"]
+[ext_resource type="PackedScene" uid="uid://cxla8srgmjae5" path="res://stages/commercial/buildings/building_e/building_e.tscn" id="5_rxpir"]
+[ext_resource type="PackedScene" uid="uid://coiau1wjllwh2" path="res://stages/commercial/buildings/building_f/building_f.tscn" id="6_0yrwi"]
+[ext_resource type="PackedScene" uid="uid://cb2w63b7o1aed" path="res://stages/commercial/buildings/building_g/building_g.tscn" id="7_w4usu"]
+[ext_resource type="PackedScene" uid="uid://3vop04kbxra5" path="res://stages/commercial/buildings/building_h/building_h.tscn" id="8_43s3l"]
+[ext_resource type="PackedScene" uid="uid://dqv3864mnvrkc" path="res://stages/commercial/buildings/building_i/building_i.tscn" id="9_dyuvk"]
+[ext_resource type="PackedScene" uid="uid://5ladp8hkwvih" path="res://stages/commercial/buildings/building_j/building_j.tscn" id="10_hmuel"]
+[ext_resource type="PackedScene" uid="uid://0q10fmsaeno6" path="res://stages/commercial/buildings/building_k/building_k.tscn" id="11_jel64"]
+[ext_resource type="PackedScene" uid="uid://be2kylafs7b4h" path="res://stages/commercial/buildings/building_l/building_l.tscn" id="12_0hpjm"]
+[ext_resource type="PackedScene" uid="uid://d0oprfm53tvyr" path="res://stages/commercial/buildings/building_m/building_m.tscn" id="13_ypxmb"]
+[ext_resource type="PackedScene" uid="uid://tumhq8cje12f" path="res://stages/commercial/buildings/building_n/building_n.tscn" id="14_3p6qb"]
+[ext_resource type="PackedScene" uid="uid://dlrfcq6cqqoro" path="res://stages/commercial/skyscrapers/building_skyscraper_a/building_skyscraper_a.tscn" id="15_v00k0"]
+[ext_resource type="PackedScene" uid="uid://baij5p0dwrfr0" path="res://stages/commercial/skyscrapers/building_skyscraper_b/building_skyscraper_b.tscn" id="16_5v4b7"]
+[ext_resource type="PackedScene" uid="uid://dcsw1x0ahfm3r" path="res://stages/commercial/skyscrapers/building_skyscraper_c/building_skyscraper_c.tscn" id="17_s1kp4"]
+[ext_resource type="PackedScene" uid="uid://crk0gr5w0delu" path="res://stages/commercial/skyscrapers/building_skyscraper_d/building_skyscraper_d.tscn" id="18_2fxp6"]
+[ext_resource type="PackedScene" uid="uid://0c7bncufpof" path="res://stages/industrial/buildings/building_a/building_a.tscn" id="19_rttrq"]
+[ext_resource type="PackedScene" uid="uid://3x7g67cg8fl8" path="res://stages/industrial/buildings/building_b/building_b.tscn" id="20_4l204"]
+[ext_resource type="PackedScene" uid="uid://cak56r16c2jk6" path="res://stages/industrial/buildings/building_c/building_c.tscn" id="21_xijpb"]
+[ext_resource type="PackedScene" uid="uid://di745k67rl240" path="res://stages/industrial/buildings/building_d/building_d.tscn" id="22_j3ise"]
+[ext_resource type="PackedScene" uid="uid://cojmjeb2ovqkx" path="res://stages/industrial/buildings/building_e/building_e.tscn" id="23_w7dg5"]
+[ext_resource type="PackedScene" uid="uid://b55h2tjxhlcne" path="res://stages/industrial/buildings/building_f/building_f.tscn" id="24_vis6j"]
+[ext_resource type="PackedScene" uid="uid://bsv3bdfrp5fii" path="res://stages/industrial/buildings/building_g/building_g.tscn" id="25_6oyh0"]
+[ext_resource type="PackedScene" uid="uid://ht0awinej3dd" path="res://stages/industrial/buildings/building_h/building_h.tscn" id="26_nq3yj"]
+[ext_resource type="PackedScene" uid="uid://k7xlj1ip13g3" path="res://stages/industrial/buildings/building_i/building_i.tscn" id="27_40nnd"]
+[ext_resource type="PackedScene" uid="uid://ct8gy377jabvi" path="res://stages/industrial/buildings/building_j/building_j.tscn" id="28_lh1yl"]
+[ext_resource type="PackedScene" uid="uid://p7ttsn01exup" path="res://stages/industrial/buildings/building_k/building_k.tscn" id="29_c70oh"]
+[ext_resource type="PackedScene" uid="uid://uru8n43r3lfh" path="res://stages/industrial/buildings/building_l/building_l.tscn" id="30_0ha4s"]
+[ext_resource type="PackedScene" uid="uid://1lgb1vishpdc" path="res://stages/industrial/buildings/building_m/building_m.tscn" id="31_rcrxf"]
+[ext_resource type="PackedScene" uid="uid://tp7muyq8kvcn" path="res://stages/industrial/buildings/building_n/building_n.tscn" id="32_8fbva"]
+[ext_resource type="PackedScene" uid="uid://c5lh7rpp08kje" path="res://stages/industrial/buildings/building_o/building_o.tscn" id="33_jxyso"]
+[ext_resource type="PackedScene" uid="uid://b5uq4gh5v77lw" path="res://stages/industrial/buildings/building_p/building_p.tscn" id="34_e2nku"]
+[ext_resource type="PackedScene" uid="uid://dg4rtypj0jo2o" path="res://stages/industrial/buildings/building_q/building_q.tscn" id="35_e0ke4"]
+[ext_resource type="PackedScene" uid="uid://d2n8aq104jyb0" path="res://stages/industrial/buildings/building_r/building_r.tscn" id="36_jdb4u"]
+[ext_resource type="PackedScene" uid="uid://6axc3npu2wsc" path="res://stages/industrial/buildings/building_s/building_s.tscn" id="37_36fng"]
+[ext_resource type="PackedScene" uid="uid://dvcbdoab7dr3i" path="res://stages/industrial/buildings/building_t/building_t.tscn" id="38_fn0eg"]
+[ext_resource type="PackedScene" uid="uid://j7uuewib1c1n" path="res://stages/suburban/buildings/building_a/building_a.tscn" id="39_78l4u"]
+[ext_resource type="PackedScene" uid="uid://6l823chitig3" path="res://stages/suburban/buildings/building_b/building_b.tscn" id="40_tjj6k"]
+[ext_resource type="PackedScene" uid="uid://bp3piyop18nvx" path="res://stages/suburban/buildings/building_c/building_c.tscn" id="41_j6gmy"]
+[ext_resource type="PackedScene" uid="uid://c6nm3lolk16in" path="res://stages/suburban/buildings/building_d/building_d.tscn" id="42_j5khg"]
+[ext_resource type="PackedScene" uid="uid://brcfavflht65c" path="res://stages/suburban/buildings/building_e/building_e.tscn" id="43_hrw4c"]
+[ext_resource type="PackedScene" uid="uid://dgd3758l1ix7a" path="res://stages/suburban/buildings/building_f/building_f.tscn" id="44_04guy"]
+[ext_resource type="PackedScene" uid="uid://cccgy25amuw2g" path="res://stages/suburban/buildings/building_g/building_g.tscn" id="45_mogih"]
+[ext_resource type="PackedScene" uid="uid://c36b8b3r0s2r4" path="res://stages/suburban/buildings/building_h/building_h.tscn" id="46_gs4j4"]
+[ext_resource type="PackedScene" uid="uid://cacbbvgsuyxxq" path="res://stages/suburban/buildings/building_i/building_i.tscn" id="47_n22yf"]
+[ext_resource type="PackedScene" uid="uid://cjr5fmc74pi3s" path="res://stages/suburban/buildings/building_j/building_j.tscn" id="48_f2fob"]
+[ext_resource type="PackedScene" uid="uid://f3itq3wwjse1" path="res://stages/suburban/buildings/building_k/building_k.tscn" id="49_5hv2a"]
+[ext_resource type="PackedScene" uid="uid://ccw0b0w7pds1c" path="res://stages/suburban/buildings/building_l/building_l.tscn" id="50_gh5kl"]
+[ext_resource type="PackedScene" uid="uid://suf64eat7ls7" path="res://stages/suburban/buildings/building_m/building_m.tscn" id="51_fb8pe"]
+[ext_resource type="PackedScene" uid="uid://b0pnq26lj3s6n" path="res://stages/suburban/buildings/building_n/building_n.tscn" id="52_slc1i"]
+[ext_resource type="PackedScene" uid="uid://er0qy3loxv3t" path="res://stages/suburban/buildings/building_o/building_o.tscn" id="53_mqjsr"]
+[ext_resource type="PackedScene" uid="uid://dmououdgwua2b" path="res://stages/suburban/buildings/building_p/building_p.tscn" id="54_8ycst"]
+[ext_resource type="PackedScene" uid="uid://vwg6su8lmrny" path="res://stages/suburban/buildings/building_q/building_q.tscn" id="55_sdto7"]
+[ext_resource type="PackedScene" uid="uid://b3nsi4nnwlyp8" path="res://stages/suburban/buildings/building_r/building_r.tscn" id="56_hwrto"]
+[ext_resource type="PackedScene" uid="uid://b87fflcemfmlk" path="res://stages/suburban/buildings/building_s/building_s.tscn" id="57_xwg3v"]
+[ext_resource type="PackedScene" uid="uid://c3gehkuvelrvo" path="res://stages/suburban/buildings/building_t/building_t.tscn" id="58_dwbie"]
+[ext_resource type="PackedScene" uid="uid://dlps1urex60bo" path="res://stages/suburban/buildings/building_u/building_u.tscn" id="59_g483w"]
+
+[node name="Buildings" type="Node3D"]
+
+[node name="CommercialA" parent="." instance=ExtResource("1_pl47e")]
+
+[node name="CommercialB" parent="." instance=ExtResource("2_rxpir")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5, 0, 0)
+
+[node name="CommercialC" parent="." instance=ExtResource("3_crs5n")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10, 0, 0)
+
+[node name="CommercialD" parent="." instance=ExtResource("4_5wc1n")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 15, 0, 0)
+
+[node name="CommercialE" parent="." instance=ExtResource("5_rxpir")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -7, 0, 0)
+
+[node name="CommercialF" parent="." instance=ExtResource("6_0yrwi")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -14, 0, 0)
+
+[node name="CommercialG" parent="." instance=ExtResource("7_w4usu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -20, 0, 0)
+
+[node name="CommercialH" parent="." instance=ExtResource("8_43s3l")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25, 0, 0)
+
+[node name="CommercialI" parent="." instance=ExtResource("9_dyuvk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -31, 0, 0)
+
+[node name="CommercialJ" parent="." instance=ExtResource("10_hmuel")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -40, 0, 0)
+
+[node name="CommercialK" parent="." instance=ExtResource("11_jel64")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -51, 0, -1)
+
+[node name="CommercialL" parent="." instance=ExtResource("12_0hpjm")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -60, 0, -1)
+
+[node name="CommercialM" parent="." instance=ExtResource("13_ypxmb")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -67, 0, -1)
+
+[node name="CommercialN" parent="." instance=ExtResource("14_3p6qb")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -77, 0, -1)
+
+[node name="SkyscraperA" parent="." instance=ExtResource("15_v00k0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -88, 0, -1)
+
+[node name="SkyscraperB" parent="." instance=ExtResource("16_5v4b7")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -96, 0, -1)
+
+[node name="SkyscraperC" parent="." instance=ExtResource("17_s1kp4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -105, 0, -2)
+
+[node name="SkyscraperD" parent="." instance=ExtResource("18_2fxp6")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -113, 0, -1)
+
+[node name="IndustrialA" parent="." instance=ExtResource("19_rttrq")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11, 0, 17)
+
+[node name="IndustrialB" parent="." instance=ExtResource("20_4l204")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1, 0, 17)
+
+[node name="IndustrialC" parent="." instance=ExtResource("21_xijpb")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -13, 0, 17)
+
+[node name="IndustrialD" parent="." instance=ExtResource("22_j3ise")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -22, 0, 17)
+
+[node name="IndustrialE" parent="." instance=ExtResource("23_w7dg5")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -36, 0, 17)
+
+[node name="IndustrialF" parent="." instance=ExtResource("24_vis6j")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -44, 0, 17)
+
+[node name="IndustrialG" parent="." instance=ExtResource("25_6oyh0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0, 17)
+
+[node name="IndustrialH" parent="." instance=ExtResource("26_nq3yj")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -64, 0, 17)
+
+[node name="IndustrialI" parent="." instance=ExtResource("27_40nnd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -73, 0, 17)
+
+[node name="IndustrialJ" parent="." instance=ExtResource("28_lh1yl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -80, 0, 17)
+
+[node name="IndustrialK" parent="." instance=ExtResource("29_c70oh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -89, 0, 17)
+
+[node name="IndustrialL" parent="." instance=ExtResource("30_0ha4s")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -97, 0, 17)
+
+[node name="IndustrialM" parent="." instance=ExtResource("31_rcrxf")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -110, 0, 17)
+
+[node name="IndustrialN" parent="." instance=ExtResource("32_8fbva")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -117, 0, 17)
+
+[node name="IndustrialO" parent="." instance=ExtResource("33_jxyso")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -124, 0, 17)
+
+[node name="IndustrialP" parent="." instance=ExtResource("34_e2nku")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -135, 0, 17)
+
+[node name="IndustrialQ" parent="." instance=ExtResource("35_e0ke4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -145, 0, 17)
+
+[node name="IndustrialR" parent="." instance=ExtResource("36_jdb4u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -159, 0, 17)
+
+[node name="IndustrialS" parent="." instance=ExtResource("37_36fng")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -173, 0, 17)
+
+[node name="IndustrialT" parent="." instance=ExtResource("38_fn0eg")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -186, 0, 17)
+
+[node name="SuburbanA" parent="." instance=ExtResource("39_78l4u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11, 0, 30)
+
+[node name="SuburbanB" parent="." instance=ExtResource("40_tjj6k")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1, 0, 31)
+
+[node name="SuburbanC" parent="." instance=ExtResource("41_j6gmy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -8, 0, 31)
+
+[node name="SuburbanD" parent="." instance=ExtResource("42_j5khg")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -17, 0, 31)
+
+[node name="SuburbanE" parent="." instance=ExtResource("43_hrw4c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -27, 0, 31)
+
+[node name="SuburbanF" parent="." instance=ExtResource("44_04guy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -36, 0, 31)
+
+[node name="SuburbanG" parent="." instance=ExtResource("45_mogih")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -44, 0, 30)
+
+[node name="SuburbanH" parent="." instance=ExtResource("46_gs4j4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -53, 0, 31)
+
+[node name="SuburbanI" parent="." instance=ExtResource("47_n22yf")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -61, 0, 31)
+
+[node name="SuburbanJ" parent="." instance=ExtResource("48_f2fob")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -69, 0, 31)
+
+[node name="SuburbanK" parent="." instance=ExtResource("49_5hv2a")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -77, 0, 31)
+
+[node name="SuburbanL" parent="." instance=ExtResource("50_gh5kl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -83, 0, 31)
+
+[node name="SuburbanM" parent="." instance=ExtResource("51_fb8pe")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -90, 0, 30)
+
+[node name="SuburbanN" parent="." instance=ExtResource("52_slc1i")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -99, 0, 31)
+
+[node name="SuburbanO" parent="." instance=ExtResource("53_mqjsr")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -108, 0, 31)
+
+[node name="SuburbanP" parent="." instance=ExtResource("54_8ycst")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -116, 0, 31)
+
+[node name="SuburbanQ" parent="." instance=ExtResource("55_sdto7")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -124, 0, 31)
+
+[node name="SuburbanR" parent="." instance=ExtResource("56_hwrto")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -131, 0, 32)
+
+[node name="SuburbanS" parent="." instance=ExtResource("57_xwg3v")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -140, 0, 32)
+
+[node name="SuburbanT" parent="." instance=ExtResource("58_dwbie")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -148, 0, 31)
+
+[node name="SuburbanU" parent="." instance=ExtResource("59_g483w")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -156, 0, 32)

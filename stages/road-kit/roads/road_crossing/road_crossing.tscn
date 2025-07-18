@@ -41,13 +41,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lixxo")
 
-[node name="RoadCrossing" type="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
-shape = ExtResource("1_h37e7")
-
-[node name="RoadCrossingMesh" type="MeshInstance3D" parent="."]
+[node name="RoadCrossingMesh" type="MeshInstance3D"]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_w44ti")
 skeleton = NodePath("")
+
+[node name="RoadCrossing" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadCrossing"]
+shape = ExtResource("1_h37e7")
