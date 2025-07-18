@@ -63,51 +63,53 @@ _data = {
 }
 point_count = 3
 
-[node name="RoadBendSidewalkMesh" type="MeshInstance3D"]
+[node name="Node3D" type="Node3D"]
+
+[node name="RoadBendSidewalkMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.66, 0, 0, 0, 6.66, 0, 0, 0, 6.66, 0, 0, 0)
 mesh = SubResource("ArrayMesh_d3d56")
 skeleton = NodePath("")
 
-[node name="RoadBendSidewalk" type="StaticBody3D" parent="."]
+[node name="RoadBendSidewalk" type="StaticBody3D" parent="RoadBendSidewalkMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalk"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalkMesh/RoadBendSidewalk"]
 shape = ExtResource("1_nnagb")
 
-[node name="PathTransmitterSouth" type="Area3D" parent="RoadBendSidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.167, 0, 0.5)
+[node name="PathTransmitterSouth" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11, 0, 3.33)
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalk/PathTransmitterSouth"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterSouth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("3_pvh0i")
 
-[node name="Path3D" type="Path3D" parent="RoadBendSidewalk/PathTransmitterSouth"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
+[node name="Path3D" type="Path3D" parent="PathTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_nnagb")
 
-[node name="PathTransmitterWest" type="Area3D" parent="RoadBendSidewalk"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.5, 0, 0.167)
+[node name="PathTransmitterWest" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -3.33, 0, 1.11)
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalk/PathTransmitterWest"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathTransmitterWest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("3_pvh0i")
 
-[node name="Path3D" type="Path3D" parent="RoadBendSidewalk/PathTransmitterWest"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.015, 0)
+[node name="Path3D" type="Path3D" parent="PathTransmitterWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 curve = SubResource("Curve3D_hgs0k")
 
-[node name="SidewalkTransmitterSouth" type="Area3D" parent="RoadBendSidewalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0, 0.5)
+[node name="SidewalkTransmitterSouth" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.33)
 collision_layer = 64
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadBendSidewalk/SidewalkTransmitterSouth"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidewalkTransmitterSouth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("3_pvh0i")
 
-[node name="Path3D" type="Path3D" parent="RoadBendSidewalk/SidewalkTransmitterSouth"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.025, 0)
+[node name="Path3D" type="Path3D" parent="SidewalkTransmitterSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 curve = SubResource("Curve3D_pvh0i")
